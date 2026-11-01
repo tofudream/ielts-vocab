@@ -135,6 +135,66 @@
 .learn-assessment .btn{min-height:44px;padding:10px 14px;font-size:14px;flex:1}
 .learn-assessment:has(.btn.hidden):not(:has(.btn:not(.hidden))){display:none}
 @media(max-width:760px){.learn-assessment{margin-top:10px}.learn-assessment .btn{font-size:13px;padding:9px 10px}}
+
+/* Quiz workspace: show the question and actions, without sampling internals. */
+.layout:has(#quiz.active) .main{max-width:1080px;padding:26px 36px 36px;margin:0 auto}
+.layout:has(#quiz.active) .top .eyebrow{font-size:10px;letter-spacing:1.5px}
+.layout:has(#quiz.active) h1{font-size:28px;line-height:1.25;margin:4px 0 5px;letter-spacing:-.6px}
+.layout:has(#quiz.active) #motivationnote{font-size:13px;line-height:1.4}
+.layout:has(#quiz.active) .footer{display:none}
+#quiz .toolbar{margin:16px 0 10px;gap:8px}
+#quiz .toolbar h2{font-size:20px;margin:0}
+#quiz .daily-date{font-size:12px;margin:3px 0 0}
+#quiz .exam-overview{padding:12px 16px;margin-bottom:12px;border-radius:14px;display:flex;align-items:center;gap:10px 18px;flex-wrap:wrap}
+#quiz .exam-overview .daily-summary-top{flex:1;gap:20px;font-size:15px;min-width:230px}
+#quiz #startexam{margin:0;font-size:14px;min-height:44px;padding:10px 16px}
+#quiz #examnotice{order:3;flex-basis:100%;font-size:12px;margin:0;line-height:1.5}
+#quizquestion{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.15fr);grid-template-areas:"number options" "word options" "stem options" "hint options" "feedback options" "explanation options" "actions actions";grid-template-rows:repeat(6,auto) auto;gap:8px 28px;padding:24px;margin-bottom:12px;border-radius:16px;align-items:start}
+#quiz #questionnumber{grid-area:number;font-size:12px;letter-spacing:1px;margin:0;line-height:1.5}
+#quiz #quizword{grid-area:word;font-size:clamp(36px,4vw,50px);line-height:1.15;margin:4px 0;overflow-wrap:anywhere}
+#quiz #quizstem{grid-area:stem;font-size:18px;line-height:1.65;margin:0;overflow-wrap:anywhere}
+#quiz #quizoptions{grid-area:options;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0;align-self:center;min-width:0}
+#quiz #quizoptions:empty{display:none}
+#quiz .quizopt button{min-height:74px;padding:14px;font-size:17px;line-height:1.5;border-radius:12px;overflow-wrap:anywhere}
+#quiz #fillform{grid-area:options;align-self:center;min-width:0}
+#quiz .fill-controls{gap:8px;margin-top:10px}
+#quiz #fillanswer{font-size:16px;min-width:0;min-height:44px;width:100%;flex:1 1 160px}
+#quiz #submitfill{min-height:44px;padding:10px 16px;font-size:14px}
+#quiz #hinttext{grid-area:hint;font-size:16px;line-height:1.65;margin:4px 0 0;padding:12px}
+#quiz #feedback{grid-area:feedback;margin:4px 0 0;font-size:16px;line-height:1.5;overflow-wrap:anywhere}
+#quiz #feedback:empty{display:none}
+#quiz #quizexplanation{grid-area:explanation;font-size:16px;line-height:1.6;overflow-wrap:anywhere;margin:2px 0 0}
+#quiz .quiz-actions{grid-area:actions;position:sticky;bottom:12px;z-index:15;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;padding:12px 0 0;border-top:1px solid #e3eae4;background:#fff}
+#quiz .quiz-actions .btn{min-height:44px;font-size:14px;padding:10px 16px}
+#quiz #examresult{padding:22px;border-radius:16px}
+@media(max-width:760px){
+ .layout:has(#quiz.active) .side{padding:9px 12px;gap:6px}
+ .layout:has(#quiz.active) .brand{font-size:17px}
+ .layout:has(#quiz.active) .brand small{display:none}
+ .layout:has(#quiz.active) .navbtn{font-size:13px;padding:8px 10px;min-height:38px}
+ .layout:has(#quiz.active) .main{padding:12px 14px calc(86px + env(safe-area-inset-bottom,0px))}
+ .layout:has(#quiz.active) h1{font-size:23px}
+ .layout:has(#quiz.active) #motivationnote{font-size:12px}
+ #quiz .toolbar{margin:10px 0 8px}
+ #quiz .toolbar h2{font-size:18px}
+ #quiz .exam-overview{padding:10px 12px;gap:8px;margin-bottom:10px}
+ #quiz .exam-overview .daily-summary-top{font-size:14px;min-width:0;flex-basis:100%}
+ #quiz #startexam{width:100%}
+ #quizquestion{display:block;padding:16px}
+ #quiz #quizword{font-size:36px;margin:8px 0}
+ #quiz #quizstem{font-size:17px;line-height:1.6;margin:6px 0 10px}
+ #quiz #quizoptions{gap:8px}
+ #quiz .quizopt button{font-size:15px;min-height:62px;padding:10px}
+ #quiz #fillform{margin:12px 0}
+ #quiz #hinttext{font-size:15px;margin-top:10px;padding:10px}
+ #quiz #feedback{font-size:15px;margin-top:10px}
+ #quiz #quizexplanation{font-size:15px;margin-top:8px}
+ #quiz .quiz-actions{position:fixed;left:0;right:0;bottom:0;padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px));margin:0;background:rgba(247,245,240,.98);border-top:1px solid #dce5dc;box-shadow:0 -5px 20px #173c3308}
+ #quiz .quiz-actions .btn{flex:1;font-size:13px;padding:10px 8px}
+ #quiz #examresult{padding:16px}
+}
+@media(max-width:760px) and (max-height:700px){.layout:has(#quiz.active) .top .eyebrow,.layout:has(#quiz.active) #motivationnote{display:none}.layout:has(#quiz.active) h1{font-size:21px}}
+@media(max-width:760px) and (max-height:620px){.layout:has(#quiz.active) .top,.layout:has(#quiz.active) .brand{display:none}.layout:has(#quiz.active) .main{padding-top:8px}#quiz .toolbar{margin-top:4px}}
 </style></head>
 <body><div class="layout"><aside class="side"><div class="brand">vocab<span style="color:#b2dc97">.</span>studio<small>IELTS LEARNING SPACE</small></div><nav aria-label="主要導覽"><button class="navbtn active" data-tab="learn">今日學習</button><button class="navbtn" data-tab="history">學習記錄</button><button class="navbtn" data-tab="library">單字總覽</button><button class="navbtn" data-tab="quiz">單字測驗</button><button class="navbtn" data-tab="review">複習清單</button></nav><div class="sidefoot">每天一點，穩定累積。<br>學習記錄儲存於此瀏覽器。</div></aside>
 <main class="main"><div class="top"><div><div class="eyebrow">YOUR DAILY ENGLISH ROUTINE</div><h1 id="motivation">先開始，再慢慢熟悉。</h1><p id="motivationnote" class="muted" style="margin:0">給自己一點時間，從今天的第一個單字開始。</p></div></div>
@@ -149,13 +209,13 @@
 <section class="section" id="history"><div class="toolbar"><h2>學習記錄</h2><button class="btn outline" id="exporthistory">匯出學習記錄 JSON</button></div><p class="muted">按日期查看學過的單字、例句及測驗成績。重複練習同一個單字，在同一天只計算一次。</p><div class="stats history-stats" aria-label="單字學習統計"><div class="stat"><span>單字總數</span><b id="total">—</b></div><div class="stat"><span>已掌握</span><b id="known">0</b></div><div class="stat"><span>待複習</span><b id="due">0</b></div></div><div class="stats history-stats"><div class="stat"><span>學習天數</span><b id="studydays">0</b></div><div class="stat"><span>累計學過（不重複）</span><b id="studiedtotal">0</b></div><div class="stat"><span>完成每日任務</span><b id="completeddays">0</b></div></div><div class="list" id="historylist"></div><div class="notice">記錄保存在目前瀏覽器，不會跨裝置同步。清除網站資料會刪除記錄，建議定期匯出備份。舊版未保存每日記錄，因此不會自動補上過去的學習日期。</div></section>
 <section class="section" id="library"><div class="toolbar"><h2>所有單字</h2><input id="search" class="control" placeholder="搜尋英文或中文..." aria-label="搜尋單字"></div><p class="muted" id="librarycount"></p><div class="list" id="wordlist"></div><div class="actions"><button class="btn outline hidden" id="loadmore">載入更多單字</button></div></section>
 <section class="section" id="quiz">
-<div class="toolbar"><div><h2>每日單字測驗</h2><p class="muted daily-date" id="examdate"></p></div><span class="pill">每日目標 40 題 · 每題 2.5 分</span></div>
-<div class="panel exam-overview"><div class="daily-summary-top"><strong id="examprogress">已答 0 / 40 題</strong><strong id="examscore">得分 0 / 100</strong></div><p id="examallocation" class="muted"></p><p id="examnotice" class="muted"></p><button class="btn primary" id="startexam">開始今日測驗</button></div>
+<div class="toolbar"><div><h2>每日單字測驗</h2><p class="muted daily-date" id="examdate"></p></div></div>
+<div class="panel exam-overview"><div class="daily-summary-top"><strong id="examprogress">已答 0 / 40 題</strong><strong id="examscore">得分 0 / 100</strong></div><p id="examnotice" class="muted"></p><button class="btn primary" id="startexam">開始今日測驗</button></div>
 <div id="quizquestion" class="panel exam-question hidden"><p class="eyebrow" id="questionnumber"></p><h3 class="word" id="quizword"></h3><p class="exam-stem" id="quizstem"></p><div class="quizopt" id="quizoptions"></div>
 <form id="fillform" class="hidden"><label for="fillanswer">填入缺少的英文單字或片語，注意時態與單複數</label><div class="fill-controls"><input id="fillanswer" class="control" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="填空答案"><button id="submitfill" type="submit" class="btn primary">送出答案</button></div></form>
 <div class="actions quiz-actions"><button class="btn light" id="quizhint">例句提示（剩餘 5 / 5 次）</button><button class="btn primary" id="newquiz" disabled>下一題 →</button></div><p id="hinttext" class="notice hidden" role="status"></p><p id="feedback" role="status" aria-live="polite"></p><p id="quizexplanation" class="example hidden"></p></div>
 <div id="examresult" class="panel exam-result hidden"></div>
-<div class="notice">目標配置：四選一 30 題，今天學習 10 題、上次學過且從未測驗 10 題、答錯待複習 10 題；各組不足時保留缺額，同題型不重複。另有 10 題句子填空，同一單字可在不同題型出現。例句提示每份最多 5 次，僅限四選一；填空沒有提示。每題 2.5 分，結果會列入「學習記錄」。</div>
+
 </section>
 <section class="section" id="review"><h2 class="section-title">需要複習的單字</h2><p class="muted">系統依照你的熟悉程度安排複習，沒有需要複習的單字時會顯示空清單。</p><div class="list" id="reviewlist"></div><div class="progressbar"><div id="mastery" style="width:0%"></div></div><p class="muted" id="masterytext"></p><button class="btn outline" id="export">匯出學習進度 JSON</button></section>
 <p class="footer">Vocabulary Studio · GitHub Pages · 學習進度儲存於目前瀏覽器（localStorage），不會跨裝置同步。</p>
@@ -560,18 +620,14 @@ function examSummary(exam) {
   return {answered:answered.length,correct,total:exam.questions.length,score:correct*2.5,max:exam.questions.length*2.5,
     hints:exam.questions.filter(question => question.hintUsed).length,full:choice===30&&fill===10};
 }
-function examAllocation(exam) {
-  const a = exam.allocation;
-  return `四選一：今天學習 ${a.today}/10、上次未測驗 ${a.previous}/10、錯字 ${a.wrong}/10；句子填空 ${a.fill}/10。`;
-}
 function renderQuiz() {
   if (!words.length) return;
   const exam = currentExam(), draft = exam || buildExam(), summary = examSummary(draft);
   text('#examdate', today().replaceAll('-',' / '));
-  text('#examallocation', examAllocation(draft));
   text('#examprogress', `已答 ${summary.answered} / ${summary.total} 題`);
   text('#examscore', `得分 ${summary.score} / ${summary.max}`);
-  text('#examnotice', `${summary.full ? '每日 40 題：30 題四選一＋10 題句子填空，滿分 100。' : `指定組的候選單字或可用例句不足，目前可出 ${summary.total}/40 題，這份為練習卷，滿分 ${summary.max}（不是百分制）。`}每題 2.5 分。各組名額不互相補足。請先完成今日學習再開始測驗；開始後不再增加或更換題目，作答和提示次數會自動儲存。每天一份，無法重抽或重考。`);
+  text('#examnotice', summary.full ? '作答會自動儲存，可稍後繼續。' : `練習卷：共 ${summary.total} 題，滿分 ${summary.max} 分（不是百分制）。`);
+  $('#examnotice').classList.toggle('hidden', !!exam);
   $('#startexam').classList.toggle('hidden', !!exam);
   $('#startexam').disabled = !draft.questions.length;
   text('#startexam', summary.full ? '開始今日 40 題測驗' : `開始今日 ${summary.total} 題練習`);
@@ -584,7 +640,7 @@ function renderQuiz() {
   }
   exam.cursor = Math.max(0, Math.min(Number(exam.cursor)||0, exam.questions.length-1));
   const question = exam.questions[exam.cursor]; quizAnswer = question.word;
-  text('#questionnumber', `第 ${exam.cursor+1} / ${summary.total} 題 · ${question.type==='choice'?'四選一':'句子填空'} · ${SOURCE_LABELS[question.source]}`);
+  text('#questionnumber', `第 ${exam.cursor+1} / ${summary.total} 題 · ${question.type==='choice'?'四選一':'句子填空'}`);
   text('#quizword', question.type==='choice' ? question.word.word : '句子填空');
   text('#quizstem', question.type==='fill' ? question.gap.sentence : '請選出正確的中文意思。');
   $('#quizoptions').replaceChildren();
@@ -653,7 +709,7 @@ function renderExamResult(container,exam) {
   const result=examSummary(exam), title=document.createElement('h3');
   title.textContent=exam.completedAt?`${result.full?'每日測驗':'練習卷'}完成 · ${result.score} / ${result.max} 分`:`測驗進行中 · ${result.score} / ${result.max} 分`;
   const note=document.createElement('p'); note.className='muted';
-  note.textContent=`已答 ${result.answered}/${result.total} 題，答對 ${result.correct} 題 · 提示使用 ${result.hints}/5 次 · 每題 2.5 分${result.full?'':' · 題數不足 40，非百分制成績'}`;
+  note.textContent=`已答 ${result.answered}/${result.total} 題，答對 ${result.correct} 題 · 提示使用 ${result.hints}/5 次 · 每題 2.5 分`;
   container.append(title,note);
   const details=document.createElement('details'), summary=document.createElement('summary');
   summary.textContent='查看已作答題目與答案'; details.append(summary);
