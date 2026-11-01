@@ -195,6 +195,7 @@
 }
 @media(max-width:760px) and (max-height:700px){.layout:has(#quiz.active) .top .eyebrow,.layout:has(#quiz.active) #motivationnote{display:none}.layout:has(#quiz.active) h1{font-size:21px}}
 @media(max-width:760px) and (max-height:620px){.layout:has(#quiz.active) .top,.layout:has(#quiz.active) .brand{display:none}.layout:has(#quiz.active) .main{padding-top:8px}#quiz .toolbar{margin-top:4px}}
+#quiz .quizopt.word-options button{min-height:56px;font-size:19px;text-align:center}
 /* Mobile Edge/Chrome polish: no mid-word breaks, stable text size, tidy nav scrolling. */
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 button,.navbtn,select,summary{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
@@ -207,6 +208,8 @@ button,.navbtn,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
  .navbtn{scroll-snap-align:start;flex:0 0 auto}
  #learn .word-head{flex-wrap:nowrap}
  #learn .word-head .word{flex:1 1 auto;text-align:center;white-space:nowrap}
+ #learn .word-head #sound{position:absolute;top:6px;right:8px;width:38px;height:38px;min-height:0;padding:0;display:inline-flex;align-items:center;justify-content:center;z-index:1}
+ #learn .card{padding-top:44px}
  #learn .toolbar{flex-wrap:nowrap;gap:8px}
  #learn .toolbox{flex-wrap:nowrap;min-width:0}
  #learn .toolbox .control{min-width:0;text-overflow:ellipsis}
@@ -393,7 +396,8 @@ function fitWord() {
   el.style.fontSize = '';
   let size = parseFloat(getComputedStyle(el).fontSize) || 0;
   if (!size) return;
-  while (size > 22 && el.scrollWidth > el.clientWidth + 1) { size -= 1; el.style.fontSize = size + 'px'; }
+  const box = () => (el.parentElement?.clientWidth || el.clientWidth);
+  while (size > 20 && el.scrollWidth > box() + 1) { size -= 1; el.style.fontSize = size + 'px'; }
 }
 if (window.addEventListener) window.addEventListener('resize', fitWord);
 if (document.fonts?.ready) document.fonts.ready.then(fitWord);
@@ -582,6 +586,21 @@ function gapFor(word) {
   if (answers.length !== 1) return null;
   return { sentence: word.example_sentence.replace(termRegex(word), '_____'), answer: matches[0][0] };
 }
+function fillOptions(word, gap) {
+  const answer = gap.answer, suffix = text => { const l = text.toLowerCase(); return /ing$/.test(l) ? 'ing' : /ed$/.test(l) ? 'ed' : /ly$/.test(l) ? 'ly' : /[^s]s$/.test(l) ? 's' : 'base'; };
+  const wordCount = text => text.trim().split(/\s+/).length, upper = /^[A-Z]/.test(answer);
+  const sentence = gap.sentence.toLowerCase(), key = suffix(answer), id = getId(word);
+  const rank = item => (suffix(item.word) === key ? 0 : 2) + (item.part_of_speech === word.part_of_speech ? 0 : 1);
+  const pool = shuffle(words.filter(item => item.word && getId(item) !== id && wordCount(item.word) === wordCount(answer)
+    && !sentence.includes(item.word.toLowerCase()))).sort((a, b) => rank(a) - rank(b));
+  const seen = new Set([normalizeAnswer(answer)]), picks = [answer];
+  for (const item of pool) {
+    const label = upper ? item.word.charAt(0).toUpperCase() + item.word.slice(1) : item.word, norm = normalizeAnswer(label);
+    if (seen.has(norm)) continue;
+    seen.add(norm); picks.push(label); if (picks.length === 4) break;
+  }
+  return picks.length === 4 ? shuffle(picks) : null;
+}
 function testedBefore(id) {
   const result = quizResults[id];
   return !!result && (Number(result.wrongCount) > 0 || Number(result.correctCount) > 0 || !!result.lastAttemptAt);
@@ -634,7 +653,7 @@ function buildExam() {
     const id = getId(word); if (fillSeen.has(id) || !gapFor(word)) continue;
     fillSeen.add(id); fillWords.push(word); if (fillWords.length === 10) break;
   }
-  fillWords.forEach((word,index) => questions.push({id:`fill-${index}`,type:'fill',source:'fill',word:{...word},gap:gapFor(word),hintUsed:false,answer:null}));
+  fillWords.forEach((word,index) => { const gap = gapFor(word); questions.push({id:`fill-${index}`,type:'fill',source:'fill',word:{...word},gap,fillOptions:fillOptions(word,gap),hintUsed:false,answer:null}); });
   return {
     version:1,date:today(),startedAt:null,completedAt:null,cursor:0,questions,
     allocation:{today:selected.today.length,previous:selected.previous.length,wrong:selected.wrong.length,fill:fillWords.length},
@@ -669,11 +688,13 @@ function renderQuiz() {
   }
   exam.cursor = Math.max(0, Math.min(Number(exam.cursor)||0, exam.questions.length-1));
   const question = exam.questions[exam.cursor]; quizAnswer = question.word;
-  text('#questionnumber', `第 ${exam.cursor+1} / ${summary.total} 題 · ${question.type==='choice'?'四選一':'句子填空'}`);
+  const fillChoices = question.type==='fill' && Array.isArray(question.fillOptions);
+  text('#questionnumber', `第 ${exam.cursor+1} / ${summary.total} 題 · ${question.type==='choice'?'四選一':fillChoices?'句子填空 · 四選一':'句子填空'}`);
   text('#quizword', question.type==='choice' ? question.word.word : '句子填空');
   text('#quizstem', question.type==='fill' ? question.gap.sentence : '請選出正確的中文意思。');
+  $('#quizoptions').classList.toggle('word-options', fillChoices);
   $('#quizoptions').replaceChildren();
-  $('#fillform').classList.toggle('hidden', question.type!=='fill');
+  $('#fillform').classList.toggle('hidden', question.type!=='fill' || fillChoices);
   $('#fillanswer').value = question.answer?.value || '';
   $('#fillanswer').disabled = !!question.answer;
   $('#submitfill').disabled = !!question.answer;
@@ -683,6 +704,16 @@ function renderQuiz() {
       if (question.answer && option.id===getId(question.word)) button.classList.add('right');
       if (question.answer && !question.answer.correct && option.id===question.answer.value) button.classList.add('wrong');
       button.onclick=()=>answerQuestion(question.id,option.id);
+      return button;
+    }));
+  }
+  if (fillChoices) {
+    $('#quizoptions').append(...question.fillOptions.map(label => {
+      const button = document.createElement('button'); button.textContent=label; button.disabled=!!question.answer;
+      const isRight = normalizeAnswer(label)===normalizeAnswer(question.gap.answer);
+      if (question.answer && isRight) button.classList.add('right');
+      if (question.answer && !question.answer.correct && label===question.answer.value) button.classList.add('wrong');
+      button.onclick=()=>answerQuestion(question.id,label);
       return button;
     }));
   }
@@ -710,6 +741,7 @@ function answerQuestion(questionId,value) {
   const question=exam.questions[exam.cursor];
   if (!question || question.id!==questionId || question.answer) return;
   if (question.type==='choice' && !question.options.some(option=>option.id===value)) return;
+  if (question.type==='fill' && Array.isArray(question.fillOptions) && !question.fillOptions.includes(value)) return;
   if (question.type==='fill' && !normalizeAnswer(value)) { text('#feedback','請先輸入答案。'); return; }
   const correct=question.type==='choice' ? value===getId(question.word) : normalizeAnswer(value)===normalizeAnswer(question.gap.answer);
   const timestamp=new Date().toISOString();
