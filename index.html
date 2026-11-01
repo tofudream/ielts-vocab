@@ -10,9 +10,8 @@
 .phrase-highlight{background:#edf3bf;color:inherit;border-radius:4px;padding:2px 0;box-decoration-break:clone;-webkit-box-decoration-break:clone}.target-highlight{color:#18573e;background:#d4eadc;padding:1px 3px;border-radius:3px;font-weight:800}.exam-overview,.exam-question,.exam-result{padding:26px;margin-bottom:18px}.exam-overview p{font-size:14px}.exam-overview #startexam{margin-top:5px}.exam-question .word{font-size:36px}.exam-stem{font-size:20px;line-height:1.9;overflow-wrap:anywhere}.quiz-actions{justify-content:space-between}.fill-controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.fill-controls input{flex:1;min-width:160px}.exam-result h3,.history-exam h3{margin:0 0 10px}.exam-result summary,.history-exam summary{cursor:pointer;color:#285542;font-weight:700;margin:14px 0}.exam-review{border-top:1px solid #e4ebe4;padding:14px 0;overflow-wrap:anywhere}.exam-review p{font-size:14px;margin:8px 0}.history-exam{background:#f1f6f0;border-radius:12px;padding:18px}.history-exam summary{padding:10px 0;display:block}.history-exam summary:before{content:none}.history-exam details{padding:0}.exam-question label{font-size:14px;color:#647c6d}@media(max-width:480px){.exam-overview,.exam-question,.exam-result{padding:18px}.exam-overview .daily-summary-top{flex-wrap:wrap}.quiz-actions .btn{flex:1}.exam-stem{font-size:18px}}
 </style></head>
 <body><div class="layout"><aside class="side"><div class="brand">vocab<span style="color:#b2dc97">.</span>studio<small>IELTS LEARNING SPACE</small></div><nav aria-label="主要導覽"><button class="navbtn active" data-tab="learn">今日學習</button><button class="navbtn" data-tab="history">學習記錄</button><button class="navbtn" data-tab="library">單字總覽</button><button class="navbtn" data-tab="quiz">單字測驗</button><button class="navbtn" data-tab="review">複習清單</button></nav><div class="sidefoot">每天一點，穩定累積。<br>學習記錄儲存於此瀏覽器。</div></aside>
-<main class="main"><div class="top"><div><div class="eyebrow">YOUR DAILY ENGLISH ROUTINE</div><h1>今天，學會更多單字。</h1><p class="muted" style="margin:0">從認識、記住，到真正能在雅思考試中使用。</p></div></div>
+<main class="main"><div class="top"><div><div class="eyebrow">YOUR DAILY ENGLISH ROUTINE</div><h1 id="motivation">先開始，再慢慢熟悉。</h1><p id="motivationnote" class="muted" style="margin:0">給自己一點時間，從今天的第一個單字開始。</p></div></div>
 <div id="storagewarning" class="notice hidden" role="alert"></div>
-<div class="stats"><div class="stat"><span>單字總數</span><b id="total">—</b></div><div class="stat"><span>已掌握</span><b id="known">0</b></div><div class="stat"><span>待複習</span><b id="due">0</b></div></div>
 <section class="section active" id="learn">
 <div class="toolbar"><div><h2>今日學習</h2><p class="muted daily-date" id="dailydate"></p></div><div class="toolbox"><select class="control" id="filter" aria-label="篩選今日單字"><option value="all">今日全部</option><option value="new">今日未完成</option><option value="review">今日待複習</option></select><button class="btn light" id="resume">繼續未完成</button></div></div>
 <div class="panel daily-summary"><div class="daily-summary-top"><strong id="dailycount">今日已學 0 / 30</strong><span class="chip" id="dailystatus">尚未完成</span></div><div class="daily-groups" id="dailygroups" aria-label="今日單字分配"></div><div class="progressbar"><div id="dailyprogress" style="width:0%"></div></div><p class="muted" id="dailyhint"></p></div>
@@ -20,7 +19,7 @@
 <div class="actions"><button class="btn outline" id="previous">← 上一個</button><button class="btn primary" id="reveal">顯示中文意思</button><button class="btn light hidden" id="again">還不熟悉</button><button class="btn primary hidden" id="remember">已經記住</button><button class="btn outline" id="next">下一個 →</button></div>
 <div class="notice">每日配置：20 個從未學過的新單字、5 個已學字（測驗錯字優先，名額不足以其他已學字補足）、5 個隨機已學字。三組不重複，各組候選不足時不跨組補足，同一天不會重抽。讀完單字與例句後，按「還不熟悉」或「已經記住」才計入今日已學；切換卡片不會自動記錄。「已學」代表完成練習，不代表已經記熟。</div>
 </section>
-<section class="section" id="history"><div class="toolbar"><h2>學習記錄</h2><button class="btn outline" id="exporthistory">匯出學習記錄 JSON</button></div><p class="muted">按日期查看學過的單字、例句及測驗成績。重複練習同一個單字，在同一天只計算一次。</p><div class="stats history-stats"><div class="stat"><span>學習天數</span><b id="studydays">0</b></div><div class="stat"><span>累計學過（不重複）</span><b id="studiedtotal">0</b></div><div class="stat"><span>完成每日任務</span><b id="completeddays">0</b></div></div><div class="list" id="historylist"></div><div class="notice">記錄保存在目前瀏覽器，不會跨裝置同步。清除網站資料會刪除記錄，建議定期匯出備份。舊版未保存每日記錄，因此不會自動補上過去的學習日期。</div></section>
+<section class="section" id="history"><div class="toolbar"><h2>學習記錄</h2><button class="btn outline" id="exporthistory">匯出學習記錄 JSON</button></div><p class="muted">按日期查看學過的單字、例句及測驗成績。重複練習同一個單字，在同一天只計算一次。</p><div class="stats history-stats" aria-label="單字學習統計"><div class="stat"><span>單字總數</span><b id="total">—</b></div><div class="stat"><span>已掌握</span><b id="known">0</b></div><div class="stat"><span>待複習</span><b id="due">0</b></div></div><div class="stats history-stats"><div class="stat"><span>學習天數</span><b id="studydays">0</b></div><div class="stat"><span>累計學過（不重複）</span><b id="studiedtotal">0</b></div><div class="stat"><span>完成每日任務</span><b id="completeddays">0</b></div></div><div class="list" id="historylist"></div><div class="notice">記錄保存在目前瀏覽器，不會跨裝置同步。清除網站資料會刪除記錄，建議定期匯出備份。舊版未保存每日記錄，因此不會自動補上過去的學習日期。</div></section>
 <section class="section" id="library"><div class="toolbar"><h2>所有單字</h2><input id="search" class="control" placeholder="搜尋英文或中文..." aria-label="搜尋單字"></div><div class="list" id="wordlist"></div></section>
 <section class="section" id="quiz">
 <div class="toolbar"><div><h2>每日單字測驗</h2><p class="muted daily-date" id="examdate"></p></div><span class="pill">每日目標 40 題 · 每題 2.5 分</span></div>
@@ -598,6 +597,35 @@ async function init() {
     console.error(error);
   }
 }
+const MOTIVATION_STORAGE = 'ielts-vocab-motivation-v1';
+const MOTIVATIONS = [
+  ['先開始，再慢慢熟悉。', '給自己一點時間，從今天的第一個單字開始。'],
+  ['今天的一小步，也算前進。', '讀一個單字、看一句例句，讓練習慢慢累積。'],
+  ['把單字，放進生活裡。', '試著用今天學到的字，描述一件身邊的小事。'],
+  ['用自己的步調，繼續向前。', '今天能練習多少，就專心完成那一點。'],
+  ['再試一次，離熟悉更近。', '遇到忘記的字，回到例句裡重新認識它。'],
+  ['先多懂一個，再多懂一點。', '從一個意思到一句用法，慢慢拓展自己的表達。'],
+  ['為今天的練習，留一點時間。', '從第一張卡片開始，接著完成下一張。'],
+  ['讓今天的努力，有個起點。', '選一個單字，讀出發音，再看看它怎麼使用。'],
+  ['把每一次練習，接成日常。', '不用急著一次學完，留一段時間持續練習。'],
+  ['下一個單字，從這裡開始。', '看完例句後，試著換成自己的句子說一次。'],
+  ['今天，為自己多累積一點。', '把注意力放在眼前這個字，一步一步完成。'],
+  ['帶著好奇，認識新的表達。', '留意單字身邊的搭配，試試它還能用在哪裡。']
+];
+function renderMotivation() {
+  let previous = -1;
+  try {
+    const raw = localStorage.getItem(MOTIVATION_STORAGE);
+    const saved = Number(raw);
+    if (raw !== null && Number.isInteger(saved) && saved >= 0 && saved < MOTIVATIONS.length) previous = saved;
+  } catch { /* The greeting also works when browser storage is unavailable. */ }
+  const selected = previous < 0 ? Math.floor(Math.random() * MOTIVATIONS.length)
+    : (previous + 1 + Math.floor(Math.random() * (MOTIVATIONS.length - 1))) % MOTIVATIONS.length;
+  text('#motivation', MOTIVATIONS[selected][0]);
+  text('#motivationnote', MOTIVATIONS[selected][1]);
+  try { localStorage.setItem(MOTIVATION_STORAGE, String(selected)); } catch { /* Keep learning available. */ }
+}
+renderMotivation();
 init();
 
 </script></body></html>
