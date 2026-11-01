@@ -196,6 +196,14 @@
 @media(max-width:760px) and (max-height:700px){.layout:has(#quiz.active) .top .eyebrow,.layout:has(#quiz.active) #motivationnote{display:none}.layout:has(#quiz.active) h1{font-size:21px}}
 @media(max-width:760px) and (max-height:620px){.layout:has(#quiz.active) .top,.layout:has(#quiz.active) .brand{display:none}.layout:has(#quiz.active) .main{padding-top:8px}#quiz .toolbar{margin-top:4px}}
 #quiz .quizopt.word-options button{min-height:56px;font-size:19px;text-align:center}
+.authgate{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:20px;background:#173c33;overflow:auto}
+.authcard{width:min(100%,380px);background:#fff;border-radius:20px;padding:28px 24px;display:grid;gap:10px;box-shadow:0 20px 60px #0004}
+.authcard .brand{color:#173c33}.authcard h2{margin:4px 0 0;font-size:22px}.authcard p{margin:0;font-size:14px}
+.authcard label{font-size:13px;font-weight:700;color:#356d54;margin-top:6px}
+.authcard .control{font-size:16px;min-height:46px;width:100%}
+.authcard .btn{min-height:48px;margin-top:10px}
+#autherror{color:#a3382d;min-height:1.4em;font-weight:700}
+.brandrow{display:flex;align-items:center;justify-content:space-between;gap:10px}.logoutbtn{border:1px solid #4d7a6b;background:transparent;color:#d4e5db;border-radius:10px;padding:7px 12px;font-size:12px;white-space:nowrap}.logoutbtn:hover{background:#2b594d;color:#fff}.logoutbtn:disabled{opacity:.6}
 /* Mobile Edge/Chrome polish: no mid-word breaks, stable text size, tidy nav scrolling. */
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 button,.navbtn,select,summary{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
@@ -218,7 +226,7 @@ button,.navbtn,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
  .learn-controls{padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px))}
 }
 </style></head>
-<body><div class="layout"><aside class="side"><div class="brand">vocab<span style="color:#b2dc97">.</span>studio<small>IELTS LEARNING SPACE</small></div><nav aria-label="主要導覽"><button class="navbtn active" data-tab="learn">今日學習</button><button class="navbtn" data-tab="history">學習記錄</button><button class="navbtn" data-tab="library">單字總覽</button><button class="navbtn" data-tab="quiz">單字測驗</button><button class="navbtn" data-tab="review">複習清單</button></nav><div class="sidefoot">每天一點，穩定累積。<br>學習記錄儲存於此瀏覽器。</div></aside>
+<body><div class="layout"><aside class="side"><div class="brandrow"><div class="brand">vocab<span style="color:#b2dc97">.</span>studio<small>IELTS LEARNING SPACE</small></div><button id="logout" class="logoutbtn hidden" type="button">登出</button></div><nav aria-label="主要導覽"><button class="navbtn active" data-tab="learn">今日學習</button><button class="navbtn" data-tab="history">學習記錄</button><button class="navbtn" data-tab="library">單字總覽</button><button class="navbtn" data-tab="quiz">單字測驗</button><button class="navbtn" data-tab="review">複習清單</button></nav><div class="sidefoot">每天一點，穩定累積。<br><span id="cloudstate">學習記錄儲存於此瀏覽器。</span></div></aside>
 <main class="main"><div class="top"><div><div class="eyebrow">YOUR DAILY ENGLISH ROUTINE</div><h1 id="motivation">先開始，再慢慢熟悉。</h1><p id="motivationnote" class="muted" style="margin:0">給自己一點時間，從今天的第一個單字開始。</p></div></div>
 <div id="storagewarning" class="notice hidden" role="alert"></div>
 <section class="section active" id="learn">
@@ -240,8 +248,11 @@ button,.navbtn,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
 
 </section>
 <section class="section" id="review"><h2 class="section-title">需要複習的單字</h2><p class="muted">系統依照你的熟悉程度安排複習，沒有需要複習的單字時會顯示空清單。</p><div class="list" id="reviewlist"></div><div class="progressbar"><div id="mastery" style="width:0%"></div></div><p class="muted" id="masterytext"></p><button class="btn outline" id="export">匯出學習進度 JSON</button></section>
-<p class="footer">Vocabulary Studio · GitHub Pages · 學習進度儲存於目前瀏覽器（localStorage），不會跨裝置同步。</p>
+<p class="footer">Vocabulary Studio · GitHub Pages · 學習進度需登入後同步到雲端。</p>
 </main></div>
+<div id="authgate" class="authgate"><form id="authform" class="authcard" novalidate><div class="brand">vocab.studio</div><h2>登入以繼續</h2><p class="muted">此網站僅限受邀使用者。登入後，學習進度與測驗紀錄會同步到雲端。</p><label for="authemail">Email</label><input id="authemail" class="control" type="email" autocomplete="username" inputmode="email" required><label for="authpass">密碼</label><input id="authpass" class="control" type="password" autocomplete="current-password" required><button id="authsubmit" class="btn primary" type="submit">登入</button><p id="autherror" role="alert"></p></form></div>
+<script id="cloud-config">window.CLOUD_CONFIG={url:"https://klljwnqocjjfkhqanbos.supabase.co",key:"sb_publishable_AmOmwjXzZrCNcnkzyLWM0g_5OzurEPT"};</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.js" integrity="sha384-TcHRA3zBbn+Lexh5n+Oil4guNPOS3rjNDpGRAN46u/s/mB2IZ50ceC6TYDU2yvgK" crossorigin="anonymous"></script>
 <script>
 const $ = selector => document.querySelector(selector);
 const STORAGE = 'ielts-vocab-progress-v1';
@@ -920,6 +931,124 @@ function renderMotivation() {
   try { localStorage.setItem(MOTIVATION_STORAGE, String(selected)); } catch { /* Keep learning available. */ }
 }
 renderMotivation();
-init();
+
+/* ---------- Cloud login and sync (Supabase). Active only when CLOUD_CONFIG exists. ---------- */
+const CLOUD_USER_KEY = 'ielts-vocab-cloud-user-v1';
+let sb = null, cloudUid = null, pushTimer = null, pushing = false, pushAgain = false;
+const stampOf = (item, key) => (isObject(item) && typeof item[key] === 'string') ? item[key] : '';
+const newerItem = (a, b, key) => stampOf(b, key) > stampOf(a, key) ? b : a;
+function mergeMap(a, b, key) {
+  const result = { ...(isObject(a) ? a : {}) };
+  for (const [id, value] of Object.entries(isObject(b) ? b : {})) result[id] = id in result ? newerItem(result[id], value, key) : value;
+  return result;
+}
+const studiedCount = day => isObject(day?.studied) ? Object.keys(day.studied).length : 0;
+function mergeDay(x, y) {
+  if (!x) return y; if (!y) return x;
+  const [base, other] = studiedCount(x) >= studiedCount(y) ? [x, y] : [y, x];
+  return { ...other, ...base, studied: { ...(other.studied || {}), ...(base.studied || {}) } };
+}
+const examRank = exam => (exam?.completedAt ? 1e6 : 0) + (Array.isArray(exam?.questions) ? exam.questions.filter(q => q && q.answer).length : 0);
+function mergeExam(x, y) { if (!x) return y; if (!y) return x; return examRank(y) > examRank(x) ? y : x; }
+function mergeDays(a, b, fn) {
+  const result = {};
+  for (const date of new Set([...Object.keys(a?.days || {}), ...Object.keys(b?.days || {})])) result[date] = fn(a?.days?.[date], b?.days?.[date]);
+  return result;
+}
+function mergeState(a, b) {
+  a = isObject(a) ? a : {}; b = isObject(b) ? b : {};
+  return {
+    progress: mergeMap(a.progress, b.progress, 'updated'),
+    quizResults: mergeMap(a.quizResults, b.quizResults, 'lastAttemptAt'),
+    journal: { ...(isObject(a.journal) ? a.journal : {}), ...(isObject(b.journal) ? b.journal : {}), version: 1, days: mergeDays(a.journal, b.journal, mergeDay) },
+    exams: { version: 1, days: mergeDays(a.exams, b.exams, mergeExam) }
+  };
+}
+const localState = () => ({ progress, quizResults, journal, exams });
+function setCloud(message) { text('#cloudstate', message); }
+function authError(message) { text('#autherror', message || ''); }
+async function cloudFetch() {
+  const { data, error } = await sb.from('user_data').select('data').eq('user_id', cloudUid).maybeSingle();
+  if (error) throw error;
+  return data?.data || null;
+}
+async function pushNow() {
+  if (!sb || !cloudUid) return;
+  if (pushing) { pushAgain = true; return; }
+  pushing = true; clearTimeout(pushTimer); setCloud('同步中…');
+  try {
+    const merged = mergeState(localState(), await cloudFetch());
+    const { error } = await sb.from('user_data').upsert({ user_id: cloudUid, data: merged, updated_at: new Date().toISOString() });
+    if (error) throw error;
+    const now = new Date();
+    setCloud(`已同步到雲端 · ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`);
+  } catch (error) {
+    console.error(error); setCloud('雲端同步失敗，之後會自動重試；進度仍保留在此裝置。');
+  } finally {
+    pushing = false;
+    if (pushAgain) { pushAgain = false; schedulePush(); }
+  }
+}
+function schedulePush() { clearTimeout(pushTimer); pushTimer = setTimeout(pushNow, 2000); }
+function clearLocalProgress() {
+  try { [STORAGE, DAILY_STORAGE, QUIZ_STORAGE, EXAM_STORAGE, CLOUD_USER_KEY].forEach(key => localStorage.removeItem(key)); } catch { /* ignore */ }
+}
+async function startApp(session) {
+  cloudUid = session.user.id;
+  let previousUser = null;
+  try { previousUser = localStorage.getItem(CLOUD_USER_KEY); } catch { /* ignore */ }
+  // Another account used this browser before: never merge its progress into this account.
+  if (previousUser && previousUser !== cloudUid) {
+    clearLocalProgress();
+    progress = {}; quizResults = {}; journal = { version: 1, days: {} }; exams = { version: 1, days: {} };
+  }
+  let remote = null, reachable = true;
+  try { remote = await cloudFetch(); } catch (error) { console.error(error); reachable = false; }
+  const merged = mergeState(localState(), remote);
+  progress = merged.progress; quizResults = merged.quizResults; journal = merged.journal; exams = merged.exams;
+  const baseSave = save;
+  save = function () { baseSave(); schedulePush(); };
+  baseSave();
+  try { localStorage.setItem(CLOUD_USER_KEY, cloudUid); } catch { /* ignore */ }
+  $('#authgate').classList.add('hidden');
+  const logout = $('#logout'); logout.classList.remove('hidden');
+  logout.onclick = async () => {
+    logout.disabled = true;
+    try { await pushNow(); } catch { /* best effort */ }
+    clearTimeout(pushTimer);
+    await sb.auth.signOut(); clearLocalProgress(); location.reload();
+  };
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') pushNow(); });
+  window.addEventListener('online', schedulePush);
+  setCloud(`已登入：${session.user.email || ''}`);
+  init();
+  if (reachable) pushNow(); else setCloud('目前無法連線雲端，先使用此裝置的進度；連線後會自動同步。');
+}
+async function cloudBoot() {
+  const config = window.CLOUD_CONFIG, lib = window.supabase;
+  if (!lib || typeof lib.createClient !== 'function') { authError('無法載入登入服務，請檢查網路後重新整理頁面。'); $('#authsubmit').disabled = true; return; }
+  sb = lib.createClient(config.url, config.key, { auth: { persistSession: true, autoRefreshToken: true } });
+  $('#authform').onsubmit = async event => {
+    event.preventDefault(); authError('');
+    const email = $('#authemail').value.trim(), password = $('#authpass').value;
+    if (!email || !password) { authError('請輸入 Email 與密碼。'); return; }
+    $('#authsubmit').disabled = true; text('#authsubmit', '登入中…');
+    try {
+      const { data, error } = await sb.auth.signInWithPassword({ email, password });
+      if (error) { authError(/invalid login/i.test(error.message) ? 'Email 或密碼錯誤。' : `登入失敗：${error.message}`); return; }
+      $('#authpass').value = '';
+      await startApp(data.session);
+    } catch (error) {
+      console.error(error); authError('登入失敗，請檢查網路後再試一次。');
+    } finally { $('#authsubmit').disabled = false; text('#authsubmit', '登入'); }
+  };
+  sb.auth.onAuthStateChange(event => { if (event === 'SIGNED_OUT' && cloudUid) location.reload(); });
+  try {
+    const { data } = await sb.auth.getSession();
+    if (data?.session) { await startApp(data.session); return; }
+  } catch (error) { console.error(error); }
+  $('#authemail').focus?.();
+}
+if (window.CLOUD_CONFIG) cloudBoot(); else init();
 
 </script></body></html>
