@@ -104,6 +104,31 @@
 }
 #learn .sense-entry p{font-size:16px}#learn #extrasenses summary{font-size:14px}
 @media(max-width:760px){#learn .sense-entry p{font-size:15px}}
+
+/* Desktop study workspace: content and actions form one compact unit. */
+@media(min-width:761px){
+ .layout:has(#learn.active) .main{max-width:1080px;padding:26px 36px 36px}
+ #learn .card{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.15fr);grid-template-areas:"term example" "meta example" "meaning example";grid-template-rows:auto auto auto;align-content:center;align-items:center;min-height:240px;gap:12px 30px;padding:40px 30px 30px;text-align:left}
+ #learn .word-head{grid-area:term;justify-content:flex-start;flex-wrap:wrap;width:100%;gap:10px}
+ #learn .word{font-size:clamp(40px,4vw,56px);line-height:1.15}
+ #learn .word-meta{grid-area:meta;justify-content:flex-start}
+ #learn #answer{grid-area:meaning;width:100%;align-self:start}
+ #learn .definition{font-size:24px}
+ #learn #extrasenses{margin:6px 0 0;display:block}
+ #learn .example-block{grid-area:example;align-self:stretch;display:flex;flex-direction:column;justify-content:center;border-top:0;border-left:1px solid #dce6dd;margin:0;padding:10px 0 10px 30px;width:100%;min-width:0}
+ #learn .example{font-size:20px;line-height:1.65}
+ #learn .translation{font-size:17px;line-height:1.6;margin-top:10px}
+ #learn .example-block .eyebrow{margin-bottom:12px}
+ .learn-controls{position:sticky;left:auto;right:auto;bottom:12px;margin:12px 0 0;padding:12px;background:#fff;border:1px solid #e0e7df;border-radius:14px;box-shadow:0 4px 18px #173c3308}
+ .learn-nav{max-width:none;grid-template-columns:minmax(100px,1fr) minmax(240px,2fr) minmax(100px,1fr)}
+ .learn-guide{margin-top:10px}
+}
+@media(min-width:761px) and (max-height:700px){
+ .layout:has(#learn.active) .main{padding-top:14px}
+ #learn .card{min-height:220px;padding:30px 24px 24px;gap:8px 24px}
+ #learn .example-block{padding-left:24px}
+ #learn .word{font-size:42px}
+}
 </style></head>
 <body><div class="layout"><aside class="side"><div class="brand">vocab<span style="color:#b2dc97">.</span>studio<small>IELTS LEARNING SPACE</small></div><nav aria-label="主要導覽"><button class="navbtn active" data-tab="learn">今日學習</button><button class="navbtn" data-tab="history">學習記錄</button><button class="navbtn" data-tab="library">單字總覽</button><button class="navbtn" data-tab="quiz">單字測驗</button><button class="navbtn" data-tab="review">複習清單</button></nav><div class="sidefoot">每天一點，穩定累積。<br>學習記錄儲存於此瀏覽器。</div></aside>
 <main class="main"><div class="top"><div><div class="eyebrow">YOUR DAILY ENGLISH ROUTINE</div><h1 id="motivation">先開始，再慢慢熟悉。</h1><p id="motivationnote" class="muted" style="margin:0">給自己一點時間，從今天的第一個單字開始。</p></div></div>
