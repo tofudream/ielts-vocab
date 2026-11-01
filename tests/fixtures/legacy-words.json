@@ -1,0 +1,162 @@
+[
+  {
+    "word": "accomplish",
+    "phonetic": "/əˈkʌmplɪʃ/",
+    "part_of_speech": "verb",
+    "definition": "完成；實現",
+    "example_sentence": "She accomplished her goal of studying abroad.",
+    "example_translation": "她實現了出國留學的目標。"
+  },
+  {
+    "word": "analyze",
+    "phonetic": "/ˈænəlaɪz/",
+    "part_of_speech": "verb",
+    "definition": "分析",
+    "example_sentence": "Researchers analyze the results carefully.",
+    "example_translation": "研究人員仔細分析結果。"
+  },
+  {
+    "word": "approach",
+    "phonetic": "/əˈprəʊtʃ/",
+    "part_of_speech": "noun",
+    "definition": "方法；途徑",
+    "example_sentence": "We need a different approach to this problem.",
+    "example_translation": "我們需要以不同的方法解決這個問題。"
+  },
+  {
+    "word": "benefit",
+    "phonetic": "/ˈbenɪfɪt/",
+    "part_of_speech": "noun",
+    "definition": "益處；好處",
+    "example_sentence": "Regular exercise has many health benefits.",
+    "example_translation": "規律運動對健康有許多益處。"
+  },
+  {
+    "word": "challenge",
+    "phonetic": "/ˈtʃælɪndʒ/",
+    "part_of_speech": "noun",
+    "definition": "挑戰",
+    "example_sentence": "Learning a new language is a challenge.",
+    "example_translation": "學習新語言是一項挑戰。"
+  },
+  {
+    "word": "consequence",
+    "phonetic": "/ˈkɒnsɪkwəns/",
+    "part_of_speech": "noun",
+    "definition": "結果；後果",
+    "example_sentence": "Pollution can have serious consequences.",
+    "example_translation": "污染可能造成嚴重後果。"
+  },
+  {
+    "word": "demonstrate",
+    "phonetic": "/ˈdemənstreɪt/",
+    "part_of_speech": "verb",
+    "definition": "證明；展示",
+    "example_sentence": "The experiment demonstrates the effect.",
+    "example_translation": "這個實驗展示了該效應。"
+  },
+  {
+    "word": "environment",
+    "phonetic": "/ɪnˈvaɪrənmənt/",
+    "part_of_speech": "noun",
+    "definition": "環境",
+    "example_sentence": "We should protect the natural environment.",
+    "example_translation": "我們應保護自然環境。"
+  },
+  {
+    "word": "evidence",
+    "phonetic": "/ˈevɪdəns/",
+    "part_of_speech": "noun",
+    "definition": "證據",
+    "example_sentence": "There is clear evidence of climate change.",
+    "example_translation": "有明確證據顯示氣候變遷正在發生。"
+  },
+  {
+    "word": "factor",
+    "phonetic": "/ˈfæktə/",
+    "part_of_speech": "noun",
+    "definition": "因素",
+    "example_sentence": "Cost is an important factor in this decision.",
+    "example_translation": "成本是這項決策的重要因素。"
+  },
+  {
+    "word": "impact",
+    "phonetic": "/ˈɪmpækt/",
+    "part_of_speech": "noun",
+    "definition": "影響",
+    "example_sentence": "Technology has a major impact on education.",
+    "example_translation": "科技對教育有重大影響。"
+  },
+  {
+    "word": "maintain",
+    "phonetic": "/meɪnˈteɪn/",
+    "part_of_speech": "verb",
+    "definition": "維持；保持",
+    "example_sentence": "It is important to maintain a healthy lifestyle.",
+    "example_translation": "維持健康的生活方式很重要。"
+  },
+  {
+    "word": "participate",
+    "phonetic": "/pɑːˈtɪsɪpeɪt/",
+    "part_of_speech": "verb",
+    "definition": "參與",
+    "example_sentence": "Many students participate in the event.",
+    "example_translation": "許多學生參與這項活動。"
+  },
+  {
+    "word": "predict",
+    "phonetic": "/prɪˈdɪkt/",
+    "part_of_speech": "verb",
+    "definition": "預測",
+    "example_sentence": "Scientists try to predict future trends.",
+    "example_translation": "科學家試著預測未來趨勢。"
+  },
+  {
+    "word": "require",
+    "phonetic": "/rɪˈkwaɪə/",
+    "part_of_speech": "verb",
+    "definition": "需要；要求",
+    "example_sentence": "This task requires careful planning.",
+    "example_translation": "這項任務需要仔細規劃。"
+  },
+  {
+    "word": "resource",
+    "phonetic": "/rɪˈzɔːs/",
+    "part_of_speech": "noun",
+    "definition": "資源",
+    "example_sentence": "Water is a valuable natural resource.",
+    "example_translation": "水是珍貴的自然資源。"
+  },
+  {
+    "word": "significant",
+    "phonetic": "/sɪɡˈnɪfɪkənt/",
+    "part_of_speech": "adjective",
+    "definition": "重大的；顯著的",
+    "example_sentence": "There was a significant improvement in her score.",
+    "example_translation": "她的成績有顯著進步。"
+  },
+  {
+    "word": "strategy",
+    "phonetic": "/ˈstrætədʒi/",
+    "part_of_speech": "noun",
+    "definition": "策略",
+    "example_sentence": "A good strategy can improve learning efficiency.",
+    "example_translation": "好的策略可以提升學習效率。"
+  },
+  {
+    "word": "sustainable",
+    "phonetic": "/səˈsteɪnəbl/",
+    "part_of_speech": "adjective",
+    "definition": "永續的",
+    "example_sentence": "The city is developing sustainable transport.",
+    "example_translation": "這座城市正在發展永續交通。"
+  },
+  {
+    "word": "vary",
+    "phonetic": "/ˈveəri/",
+    "part_of_speech": "verb",
+    "definition": "變化；不同",
+    "example_sentence": "Results may vary depending on the method.",
+    "example_translation": "結果可能因方法而異。"
+  }
+]

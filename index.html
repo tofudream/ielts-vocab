@@ -8,6 +8,7 @@
 .daily-groups{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.daily-groups:empty{display:none}.daily-date{font-size:14px;margin:8px 0 0}.daily-summary{padding:20px 24px;margin-bottom:18px}.daily-summary-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.daily-summary p{font-size:13px;margin:12px 0 0}.example-block{width:min(100%,600px);border-top:1px solid #e4ebe4;margin-top:7px;padding-top:20px;text-align:left}.example-block .eyebrow{font-size:10px;margin-bottom:10px}.example-block p{margin:7px 0;overflow-wrap:anywhere}.history-day{padding:0;overflow:hidden}.history-day summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:20px 22px;list-style:none}.history-day summary::-webkit-details-marker{display:none}.history-day summary:focus-visible{outline:3px solid #87af9c;outline-offset:-4px}.history-day summary strong:before{content:'▸';display:inline-block;margin-right:10px;color:#638a7b}.history-day[open] summary strong:before{content:'▾'}.history-day summary p{font-size:13px;color:#6e8078;margin:5px 0 0}.history-words{padding:0 20px 20px;display:grid;gap:10px}.history-word{border:1px solid #e6e9e2;border-radius:12px;padding:15px;overflow-wrap:anywhere}.history-word-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.history-word p{font-size:14px;margin:7px 0 0}.history-word .example{color:#36594a}.history-word .translation{font-size:13px}.history-stats{margin:20px 0}#storagewarning{background:#fff1db;color:#755120}@media(max-width:420px){.history-stats{grid-template-columns:1fr}.history-stats .stat{display:flex;justify-content:space-between;align-items:center}.history-stats .stat b{margin:0}.daily-summary{padding:17px}.history-words{padding:0 12px 12px}}
 
 .phrase-highlight{background:#edf3bf;color:inherit;border-radius:4px;padding:2px 0;box-decoration-break:clone;-webkit-box-decoration-break:clone}.target-highlight{color:#18573e;background:#d4eadc;padding:1px 3px;border-radius:3px;font-weight:800}.exam-overview,.exam-question,.exam-result{padding:26px;margin-bottom:18px}.exam-overview p{font-size:14px}.exam-overview #startexam{margin-top:5px}.exam-question .word{font-size:36px}.exam-stem{font-size:20px;line-height:1.9;overflow-wrap:anywhere}.quiz-actions{justify-content:space-between}.fill-controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.fill-controls input{flex:1;min-width:160px}.exam-result h3,.history-exam h3{margin:0 0 10px}.exam-result summary,.history-exam summary{cursor:pointer;color:#285542;font-weight:700;margin:14px 0}.exam-review{border-top:1px solid #e4ebe4;padding:14px 0;overflow-wrap:anywhere}.exam-review p{font-size:14px;margin:8px 0}.history-exam{background:#f1f6f0;border-radius:12px;padding:18px}.history-exam summary{padding:10px 0;display:block}.history-exam summary:before{content:none}.history-exam details{padding:0}.exam-question label{font-size:14px;color:#647c6d}@media(max-width:480px){.exam-overview,.exam-question,.exam-result{padding:18px}.exam-overview .daily-summary-top{flex-wrap:wrap}.quiz-actions .btn{flex:1}.exam-stem{font-size:18px}}
+.sense-list{width:100%;text-align:left}.sense-entry{border-top:1px solid #e3eae4;padding:14px 0;overflow-wrap:anywhere}.sense-entry p{margin:6px 0;font-size:14px}.sense-entry .muted{font-size:12px}.sense-list h4{font-size:14px;margin:20px 0 8px}.word-entry{display:block}.word-entry>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer}.word-entry[open]>summary{margin-bottom:12px}.word-entry>summary strong:after{content:" ＋";font-size:13px;color:#638a7b}.word-entry[open]>summary strong:after{content:" −"}.word-entry .sense-list{padding-left:2px}#answer{width:min(100%,600px)}
 </style></head>
 <body><div class="layout"><aside class="side"><div class="brand">vocab<span style="color:#b2dc97">.</span>studio<small>IELTS LEARNING SPACE</small></div><nav aria-label="主要導覽"><button class="navbtn active" data-tab="learn">今日學習</button><button class="navbtn" data-tab="history">學習記錄</button><button class="navbtn" data-tab="library">單字總覽</button><button class="navbtn" data-tab="quiz">單字測驗</button><button class="navbtn" data-tab="review">複習清單</button></nav><div class="sidefoot">每天一點，穩定累積。<br>學習記錄儲存於此瀏覽器。</div></aside>
 <main class="main"><div class="top"><div><div class="eyebrow">YOUR DAILY ENGLISH ROUTINE</div><h1 id="motivation">先開始，再慢慢熟悉。</h1><p id="motivationnote" class="muted" style="margin:0">給自己一點時間，從今天的第一個單字開始。</p></div></div>
@@ -15,12 +16,12 @@
 <section class="section active" id="learn">
 <div class="toolbar"><div><h2>今日學習</h2><p class="muted daily-date" id="dailydate"></p></div><div class="toolbox"><select class="control" id="filter" aria-label="篩選今日單字"><option value="all">今日全部</option><option value="new">今日未完成</option><option value="review">今日待複習</option></select><button class="btn light" id="resume">繼續未完成</button></div></div>
 <div class="panel daily-summary"><div class="daily-summary-top"><strong id="dailycount">今日已學 0 / 30</strong><span class="chip" id="dailystatus">尚未完成</span></div><div class="daily-groups" id="dailygroups" aria-label="今日單字分配"></div><div class="progressbar"><div id="dailyprogress" style="width:0%"></div></div><p class="muted" id="dailyhint"></p></div>
-<div class="panel card" id="flashcard"><div class="counter" id="count">00 / 00</div><h2 class="word" id="word">Loading...</h2><div class="phonetic" id="phonetic"></div><span class="chip hidden" id="cardkind"></span><button class="btn light" id="sound" aria-label="播放英文發音">▶ 播放發音</button><div id="answer" class="hidden"><p class="definition" id="definition"></p></div><div class="example-block" id="exampleblock"><div class="eyebrow">EXAMPLE · 例句</div><p class="example" id="example"></p><p class="translation" id="translation"></p></div></div>
+<div class="panel card" id="flashcard"><div class="counter" id="count">00 / 00</div><h2 class="word" id="word">Loading...</h2><div class="phonetic" id="phonetic"></div><span class="chip hidden" id="cardkind"></span><button class="btn light" id="sound" aria-label="播放英文發音">▶ 播放發音</button><div id="answer" class="hidden"><p class="definition" id="definition"></p><div id="othersenses" class="sense-list"></div></div><div class="example-block" id="exampleblock"><div class="eyebrow">EXAMPLE · 例句</div><p class="example" id="example"></p><p class="translation" id="translation"></p></div></div>
 <div class="actions"><button class="btn outline" id="previous">← 上一個</button><button class="btn primary" id="reveal">顯示中文意思</button><button class="btn light hidden" id="again">還不熟悉</button><button class="btn primary hidden" id="remember">已經記住</button><button class="btn outline" id="next">下一個 →</button></div>
 <div class="notice">每日配置：20 個從未學過的新單字、5 個已學字（測驗錯字優先，名額不足以其他已學字補足）、5 個隨機已學字。三組不重複，各組候選不足時不跨組補足，同一天不會重抽。讀完單字與例句後，按「還不熟悉」或「已經記住」才計入今日已學；切換卡片不會自動記錄。「已學」代表完成練習，不代表已經記熟。</div>
 </section>
 <section class="section" id="history"><div class="toolbar"><h2>學習記錄</h2><button class="btn outline" id="exporthistory">匯出學習記錄 JSON</button></div><p class="muted">按日期查看學過的單字、例句及測驗成績。重複練習同一個單字，在同一天只計算一次。</p><div class="stats history-stats" aria-label="單字學習統計"><div class="stat"><span>單字總數</span><b id="total">—</b></div><div class="stat"><span>已掌握</span><b id="known">0</b></div><div class="stat"><span>待複習</span><b id="due">0</b></div></div><div class="stats history-stats"><div class="stat"><span>學習天數</span><b id="studydays">0</b></div><div class="stat"><span>累計學過（不重複）</span><b id="studiedtotal">0</b></div><div class="stat"><span>完成每日任務</span><b id="completeddays">0</b></div></div><div class="list" id="historylist"></div><div class="notice">記錄保存在目前瀏覽器，不會跨裝置同步。清除網站資料會刪除記錄，建議定期匯出備份。舊版未保存每日記錄，因此不會自動補上過去的學習日期。</div></section>
-<section class="section" id="library"><div class="toolbar"><h2>所有單字</h2><input id="search" class="control" placeholder="搜尋英文或中文..." aria-label="搜尋單字"></div><div class="list" id="wordlist"></div></section>
+<section class="section" id="library"><div class="toolbar"><h2>所有單字</h2><input id="search" class="control" placeholder="搜尋英文或中文..." aria-label="搜尋單字"></div><p class="muted" id="librarycount"></p><div class="list" id="wordlist"></div><div class="actions"><button class="btn outline hidden" id="loadmore">載入更多單字</button></div></section>
 <section class="section" id="quiz">
 <div class="toolbar"><div><h2>每日單字測驗</h2><p class="muted daily-date" id="examdate"></p></div><span class="pill">每日目標 40 題 · 每題 2.5 分</span></div>
 <div class="panel exam-overview"><div class="daily-summary-top"><strong id="examprogress">已答 0 / 40 題</strong><strong id="examscore">得分 0 / 100</strong></div><p id="examallocation" class="muted"></p><p id="examnotice" class="muted"></p><button class="btn primary" id="startexam">開始今日測驗</button></div>
@@ -41,6 +42,7 @@ const QUIZ_STORAGE = 'ielts-vocab-quiz-v1';
 const EXAM_STORAGE = 'ielts-vocab-exams-v1';
 const DAILY_RULE_VERSION = 2;
 const DAILY_QUOTAS = { new: 20, priority: 5, random: 5 };
+let libraryLimit = 100;
 let words = [], sequence = [], index = 0, quizAnswer = null, activeDate = '';
 const text = (selector, value) => { $(selector).textContent = value; };
 const getId = word => word.word.trim().toLowerCase();
@@ -192,6 +194,12 @@ function renderCard() {
   const kind = !word ? '' : day.groups?.new?.includes(id) ? '新單字' : day.groups?.priority?.includes(id) ? (day.priorityWrongIds?.includes(id) ? '複習 · 測驗錯字優先' : '複習 · 已學單字') : day.groups?.random?.includes(id) ? '隨機複習' : '原清單';
   text('#cardkind', kind); $('#cardkind').classList.toggle('hidden', !word);
   text('#definition', word?.definition || '');
+  $('#othersenses').replaceChildren();
+  const otherSenses = Array.isArray(word?.senses) ? word.senses.slice(1) : [];
+  if (otherSenses.length) {
+    const heading = document.createElement('h4'); heading.textContent = `其他詞義（${otherSenses.length}）`;
+    $('#othersenses').append(heading, ...otherSenses.map(sense => senseElement(word, sense)));
+  }
   highlightedExample($('#example'), word || {word:'',example_sentence:''});
   text('#translation', word?.example_translation || '');
   $('#exampleblock').classList.toggle('hidden', !word);
@@ -232,23 +240,47 @@ function mark(remember) {
   index = sequence.length ? (position >= 0 ? (position + 1) % sequence.length : Math.min(oldIndex, sequence.length - 1)) : 0;
   renderCard(); stats(); renderList(); renderReview(); renderHistory();
 }
+function senseElement(word, sense) {
+  const el = document.createElement('div'); el.className = 'sense-entry';
+  const title = document.createElement('p');
+  title.textContent = [sense.part_of_speech, sense.phonetic, sense.definition].filter(Boolean).join(' · ');
+  const example = document.createElement('p'); example.className = 'example';
+  highlightedExample(example, {...word, ...sense});
+  const translation = document.createElement('p'); translation.className = 'translation';
+  translation.textContent = sense.example_translation || '';
+  el.append(title, example, translation);
+  return el;
+}
 function item(word) {
-  const el = document.createElement('div'); el.className = 'item';
+  const el = document.createElement('details'); el.className = 'item word-entry';
+  const summary = document.createElement('summary');
   const info = document.createElement('div'), name = document.createElement('strong'), sub = document.createElement('p');
   name.textContent = word.word;
-  sub.textContent = [word.part_of_speech, word.definition].filter(Boolean).join(' · ');
+  const senses = Array.isArray(word.senses) && word.senses.length ? word.senses : [word];
+  sub.textContent = [word.part_of_speech, word.definition, senses.length > 1 ? `${senses.length} 個詞義` : ''].filter(Boolean).join(' · ');
   info.append(name, sub);
   const tag = document.createElement('span'); tag.className = 'chip';
   tag.textContent = due(word) ? '待複習' : isObject(progress[getId(word)]) ? '已學習' : '未學習';
-  el.append(info, tag); return el;
+  summary.append(info, tag); el.append(summary);
+  // Build expanded examples only when opened: large dictionaries stay responsive.
+  el.ontoggle = () => {
+    if (!el.open || el.dataset.loaded) return;
+    const body = document.createElement('div'); body.className = 'sense-list';
+    body.append(...senses.map(sense => senseElement(word, sense)));
+    el.append(body); el.dataset.loaded = 'true';
+  };
+  return el;
 }
 function empty(message) {
   const el = document.createElement('div'); el.className = 'empty'; el.textContent = message; return el;
 }
 function renderList() {
   const query = $('#search').value.trim().toLowerCase();
-  const arr = words.filter(word => (word.word + ' ' + word.definition).toLowerCase().includes(query));
-  $('#wordlist').replaceChildren(...(arr.length ? arr.map(item) : [empty('找不到符合的單字')]));
+  const arr = words.filter(word => [word.word, word.definition, ...(word.senses || []).map(sense => sense.definition)].join(' ').toLowerCase().includes(query));
+  const visible = arr.slice(0, libraryLimit);
+  $('#wordlist').replaceChildren(...(visible.length ? visible.map(item) : [empty('找不到符合的單字')]));
+  text('#librarycount', `共 ${arr.length} 個單字 · 已顯示 ${visible.length} 個 · 點選單字可查看所有詞義與例句`);
+  $('#loadmore').classList.toggle('hidden', visible.length >= arr.length);
 }
 function renderReview() {
   const arr = words.filter(due);
@@ -550,7 +582,8 @@ $('#resume').onclick = () => {
   if (!words.length) return;
   rollover(); $('#filter').value = 'new'; refresh();
 };
-$('#search').oninput = renderList;
+$('#search').oninput = () => { libraryLimit = 100; renderList(); };
+$('#loadmore').onclick = () => { libraryLimit += 100; renderList(); };
 $('#sound').onclick = () => {
   if (rollover()) return;
   const word = sequence[index]; if (!word || !('speechSynthesis' in window)) return;
