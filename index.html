@@ -5,7 +5,7 @@
 <style>
 :root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;color:#1d2b28;background:#f7f5f0}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #87af9c;outline-offset:2px}.layout{display:grid;grid-template-columns:250px minmax(0,1fr);min-height:100vh}.side{background:#173c33;color:#eef6f1;padding:30px 22px;display:flex;flex-direction:column;gap:32px}.brand{font-size:21px;font-weight:800;letter-spacing:-.7px}.brand small{display:block;font-size:11px;font-weight:500;color:#a6c9b9;letter-spacing:2px;margin-top:6px}.side nav{display:grid;gap:8px}.navbtn{border:0;color:#d4e5db;background:transparent;text-align:left;padding:13px 16px;border-radius:12px}.navbtn.active,.navbtn:hover{background:#2b594d;color:#fff}.sidefoot{margin-top:auto;color:#a6c9b9;font-size:12px;line-height:1.7}.main{max-width:1160px;width:100%;margin:auto;padding:42px 52px 75px}.top{display:flex;justify-content:space-between;align-items:start;gap:20px;flex-wrap:wrap}.eyebrow{color:#638a7b;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase}h1{font-family:Georgia,"Noto Serif TC",serif;font-size:clamp(30px,4vw,44px);letter-spacing:-1.5px;margin:7px 0 12px}p{line-height:1.6}.muted{color:#6e8078}.pill{display:inline-flex;background:#e3eee7;color:#356d54;border-radius:50px;font-size:12px;font-weight:700;padding:9px 15px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0}.stat,.panel{background:#fff;border:1px solid #e8eae4;border-radius:20px;box-shadow:0 8px 28px #25483a08}.stat{padding:23px}.stat b{display:block;font-size:32px;letter-spacing:-1px;margin-top:9px}.stat span{color:#7a8982;font-size:13px}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:25px 0 18px}.toolbar h2{font-size:22px;margin:0}.toolbox{display:flex;gap:8px;flex-wrap:wrap}.control{background:white;border:1px solid #d9e3db;border-radius:10px;padding:10px 12px;color:#25463a;max-width:100%}.card{min-height:350px;padding:40px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;position:relative}.card .counter{position:absolute;top:19px;left:24px;font-size:12px;color:#8b9a91}.word{font-family:Georgia,serif;font-size:clamp(33px,5vw,54px);margin:0;overflow-wrap:anywhere}.phonetic{font-size:17px;color:#789183}.definition{font-weight:700;font-size:21px;margin:0}.example{font-size:16px;margin:0;max-width:600px}.translation{color:#7b8980;margin:0}.hidden{display:none!important}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:20px}.btn{border:0;border-radius:12px;padding:13px 20px;font-weight:700}.primary{background:#245b47;color:white}.primary:hover{background:#194a39}.light{background:#e7eee9;color:#285542}.outline{background:white;border:1px solid #d7e4dc;color:#285542}.section{display:none}.section.active{display:block}.section-title{font-size:22px}.progressbar{height:10px;border-radius:10px;background:#e7eee7;overflow:hidden;margin-top:16px}.progressbar>div{height:100%;background:#3f8d69;transition:width .2s}.list{display:grid;gap:10px}.item{background:#fff;border:1px solid #e6e9e2;padding:16px 18px;border-radius:13px;display:flex;justify-content:space-between;gap:12px;align-items:center}.item strong{font-size:18px}.item p{margin:5px 0 0;font-size:13px;color:#73877b}.chip{border-radius:50px;background:#eef4ef;padding:6px 10px;color:#547665;font-size:12px;white-space:nowrap}.notice{padding:14px 18px;border-radius:13px;background:#eff5ed;color:#46604f;margin:16px 0;line-height:1.6}.footer{font-size:12px;color:#87948a;margin-top:35px}.empty{padding:45px 20px;text-align:center;color:#74877c}.quizopt{display:grid;gap:10px;margin-top:20px}.quizopt button{text-align:left;background:white;border:1px solid #dbe5dc;padding:16px;border-radius:12px}.quizopt button:hover{background:#eaf2ea}.quizopt button:disabled{cursor:default}.right{border-color:#4b9674!important;background:#e7f5ed!important}.wrong{border-color:#c77a71!important;background:#faeae7!important}#feedback{font-weight:700;margin:14px 0}.searchpanel{margin:16px 0} @media(max-width:760px){.layout{display:block}.side{padding:16px;gap:13px}.brand{font-size:18px}.side nav{display:flex;overflow:auto}.navbtn{white-space:nowrap;padding:10px 12px}.sidefoot{display:none}.main{padding:26px 18px 60px}.stats{gap:9px}.stat{padding:15px}.stat b{font-size:24px}.card{min-height:345px;padding:45px 16px}.top{gap:10px}}
 
-.daily-date{font-size:14px;margin:8px 0 0}.daily-summary{padding:20px 24px;margin-bottom:18px}.daily-summary-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.daily-summary p{font-size:13px;margin:12px 0 0}.example-block{width:min(100%,600px);border-top:1px solid #e4ebe4;margin-top:7px;padding-top:20px;text-align:left}.example-block .eyebrow{font-size:10px;margin-bottom:10px}.example-block p{margin:7px 0;overflow-wrap:anywhere}.history-day{padding:0;overflow:hidden}.history-day summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:20px 22px;list-style:none}.history-day summary::-webkit-details-marker{display:none}.history-day summary:focus-visible{outline:3px solid #87af9c;outline-offset:-4px}.history-day summary strong:before{content:'▸';display:inline-block;margin-right:10px;color:#638a7b}.history-day[open] summary strong:before{content:'▾'}.history-day summary p{font-size:13px;color:#6e8078;margin:5px 0 0}.history-words{padding:0 20px 20px;display:grid;gap:10px}.history-word{border:1px solid #e6e9e2;border-radius:12px;padding:15px;overflow-wrap:anywhere}.history-word-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.history-word p{font-size:14px;margin:7px 0 0}.history-word .example{color:#36594a}.history-word .translation{font-size:13px}.history-stats{margin:20px 0}#storagewarning{background:#fff1db;color:#755120}@media(max-width:420px){.history-stats{grid-template-columns:1fr}.history-stats .stat{display:flex;justify-content:space-between;align-items:center}.history-stats .stat b{margin:0}.daily-summary{padding:17px}.history-words{padding:0 12px 12px}}
+.daily-groups{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.daily-groups:empty{display:none}.daily-date{font-size:14px;margin:8px 0 0}.daily-summary{padding:20px 24px;margin-bottom:18px}.daily-summary-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.daily-summary p{font-size:13px;margin:12px 0 0}.example-block{width:min(100%,600px);border-top:1px solid #e4ebe4;margin-top:7px;padding-top:20px;text-align:left}.example-block .eyebrow{font-size:10px;margin-bottom:10px}.example-block p{margin:7px 0;overflow-wrap:anywhere}.history-day{padding:0;overflow:hidden}.history-day summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:20px 22px;list-style:none}.history-day summary::-webkit-details-marker{display:none}.history-day summary:focus-visible{outline:3px solid #87af9c;outline-offset:-4px}.history-day summary strong:before{content:'▸';display:inline-block;margin-right:10px;color:#638a7b}.history-day[open] summary strong:before{content:'▾'}.history-day summary p{font-size:13px;color:#6e8078;margin:5px 0 0}.history-words{padding:0 20px 20px;display:grid;gap:10px}.history-word{border:1px solid #e6e9e2;border-radius:12px;padding:15px;overflow-wrap:anywhere}.history-word-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.history-word p{font-size:14px;margin:7px 0 0}.history-word .example{color:#36594a}.history-word .translation{font-size:13px}.history-stats{margin:20px 0}#storagewarning{background:#fff1db;color:#755120}@media(max-width:420px){.history-stats{grid-template-columns:1fr}.history-stats .stat{display:flex;justify-content:space-between;align-items:center}.history-stats .stat b{margin:0}.daily-summary{padding:17px}.history-words{padding:0 12px 12px}}
 </style></head>
 <body><div class="layout"><aside class="side"><div class="brand">vocab<span style="color:#b2dc97">.</span>studio<small>IELTS LEARNING SPACE</small></div><nav aria-label="主要導覽"><button class="navbtn active" data-tab="learn">今日學習</button><button class="navbtn" data-tab="history">學習記錄</button><button class="navbtn" data-tab="library">單字總覽</button><button class="navbtn" data-tab="quiz">單字測驗</button><button class="navbtn" data-tab="review">複習清單</button></nav><div class="sidefoot">每天一點，穩定累積。<br>學習記錄儲存於此瀏覽器。</div></aside>
 <main class="main"><div class="top"><div><div class="eyebrow">YOUR DAILY ENGLISH ROUTINE</div><h1>今天，學會更多單字。</h1><p class="muted" style="margin:0">從認識、記住，到真正能在雅思考試中使用。</p></div><span class="pill">IELTS · 5.5–6.5</span></div>
@@ -13,14 +13,14 @@
 <div class="stats"><div class="stat"><span>單字總數</span><b id="total">—</b></div><div class="stat"><span>已掌握</span><b id="known">0</b></div><div class="stat"><span>待複習</span><b id="due">0</b></div></div>
 <section class="section active" id="learn">
 <div class="toolbar"><div><h2>今日學習</h2><p class="muted daily-date" id="dailydate"></p></div><div class="toolbox"><select class="control" id="filter" aria-label="篩選今日單字"><option value="all">今日全部</option><option value="new">今日未完成</option><option value="review">今日待複習</option></select><button class="btn light" id="resume">繼續未完成</button></div></div>
-<div class="panel daily-summary"><div class="daily-summary-top"><strong id="dailycount">今日已學 0 / 30</strong><span class="chip" id="dailystatus">尚未完成</span></div><div class="progressbar"><div id="dailyprogress" style="width:0%"></div></div><p class="muted" id="dailyhint"></p></div>
-<div class="panel card" id="flashcard"><div class="counter" id="count">00 / 00</div><h2 class="word" id="word">Loading...</h2><div class="phonetic" id="phonetic"></div><button class="btn light" id="sound" aria-label="播放英文發音">▶ 播放發音</button><div id="answer" class="hidden"><p class="definition" id="definition"></p></div><div class="example-block" id="exampleblock"><div class="eyebrow">EXAMPLE · 例句</div><p class="example" id="example"></p><p class="translation" id="translation"></p></div></div>
+<div class="panel daily-summary"><div class="daily-summary-top"><strong id="dailycount">今日已學 0 / 30</strong><span class="chip" id="dailystatus">尚未完成</span></div><div class="daily-groups" id="dailygroups" aria-label="今日單字分配"></div><div class="progressbar"><div id="dailyprogress" style="width:0%"></div></div><p class="muted" id="dailyhint"></p></div>
+<div class="panel card" id="flashcard"><div class="counter" id="count">00 / 00</div><h2 class="word" id="word">Loading...</h2><div class="phonetic" id="phonetic"></div><span class="chip hidden" id="cardkind"></span><button class="btn light" id="sound" aria-label="播放英文發音">▶ 播放發音</button><div id="answer" class="hidden"><p class="definition" id="definition"></p></div><div class="example-block" id="exampleblock"><div class="eyebrow">EXAMPLE · 例句</div><p class="example" id="example"></p><p class="translation" id="translation"></p></div></div>
 <div class="actions"><button class="btn outline" id="previous">← 上一個</button><button class="btn primary" id="reveal">顯示中文意思</button><button class="btn light hidden" id="again">還不熟悉</button><button class="btn primary hidden" id="remember">已經記住</button><button class="btn outline" id="next">下一個 →</button></div>
-<div class="notice">每天隨機抽取最多 30 個不重複單字，同一天不會重抽。讀完單字與例句後，按「還不熟悉」或「已經記住」才計入今日已學；切換卡片不會自動記錄。「已學」代表完成練習，不代表已經記熟。</div>
+<div class="notice">每日配置：20 個從未學過的新單字、5 個已學字（測驗錯字優先，名額不足以其他已學字補足）、5 個隨機已學字。三組不重複，各組候選不足時不跨組補足，同一天不會重抽。讀完單字與例句後，按「還不熟悉」或「已經記住」才計入今日已學；切換卡片不會自動記錄。「已學」代表完成練習，不代表已經記熟。</div>
 </section>
 <section class="section" id="history"><div class="toolbar"><h2>學習記錄</h2><button class="btn outline" id="exporthistory">匯出學習記錄 JSON</button></div><p class="muted">按日期查看實際學過的單字與例句。重複練習同一個單字，在同一天只計算一次。</p><div class="stats history-stats"><div class="stat"><span>學習天數</span><b id="studydays">0</b></div><div class="stat"><span>累計學過（不重複）</span><b id="studiedtotal">0</b></div><div class="stat"><span>完成每日任務</span><b id="completeddays">0</b></div></div><div class="list" id="historylist"></div><div class="notice">記錄保存在目前瀏覽器，不會跨裝置同步。清除網站資料會刪除記錄，建議定期匯出備份。舊版未保存每日記錄，因此不會自動補上過去的學習日期。</div></section>
 <section class="section" id="library"><div class="toolbar"><h2>所有單字</h2><input id="search" class="control" placeholder="搜尋英文或中文..." aria-label="搜尋單字"></div><div class="list" id="wordlist"></div></section>
-<section class="section" id="quiz"><div class="toolbar"><h2>四選一測驗</h2><button class="btn outline" id="newquiz">換一題</button></div><div class="panel" style="padding:28px"><div class="eyebrow">CHOOSE THE MEANING</div><h3 class="word" style="font-size:38px" id="quizword"></h3><div class="quizopt" id="quizoptions"></div><p id="feedback" role="status"></p></div></section>
+<section class="section" id="quiz"><div class="toolbar"><h2>四選一測驗</h2><button class="btn outline" id="newquiz">換一題</button></div><div class="panel" style="padding:28px"><p class="muted" style="margin-top:0;font-size:14px">測驗答錯會自動記錄；已學過的錯字將優先列入之後每日的複習清單，今日已抽好的單字不會變動。</p><div class="eyebrow">CHOOSE THE MEANING</div><h3 class="word" style="font-size:38px" id="quizword"></h3><div class="quizopt" id="quizoptions"></div><p id="feedback" role="status"></p></div></section>
 <section class="section" id="review"><h2 class="section-title">需要複習的單字</h2><p class="muted">系統依照你的熟悉程度安排複習，沒有需要複習的單字時會顯示空清單。</p><div class="list" id="reviewlist"></div><div class="progressbar"><div id="mastery" style="width:0%"></div></div><p class="muted" id="masterytext"></p><button class="btn outline" id="export">匯出學習進度 JSON</button></section>
 <p class="footer">Vocabulary Studio · GitHub Pages · 學習進度儲存於目前瀏覽器（localStorage），不會跨裝置同步。</p>
 </main></div>
@@ -28,7 +28,9 @@
 const $ = selector => document.querySelector(selector);
 const STORAGE = 'ielts-vocab-progress-v1';
 const DAILY_STORAGE = 'ielts-vocab-daily-v1';
-const DAILY_TARGET = 30;
+const QUIZ_STORAGE = 'ielts-vocab-quiz-v1';
+const DAILY_RULE_VERSION = 2;
+const DAILY_QUOTAS = { new: 20, priority: 5, random: 5 };
 let words = [], sequence = [], index = 0, quizAnswer = null, activeDate = '';
 const text = (selector, value) => { $(selector).textContent = value; };
 const getId = word => word.word.trim().toLowerCase();
@@ -49,6 +51,7 @@ function readStorage(key, fallback) {
   }
 }
 let progress = readStorage(STORAGE, {});
+let quizResults = readStorage(QUIZ_STORAGE, {});
 let journal = readStorage(DAILY_STORAGE, { version: 1, days: {} });
 if (!isObject(journal.days)) journal = { version: 1, days: {} };
 function today(date = new Date()) {
@@ -60,6 +63,7 @@ function save() {
   try {
     localStorage.setItem(DAILY_STORAGE, JSON.stringify(journal));
     localStorage.setItem(STORAGE, JSON.stringify(progress));
+    localStorage.setItem(QUIZ_STORAGE, JSON.stringify(quizResults));
   } catch {
     storageWarning('無法儲存學習記錄；目前進度只保留在此頁面，關閉後可能遺失。請匯出備份並檢查瀏覽器儲存設定。');
   }
@@ -76,15 +80,41 @@ function validDay(day) {
   return isObject(day) && Array.isArray(day.ids) && day.ids.length > 0 &&
     day.ids.every(id => typeof id === 'string') && new Set(day.ids).size === day.ids.length && isObject(day.studied);
 }
+function everStudiedIds() {
+  // A zero mastery level still means the word has been studied.
+  const ids = new Set(Object.keys(progress).filter(id => isObject(progress[id])));
+  Object.values(journal.days).forEach(day => {
+    if (!validDay(day)) return;
+    studiedIds(day).forEach(id => ids.add(id));
+  });
+  return ids;
+}
+function createDailyPlan() {
+  const seen = everStudiedIds();
+  const newWords = shuffle(words.filter(word => !seen.has(getId(word)))).slice(0, DAILY_QUOTAS.new);
+  const oldWords = words.filter(word => seen.has(getId(word)));
+  const wrongWords = shuffle(oldWords.filter(word => (quizResults[getId(word)]?.wrongCount || 0) > 0)).slice(0, DAILY_QUOTAS.priority);
+  const priorityUsed = new Set(wrongWords.map(getId));
+  const filler = shuffle(oldWords.filter(word => !priorityUsed.has(getId(word)))).slice(0, DAILY_QUOTAS.priority - wrongWords.length);
+  const priority = [...wrongWords, ...filler];
+  const used = new Set(priority.map(getId));
+  const random = shuffle(oldWords.filter(word => !used.has(getId(word)))).slice(0, DAILY_QUOTAS.random);
+  const groups = { new: newWords.map(getId), priority: priority.map(getId), random: random.map(getId) };
+  return {
+    ruleVersion: DAILY_RULE_VERSION, groups,
+    priorityWrongIds: wrongWords.map(getId),
+    ids: [...groups.new, ...groups.priority, ...groups.random],
+    studied: {}, createdAt: new Date().toISOString(), completedAt: null
+  };
+}
 function ensureDay() {
   const date = today();
   const changed = activeDate !== date;
   activeDate = date;
-  if (!validDay(journal.days[date])) {
-    journal.days[date] = {
-      ids: shuffle(words).slice(0, DAILY_TARGET).map(getId),
-      studied: {}, createdAt: new Date().toISOString(), completedAt: null
-    };
+  const existing = journal.days[date];
+  if (!validDay(existing) || (existing.ruleVersion !== DAILY_RULE_VERSION && !studiedIds(existing).length)) {
+    // Apply new rules immediately only if today's previous plan was unstarted.
+    journal.days[date] = createDailyPlan();
     save();
   }
   return changed;
@@ -107,7 +137,23 @@ function renderDaily() {
   text('#dailystatus', count === total ? '今日任務完成 ✓' : `還有 ${total - count} 個`);
   $('#dailyprogress').style.width = `${total ? count / total * 100 : 0}%`;
   const available = dailyWords().length;
-  let hint = total < DAILY_TARGET ? `每日目標 30 個；抽取時詞庫只有 ${total} 個，今天學習全部 ${total} 個。` : '今日 30 個單字已固定，重新整理或切換分頁都不會重抽。';
+  const groups = day.groups;
+  const currentRules = day.ruleVersion === DAILY_RULE_VERSION && groups;
+  const labels = { new: '新單字', priority: '錯字優先複習', random: '隨機複習' };
+  $('#dailygroups').replaceChildren(...(currentRules ? Object.keys(DAILY_QUOTAS).map(key => {
+    const chip = document.createElement('span'); chip.className = 'chip';
+    chip.textContent = `${labels[key]} ${groups[key].length} / ${DAILY_QUOTAS[key]}`;
+    return chip;
+  }) : []));
+  let hint;
+  if (currentRules) {
+    const shortages = Object.keys(DAILY_QUOTAS).filter(key => groups[key].length < DAILY_QUOTAS[key]).map(key => `${labels[key]}缺 ${DAILY_QUOTAS[key] - groups[key].length} 個`);
+    hint = `每日目標為 20 個新字＋5 個錯字優先複習＋5 個隨機複習，今天實際抽取 ${total} 個，三組不重複。`;
+    if (shortages.length) hint += ` 候選單字不足（${shortages.join('、')}），各組不互相補足。`;
+    hint += ` 優先複習組包含 ${day.priorityWrongIds?.length || 0} 個曾答錯的單字；其餘由已學字隨機補足。今日清單已固定。`;
+  } else {
+    hint = '今天已開始學習，保留原清單與進度；明日起採用「20 個新字＋5 個錯字優先複習＋5 個隨機複習」。';
+  }
   if (available < total) hint += ` 有 ${total - available} 個單字已從詞庫移除；記錄仍保留。`;
   if (count === total) hint += ' 今天已完成，仍可繼續複習。';
   text('#dailyhint', hint);
@@ -129,6 +175,9 @@ function renderCard() {
   text('#count', word ? `${String(index + 1).padStart(2, '0')} / ${String(sequence.length).padStart(2, '0')}${currentDay().studied[getId(word)] ? ' · 今日已學' : ''}` : '0 / 0');
   text('#word', word ? word.word : '沒有符合條件的今日單字');
   text('#phonetic', word ? [word.phonetic, word.part_of_speech].filter(Boolean).join(' · ') : '可切換「今日全部」繼續複習');
+  const day = currentDay(), id = word ? getId(word) : '';
+  const kind = !word ? '' : day.groups?.new?.includes(id) ? '新單字' : day.groups?.priority?.includes(id) ? (day.priorityWrongIds?.includes(id) ? '複習 · 測驗錯字優先' : '複習 · 已學單字') : day.groups?.random?.includes(id) ? '隨機複習' : '原清單';
+  text('#cardkind', kind); $('#cardkind').classList.toggle('hidden', !word);
   text('#definition', word?.definition || '');
   text('#example', word?.example_sentence || '此單字尚未提供例句。');
   text('#translation', word?.example_translation || '');
@@ -177,7 +226,7 @@ function item(word) {
   sub.textContent = [word.part_of_speech, word.definition].filter(Boolean).join(' · ');
   info.append(name, sub);
   const tag = document.createElement('span'); tag.className = 'chip';
-  tag.textContent = due(word) ? '待複習' : learned(word) ? '已學習' : '未學習';
+  tag.textContent = due(word) ? '待複習' : isObject(progress[getId(word)]) ? '已學習' : '未學習';
   el.append(info, tag); return el;
 }
 function empty(message) {
@@ -234,12 +283,25 @@ function renderQuiz() {
   if (words.length < 4) { text('#quizword', '至少需要四個單字才能測驗'); $('#quizoptions').replaceChildren(); return; }
   const options = shuffle(words).slice(0, 4);
   quizAnswer = options[Math.floor(Math.random() * 4)]; text('#quizword', quizAnswer.word);
+  const target = quizAnswer;
+  let answered = false;
   $('#quizoptions').replaceChildren(...shuffle(options).map(word => {
     const button = document.createElement('button'); button.textContent = word.definition;
     button.onclick = () => {
-      [...$('#quizoptions').children].forEach(el => { el.disabled = true; if (el.textContent === quizAnswer.definition) el.classList.add('right'); });
-      if (word !== quizAnswer) button.classList.add('wrong');
-      text('#feedback', word === quizAnswer ? '答對了！' : '正確答案：' + quizAnswer.definition);
+      if (answered) return;
+      answered = true;
+      const correct = word === target, key = getId(target);
+      const previous = isObject(quizResults[key]) ? quizResults[key] : {};
+      quizResults[key] = {
+        wrongCount: (Number(previous.wrongCount) || 0) + (correct ? 0 : 1),
+        correctCount: (Number(previous.correctCount) || 0) + (correct ? 1 : 0),
+        lastAttemptAt: new Date().toISOString(),
+        lastWrongAt: correct ? previous.lastWrongAt || null : new Date().toISOString()
+      };
+      save();
+      [...$('#quizoptions').children].forEach(el => { el.disabled = true; if (el.textContent === target.definition) el.classList.add('right'); });
+      if (!correct) button.classList.add('wrong');
+      text('#feedback', correct ? '答對了！' : '正確答案：' + target.definition + '（已記錄測驗錯字）');
     };
     return button;
   }));
@@ -278,12 +340,13 @@ $('#sound').onclick = () => {
 };
 $('#newquiz').onclick = renderQuiz;
 $('#export').onclick = () => download(progress, 'vocabulary-progress.json');
-$('#exporthistory').onclick = () => download({ ...journal, progress, exportedAt: new Date().toISOString() }, 'vocabulary-learning-history.json');
+$('#exporthistory').onclick = () => download({ ...journal, progress, quizResults, exportedAt: new Date().toISOString() }, 'vocabulary-learning-history.json');
 window.addEventListener('focus', rollover);
 document.addEventListener('visibilitychange', () => { if (!document.hidden) rollover(); });
 window.addEventListener('storage', event => {
-  if (event.key !== STORAGE && event.key !== DAILY_STORAGE && event.key !== null) return;
+  if (event.key !== STORAGE && event.key !== DAILY_STORAGE && event.key !== QUIZ_STORAGE && event.key !== null) return;
   progress = readStorage(STORAGE, {}); journal = readStorage(DAILY_STORAGE, { version: 1, days: {} });
+  quizResults = readStorage(QUIZ_STORAGE, {});
   if (!isObject(journal.days)) journal = { version: 1, days: {} };
   if (words.length) refresh(false);
 });
