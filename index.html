@@ -388,13 +388,14 @@ function stats() {
   renderDaily();
 }
 function fitWord() {
-  const el = $('#word'); if (!el) return;
+  const el = $('#word');
+  if (!el || !el.style || typeof getComputedStyle !== 'function') return;
   el.style.fontSize = '';
-  const base = parseFloat(getComputedStyle(el).fontSize);
-  let size = base;
+  let size = parseFloat(getComputedStyle(el).fontSize) || 0;
+  if (!size) return;
   while (size > 22 && el.scrollWidth > el.clientWidth + 1) { size -= 1; el.style.fontSize = size + 'px'; }
 }
-window.addEventListener('resize', fitWord);
+if (window.addEventListener) window.addEventListener('resize', fitWord);
 if (document.fonts?.ready) document.fonts.ready.then(fitWord);
 function renderCard() {
   const word = sequence[index];
