@@ -129,6 +129,12 @@
  #learn .example-block{padding-left:24px}
  #learn .word{font-size:42px}
 }
+
+#flashcard:not(.example-chinese-visible) #othersenses .translation{display:none}
+.learn-assessment{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.learn-assessment .btn{min-height:44px;padding:10px 14px;font-size:14px;flex:1}
+.learn-assessment:has(.btn.hidden):not(:has(.btn:not(.hidden))){display:none}
+@media(max-width:760px){.learn-assessment{margin-top:10px}.learn-assessment .btn{font-size:13px;padding:9px 10px}}
 </style></head>
 <body><div class="layout"><aside class="side"><div class="brand">vocab<span style="color:#b2dc97">.</span>studio<small>IELTS LEARNING SPACE</small></div><nav aria-label="主要導覽"><button class="navbtn active" data-tab="learn">今日學習</button><button class="navbtn" data-tab="history">學習記錄</button><button class="navbtn" data-tab="library">單字總覽</button><button class="navbtn" data-tab="quiz">單字測驗</button><button class="navbtn" data-tab="review">複習清單</button></nav><div class="sidefoot">每天一點，穩定累積。<br>學習記錄儲存於此瀏覽器。</div></aside>
 <main class="main"><div class="top"><div><div class="eyebrow">YOUR DAILY ENGLISH ROUTINE</div><h1 id="motivation">先開始，再慢慢熟悉。</h1><p id="motivationnote" class="muted" style="margin:0">給自己一點時間，從今天的第一個單字開始。</p></div></div>
@@ -136,8 +142,8 @@
 <section class="section active" id="learn">
 <div class="toolbar"><div><h2>今日學習</h2><p class="muted daily-date" id="dailydate"></p></div><div class="toolbox"><select class="control" id="filter" aria-label="篩選今日單字"><option value="all">今日全部</option><option value="new">今日未完成</option><option value="review">今日待複習</option></select><button class="btn light" id="resume">繼續未完成</button></div></div>
 <div class="panel daily-summary"><div class="daily-summary-top"><strong id="dailycount">今日已學 0 / 30</strong><span class="chip" id="dailystatus">尚未完成</span></div><div class="progressbar"><div id="dailyprogress" style="width:0%"></div></div><details class="daily-details"><summary>抽取說明與缺額</summary><div class="daily-groups" id="dailygroups" aria-label="今日單字分配"></div><p class="muted" id="dailyhint"></p></details></div>
-<div class="panel card" id="flashcard"><div class="counter" id="count">00 / 00</div><div class="word-head"><h2 class="word" id="word">Loading...</h2><button class="btn light" id="sound" aria-label="播放英文發音"><span aria-hidden="true">▶</span><span class="sound-label"> 播放發音</span></button></div><div class="word-meta"><div class="phonetic" id="phonetic"></div><span class="chip hidden" id="cardkind"></span></div><div id="answer" class="hidden"><p class="definition" id="definition"></p><details id="extrasenses" class="hidden"><summary>查看其他詞義</summary><div id="othersenses" class="sense-list"></div></details></div><div class="example-block" id="exampleblock"><div class="eyebrow">EXAMPLE · 例句</div><p class="example" id="example"></p><p class="translation" id="translation"></p></div></div>
-<div class="learn-controls" role="group" aria-label="單字學習操作"><div class="learn-nav"><button class="btn outline" id="previous">← 上一個</button><div class="learn-rating"><button class="btn primary" id="reveal">顯示中文意思</button><button class="btn light hidden" id="again">還不熟悉</button><button class="btn primary hidden" id="remember">已經記住</button></div><button class="btn outline" id="next">下一個 →</button></div></div>
+<div class="panel card" id="flashcard"><div class="counter" id="count">00 / 00</div><div class="word-head"><h2 class="word" id="word">Loading...</h2><button class="btn light" id="sound" aria-label="播放英文發音"><span aria-hidden="true">▶</span><span class="sound-label"> 播放發音</span></button></div><div class="word-meta"><div class="phonetic" id="phonetic"></div><span class="chip hidden" id="cardkind"></span></div><div id="answer" class="hidden"><p class="definition" id="definition"></p><details id="extrasenses" class="hidden"><summary>查看其他詞義</summary><div id="othersenses" class="sense-list"></div></details><div class="learn-assessment"><button class="btn light hidden" id="again">還不熟悉</button><button class="btn primary hidden" id="remember">已經記住</button></div></div><div class="example-block" id="exampleblock"><div class="eyebrow">EXAMPLE · 例句</div><p class="example" id="example"></p><p class="translation hidden" id="translation"></p></div></div>
+<div class="learn-controls" role="group" aria-label="單字學習操作"><div class="learn-nav"><button class="btn outline" id="previous">← 上一個</button><div class="learn-rating"><button class="btn primary" id="reveal" aria-controls="answer" aria-expanded="false">顯示單字中文</button><button class="btn outline" id="revealtranslation" aria-controls="translation" aria-expanded="false">顯示例句中文</button></div><button class="btn outline" id="next">下一個 →</button></div></div>
 <details class="learn-guide"><summary>學習方式與抽取規則</summary><div class="notice">每日配置：20 個從未學過的新單字、5 個已學字（測驗錯字優先，名額不足以其他已學字補足）、5 個隨機已學字。三組不重複，各組候選不足時不跨組補足，同一天不會重抽。讀完單字與例句後，按「還不熟悉」或「已經記住」才計入今日已學；切換卡片不會自動記錄。「已學」代表完成練習，不代表已經記熟。</div></details>
 </section>
 <section class="section" id="history"><div class="toolbar"><h2>學習記錄</h2><button class="btn outline" id="exporthistory">匯出學習記錄 JSON</button></div><p class="muted">按日期查看學過的單字、例句及測驗成績。重複練習同一個單字，在同一天只計算一次。</p><div class="stats history-stats" aria-label="單字學習統計"><div class="stat"><span>單字總數</span><b id="total">—</b></div><div class="stat"><span>已掌握</span><b id="known">0</b></div><div class="stat"><span>待複習</span><b id="due">0</b></div></div><div class="stats history-stats"><div class="stat"><span>學習天數</span><b id="studydays">0</b></div><div class="stat"><span>累計學過（不重複）</span><b id="studiedtotal">0</b></div><div class="stat"><span>完成每日任務</span><b id="completeddays">0</b></div></div><div class="list" id="historylist"></div><div class="notice">記錄保存在目前瀏覽器，不會跨裝置同步。清除網站資料會刪除記錄，建議定期匯出備份。舊版未保存每日記錄，因此不會自動補上過去的學習日期。</div></section>
@@ -306,6 +312,10 @@ function renderCard() {
   const word = sequence[index];
   $('#answer').classList.add('hidden');
   $('#reveal').classList.remove('hidden');
+  $('#translation').classList.add('hidden');
+  $('#flashcard').classList.remove('example-chinese-visible');
+  text('#reveal', '顯示單字中文'); text('#revealtranslation', '顯示例句中文');
+  $('#reveal').ariaExpanded = 'false'; $('#revealtranslation').ariaExpanded = 'false';
   $('#again').classList.add('hidden'); $('#remember').classList.add('hidden');
   text('#count', word ? `${String(index + 1).padStart(2, '0')} / ${String(sequence.length).padStart(2, '0')}${currentDay().studied[getId(word)] ? ' · 今日已學' : ''}` : '0 / 0');
   text('#word', word ? word.word : '沒有符合條件的今日單字');
@@ -325,7 +335,8 @@ function renderCard() {
   highlightedExample($('#example'), word || {word:'',example_sentence:''});
   text('#translation', word?.example_translation || '');
   $('#exampleblock').classList.toggle('hidden', !word);
-  ['#sound', '#reveal', '#previous', '#next'].forEach(selector => { $(selector).disabled = !word; });
+  ['#sound', '#reveal', '#revealtranslation', '#previous', '#next'].forEach(selector => { $(selector).disabled = !word; });
+  $('#revealtranslation').disabled = !word || !word.example_translation;
 }
 function refresh(reset = true) {
   ensureDay(); sequence = filtered();
@@ -693,8 +704,19 @@ document.querySelectorAll('[data-tab]').forEach(button => button.onclick = () =>
 });
 $('#reveal').onclick = () => {
   if (rollover() || !sequence[index]) return;
-  $('#answer').classList.remove('hidden'); $('#reveal').classList.add('hidden');
-  $('#again').classList.remove('hidden'); $('#remember').classList.remove('hidden');
+  const show = $('#answer').classList.contains('hidden');
+  $('#answer').classList.toggle('hidden', !show);
+  text('#reveal', show ? '隱藏單字中文' : '顯示單字中文');
+  $('#reveal').ariaExpanded = String(show);
+  $('#again').classList.toggle('hidden', !show); $('#remember').classList.toggle('hidden', !show);
+};
+$('#revealtranslation').onclick = () => {
+  if (rollover() || !sequence[index]?.example_translation) return;
+  const show = $('#translation').classList.contains('hidden');
+  $('#translation').classList.toggle('hidden', !show);
+  $('#flashcard').classList.toggle('example-chinese-visible', show);
+  text('#revealtranslation', show ? '隱藏例句中文' : '顯示例句中文');
+  $('#revealtranslation').ariaExpanded = String(show);
 };
 $('#previous').onclick = () => { if (rollover() || !sequence.length) return; index = (index - 1 + sequence.length) % sequence.length; renderCard(); };
 $('#next').onclick = () => { if (rollover() || !sequence.length) return; index = (index + 1) % sequence.length; renderCard(); };
@@ -748,7 +770,7 @@ async function init() {
     renderCard(); stats(); renderList(); renderReview(); renderHistory(); renderQuiz();
   } catch (error) {
     text('#word', '單字資料載入失敗'); text('#phonetic', error.message);
-    ['#sound', '#reveal', '#previous', '#next', '#resume'].forEach(selector => { $(selector).disabled = true; });
+    ['#sound', '#reveal', '#revealtranslation', '#previous', '#next', '#resume'].forEach(selector => { $(selector).disabled = true; });
     console.error(error);
   }
 }
