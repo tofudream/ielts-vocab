@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f7f5f0"><meta name="description" content="IELTS vocabulary flashcards and review">
 <title>IELTS Vocabulary Studio</title>
 <style>
@@ -9,16 +9,108 @@
 
 .phrase-highlight{background:#edf3bf;color:inherit;border-radius:4px;padding:2px 0;box-decoration-break:clone;-webkit-box-decoration-break:clone}.target-highlight{color:#18573e;background:#d4eadc;padding:1px 3px;border-radius:3px;font-weight:800}.exam-overview,.exam-question,.exam-result{padding:26px;margin-bottom:18px}.exam-overview p{font-size:14px}.exam-overview #startexam{margin-top:5px}.exam-question .word{font-size:36px}.exam-stem{font-size:20px;line-height:1.9;overflow-wrap:anywhere}.quiz-actions{justify-content:space-between}.fill-controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.fill-controls input{flex:1;min-width:160px}.exam-result h3,.history-exam h3{margin:0 0 10px}.exam-result summary,.history-exam summary{cursor:pointer;color:#285542;font-weight:700;margin:14px 0}.exam-review{border-top:1px solid #e4ebe4;padding:14px 0;overflow-wrap:anywhere}.exam-review p{font-size:14px;margin:8px 0}.history-exam{background:#f1f6f0;border-radius:12px;padding:18px}.history-exam summary{padding:10px 0;display:block}.history-exam summary:before{content:none}.history-exam details{padding:0}.exam-question label{font-size:14px;color:#647c6d}@media(max-width:480px){.exam-overview,.exam-question,.exam-result{padding:18px}.exam-overview .daily-summary-top{flex-wrap:wrap}.quiz-actions .btn{flex:1}.exam-stem{font-size:18px}}
 .sense-list{width:100%;text-align:left}.sense-entry{border-top:1px solid #e3eae4;padding:14px 0;overflow-wrap:anywhere}.sense-entry p{margin:6px 0;font-size:14px}.sense-entry .muted{font-size:12px}.sense-list h4{font-size:14px;margin:20px 0 8px}.word-entry{display:block}.word-entry>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer}.word-entry[open]>summary{margin-bottom:12px}.word-entry>summary strong:after{content:" ＋";font-size:13px;color:#638a7b}.word-entry[open]>summary strong:after{content:" −"}.word-entry .sense-list{padding-left:2px}#answer{width:min(100%,600px)}
+/* Compact daily learning; navigation remains reachable at every viewport height. */
+.layout:has(#learn.active) .main{padding:18px 32px 104px;margin:0 auto}
+.layout:has(#learn.active) .top .eyebrow{font-size:10px;letter-spacing:1.5px}
+.layout:has(#learn.active) h1{font-size:28px;margin:4px 0 5px;letter-spacing:-.6px;line-height:1.25}
+.layout:has(#learn.active) #motivationnote{font-size:13px;line-height:1.4}
+.layout:has(#learn.active) .footer{display:none}
+#learn .toolbar{margin:16px 0 10px;gap:8px}
+#learn .toolbar h2{font-size:19px}
+#learn .daily-date{font-size:12px;margin:3px 0 0}
+#learn .toolbox{gap:6px}
+#learn .control,#learn #resume{font-size:13px;padding:9px 10px;min-height:40px}
+#learn .daily-summary{padding:10px 14px;margin-bottom:10px;border-radius:14px}
+#learn .daily-summary-top{font-size:13px}
+#learn .chip{padding:4px 8px;font-size:11px}
+#learn .daily-groups{gap:5px;margin-top:6px}
+#learn .progressbar{height:5px;margin-top:8px}
+.daily-details{font-size:12px;margin-top:6px;color:#60766a}
+.daily-details summary,.learn-guide summary,#extrasenses summary{cursor:pointer;min-height:24px;line-height:24px}
+#learn .daily-details p{font-size:12px;margin:5px 0;line-height:1.5}
+#learn .card{min-height:0;padding:28px 20px 16px;gap:7px;border-radius:16px}
+#learn .card .counter{top:10px;left:16px;font-size:11px}
+#learn .word{font-size:40px;line-height:1.15}
+#learn .phonetic{font-size:14px;line-height:1.35}
+#learn #sound{padding:8px 12px;min-height:40px;font-size:13px}
+#learn .definition{font-size:18px;line-height:1.4}
+#learn .example-block{margin-top:3px;padding-top:10px}
+#learn .example-block .eyebrow{margin-bottom:5px}
+#learn .example-block p{margin:4px 0;line-height:1.5}
+#learn .example{font-size:16px}
+#learn .translation{font-size:14px}
+#extrasenses{margin-top:6px;font-size:13px;text-align:left}
+#extrasenses .sense-list h4{margin:6px 0}
+.learn-guide{margin:8px 0;color:#60766a;font-size:12px}
+.learn-guide .notice{font-size:12px;margin:5px 0;padding:10px 12px}
+.learn-controls{position:fixed;z-index:20;left:250px;right:0;bottom:0;padding:10px 24px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(247,245,240,.98);border-top:1px solid #dce5dc;box-shadow:0 -5px 20px #173c3308}
+.learn-nav{display:grid;grid-template-columns:minmax(100px,1fr) minmax(260px,2fr) minmax(100px,1fr);gap:10px;max-width:1000px;margin:auto}
+.learn-rating{display:flex;gap:8px;min-width:0}
+.learn-controls .btn{min-height:44px;padding:10px 14px;font-size:14px;white-space:nowrap}
+.learn-rating .btn{flex:1;min-width:0}
+@media(max-width:760px){
+ .layout:has(#learn.active) .side{padding:9px 12px;gap:6px}
+ .layout:has(#learn.active) .brand{font-size:17px}
+ .layout:has(#learn.active) .brand small{display:none}
+ .layout:has(#learn.active) .navbtn{font-size:13px;padding:8px 10px;min-height:38px}
+ .layout:has(#learn.active) .main{padding:12px 14px calc(124px + env(safe-area-inset-bottom,0px))}
+ .layout:has(#learn.active) h1{font-size:23px;line-height:1.25}
+ .layout:has(#learn.active) #motivationnote{font-size:12px}
+ #learn .toolbar{margin:10px 0 8px;align-items:center}
+ #learn .toolbar h2{font-size:17px}
+ #learn .control,#learn #resume{font-size:12px;padding:7px 8px;min-height:36px}
+ #learn .daily-summary{padding:9px 11px;margin-bottom:8px}
+ #learn .daily-groups{gap:4px}
+ #learn .daily-groups .chip{font-size:10px;padding:3px 6px}
+ #learn .card{padding:25px 14px 12px;gap:5px}
+ #learn .word{font-size:32px}
+ #learn .phonetic{font-size:13px}
+ #learn .example{font-size:15px}
+ #learn .translation{font-size:13px}
+ .learn-controls{left:0;padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px))}
+ .learn-nav{grid-template-columns:1fr 1fr;gap:7px}
+ .learn-rating{grid-column:1 / -1;grid-row:1;gap:7px}
+ #previous{grid-column:1;grid-row:2}#next{grid-column:2;grid-row:2}
+ .learn-controls .btn{padding:9px 10px;font-size:13px}
+}
+@media(max-height:700px){
+ .layout:has(#learn.active) h1{font-size:21px}
+ .layout:has(#learn.active) .top .eyebrow{display:none}
+ #learn .card{gap:4px;padding-top:24px}
+ #learn .word{font-size:30px}
+}
+
+#learn .word-head{width:min(100%,600px);display:flex;align-items:center;justify-content:center;gap:12px;min-width:0}
+#learn .word-head .word{min-width:0}
+#learn .word-head #sound{flex-shrink:0}
+#learn .word-meta{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+#learn #answer .definition{display:inline-block}
+#learn #extrasenses{display:inline-block;margin:0 0 0 10px;vertical-align:middle}
+#learn #extrasenses[open]{display:block;width:100%;margin:6px 0 0}
+@media(max-width:760px){#learn .sound-label{display:none}#learn #sound{width:40px;padding:8px}#learn .word-head{gap:9px}}
+@media(max-width:360px){#learn .daily-date{font-size:10px}#learn .control,#learn #resume{font-size:11px;padding:6px 7px}.layout:has(#learn.active) h1{font-size:20px}}
+@media(max-width:760px) and (max-height:700px){.layout:has(#learn.active) #motivationnote,#learn .example-block .eyebrow{display:none}}
+@media(max-width:760px) and (max-height:620px){
+ .layout:has(#learn.active) .main{padding-top:8px}
+ .layout:has(#learn.active) .top,.layout:has(#learn.active) .brand{display:none}
+ .layout:has(#learn.active) #motivationnote{display:none}
+ .layout:has(#learn.active) .side{padding-top:6px;padding-bottom:6px}
+ #learn .toolbar{margin:7px 0 6px}
+ #learn .daily-summary{padding:7px 10px}
+ #learn .daily-details{margin-top:2px}
+ #learn .card{padding-bottom:10px;gap:4px}
+ #learn .example-block .eyebrow{display:none}
+}
 </style></head>
 <body><div class="layout"><aside class="side"><div class="brand">vocab<span style="color:#b2dc97">.</span>studio<small>IELTS LEARNING SPACE</small></div><nav aria-label="主要導覽"><button class="navbtn active" data-tab="learn">今日學習</button><button class="navbtn" data-tab="history">學習記錄</button><button class="navbtn" data-tab="library">單字總覽</button><button class="navbtn" data-tab="quiz">單字測驗</button><button class="navbtn" data-tab="review">複習清單</button></nav><div class="sidefoot">每天一點，穩定累積。<br>學習記錄儲存於此瀏覽器。</div></aside>
 <main class="main"><div class="top"><div><div class="eyebrow">YOUR DAILY ENGLISH ROUTINE</div><h1 id="motivation">先開始，再慢慢熟悉。</h1><p id="motivationnote" class="muted" style="margin:0">給自己一點時間，從今天的第一個單字開始。</p></div></div>
 <div id="storagewarning" class="notice hidden" role="alert"></div>
 <section class="section active" id="learn">
 <div class="toolbar"><div><h2>今日學習</h2><p class="muted daily-date" id="dailydate"></p></div><div class="toolbox"><select class="control" id="filter" aria-label="篩選今日單字"><option value="all">今日全部</option><option value="new">今日未完成</option><option value="review">今日待複習</option></select><button class="btn light" id="resume">繼續未完成</button></div></div>
-<div class="panel daily-summary"><div class="daily-summary-top"><strong id="dailycount">今日已學 0 / 30</strong><span class="chip" id="dailystatus">尚未完成</span></div><div class="daily-groups" id="dailygroups" aria-label="今日單字分配"></div><div class="progressbar"><div id="dailyprogress" style="width:0%"></div></div><p class="muted" id="dailyhint"></p></div>
-<div class="panel card" id="flashcard"><div class="counter" id="count">00 / 00</div><h2 class="word" id="word">Loading...</h2><div class="phonetic" id="phonetic"></div><span class="chip hidden" id="cardkind"></span><button class="btn light" id="sound" aria-label="播放英文發音">▶ 播放發音</button><div id="answer" class="hidden"><p class="definition" id="definition"></p><div id="othersenses" class="sense-list"></div></div><div class="example-block" id="exampleblock"><div class="eyebrow">EXAMPLE · 例句</div><p class="example" id="example"></p><p class="translation" id="translation"></p></div></div>
-<div class="actions"><button class="btn outline" id="previous">← 上一個</button><button class="btn primary" id="reveal">顯示中文意思</button><button class="btn light hidden" id="again">還不熟悉</button><button class="btn primary hidden" id="remember">已經記住</button><button class="btn outline" id="next">下一個 →</button></div>
-<div class="notice">每日配置：20 個從未學過的新單字、5 個已學字（測驗錯字優先，名額不足以其他已學字補足）、5 個隨機已學字。三組不重複，各組候選不足時不跨組補足，同一天不會重抽。讀完單字與例句後，按「還不熟悉」或「已經記住」才計入今日已學；切換卡片不會自動記錄。「已學」代表完成練習，不代表已經記熟。</div>
+<div class="panel daily-summary"><div class="daily-summary-top"><strong id="dailycount">今日已學 0 / 30</strong><span class="chip" id="dailystatus">尚未完成</span></div><div class="progressbar"><div id="dailyprogress" style="width:0%"></div></div><details class="daily-details"><summary>抽取說明與缺額</summary><div class="daily-groups" id="dailygroups" aria-label="今日單字分配"></div><p class="muted" id="dailyhint"></p></details></div>
+<div class="panel card" id="flashcard"><div class="counter" id="count">00 / 00</div><div class="word-head"><h2 class="word" id="word">Loading...</h2><button class="btn light" id="sound" aria-label="播放英文發音"><span aria-hidden="true">▶</span><span class="sound-label"> 播放發音</span></button></div><div class="word-meta"><div class="phonetic" id="phonetic"></div><span class="chip hidden" id="cardkind"></span></div><div id="answer" class="hidden"><p class="definition" id="definition"></p><details id="extrasenses" class="hidden"><summary>查看其他詞義</summary><div id="othersenses" class="sense-list"></div></details></div><div class="example-block" id="exampleblock"><div class="eyebrow">EXAMPLE · 例句</div><p class="example" id="example"></p><p class="translation" id="translation"></p></div></div>
+<div class="learn-controls" role="group" aria-label="單字學習操作"><div class="learn-nav"><button class="btn outline" id="previous">← 上一個</button><div class="learn-rating"><button class="btn primary" id="reveal">顯示中文意思</button><button class="btn light hidden" id="again">還不熟悉</button><button class="btn primary hidden" id="remember">已經記住</button></div><button class="btn outline" id="next">下一個 →</button></div></div>
+<details class="learn-guide"><summary>學習方式與抽取規則</summary><div class="notice">每日配置：20 個從未學過的新單字、5 個已學字（測驗錯字優先，名額不足以其他已學字補足）、5 個隨機已學字。三組不重複，各組候選不足時不跨組補足，同一天不會重抽。讀完單字與例句後，按「還不熟悉」或「已經記住」才計入今日已學；切換卡片不會自動記錄。「已學」代表完成練習，不代表已經記熟。</div></details>
 </section>
 <section class="section" id="history"><div class="toolbar"><h2>學習記錄</h2><button class="btn outline" id="exporthistory">匯出學習記錄 JSON</button></div><p class="muted">按日期查看學過的單字、例句及測驗成績。重複練習同一個單字，在同一天只計算一次。</p><div class="stats history-stats" aria-label="單字學習統計"><div class="stat"><span>單字總數</span><b id="total">—</b></div><div class="stat"><span>已掌握</span><b id="known">0</b></div><div class="stat"><span>待複習</span><b id="due">0</b></div></div><div class="stats history-stats"><div class="stat"><span>學習天數</span><b id="studydays">0</b></div><div class="stat"><span>累計學過（不重複）</span><b id="studiedtotal">0</b></div><div class="stat"><span>完成每日任務</span><b id="completeddays">0</b></div></div><div class="list" id="historylist"></div><div class="notice">記錄保存在目前瀏覽器，不會跨裝置同步。清除網站資料會刪除記錄，建議定期匯出備份。舊版未保存每日記錄，因此不會自動補上過去的學習日期。</div></section>
 <section class="section" id="library"><div class="toolbar"><h2>所有單字</h2><input id="search" class="control" placeholder="搜尋英文或中文..." aria-label="搜尋單字"></div><p class="muted" id="librarycount"></p><div class="list" id="wordlist"></div><div class="actions"><button class="btn outline hidden" id="loadmore">載入更多單字</button></div></section>
@@ -196,6 +288,8 @@ function renderCard() {
   text('#definition', word?.definition || '');
   $('#othersenses').replaceChildren();
   const otherSenses = Array.isArray(word?.senses) ? word.senses.slice(1) : [];
+  $('#extrasenses').open = false;
+  $('#extrasenses').classList.toggle('hidden', !otherSenses.length);
   if (otherSenses.length) {
     const heading = document.createElement('h4'); heading.textContent = `其他詞義（${otherSenses.length}）`;
     $('#othersenses').append(heading, ...otherSenses.map(sense => senseElement(word, sense)));
