@@ -30,15 +30,15 @@
 #learn .daily-details p{font-size:12px;margin:5px 0;line-height:1.5}
 #learn .card{min-height:0;padding:28px 20px 16px;gap:7px;border-radius:16px}
 #learn .card .counter{top:10px;left:16px;font-size:11px}
-#learn .word{font-size:40px;line-height:1.15}
-#learn .phonetic{font-size:14px;line-height:1.35}
+#learn .word{font-size:48px;line-height:1.15}
+#learn .phonetic{font-size:16px;line-height:1.35}
 #learn #sound{padding:8px 12px;min-height:40px;font-size:13px}
-#learn .definition{font-size:18px;line-height:1.4}
+#learn .definition{font-size:22px;line-height:1.4}
 #learn .example-block{margin-top:3px;padding-top:10px}
 #learn .example-block .eyebrow{margin-bottom:5px}
 #learn .example-block p{margin:4px 0;line-height:1.5}
-#learn .example{font-size:16px}
-#learn .translation{font-size:14px}
+#learn .example{font-size:18px}
+#learn .translation{font-size:16px}
 #extrasenses{margin-top:6px;font-size:13px;text-align:left}
 #extrasenses .sense-list h4{margin:6px 0}
 .learn-guide{margin:8px 0;color:#60766a;font-size:12px}
@@ -63,10 +63,11 @@
  #learn .daily-groups{gap:4px}
  #learn .daily-groups .chip{font-size:10px;padding:3px 6px}
  #learn .card{padding:25px 14px 12px;gap:5px}
- #learn .word{font-size:32px}
- #learn .phonetic{font-size:13px}
- #learn .example{font-size:15px}
- #learn .translation{font-size:13px}
+ #learn .word{font-size:40px}
+ #learn .phonetic{font-size:15px}
+ #learn .definition{font-size:20px}
+ #learn .example{font-size:17px}
+ #learn .translation{font-size:15px}
  .learn-controls{left:0;padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px))}
  .learn-nav{grid-template-columns:1fr 1fr;gap:7px}
  .learn-rating{grid-column:1 / -1;grid-row:1;gap:7px}
@@ -77,7 +78,7 @@
  .layout:has(#learn.active) h1{font-size:21px}
  .layout:has(#learn.active) .top .eyebrow{display:none}
  #learn .card{gap:4px;padding-top:24px}
- #learn .word{font-size:30px}
+ #learn .word{font-size:36px}
 }
 
 #learn .word-head{width:min(100%,600px);display:flex;align-items:center;justify-content:center;gap:12px;min-width:0}
@@ -101,6 +102,8 @@
  #learn .card{padding-bottom:10px;gap:4px}
  #learn .example-block .eyebrow{display:none}
 }
+#learn .sense-entry p{font-size:16px}#learn #extrasenses summary{font-size:14px}
+@media(max-width:760px){#learn .sense-entry p{font-size:15px}}
 </style></head>
 <body><div class="layout"><aside class="side"><div class="brand">vocab<span style="color:#b2dc97">.</span>studio<small>IELTS LEARNING SPACE</small></div><nav aria-label="主要導覽"><button class="navbtn active" data-tab="learn">今日學習</button><button class="navbtn" data-tab="history">學習記錄</button><button class="navbtn" data-tab="library">單字總覽</button><button class="navbtn" data-tab="quiz">單字測驗</button><button class="navbtn" data-tab="review">複習清單</button></nav><div class="sidefoot">每天一點，穩定累積。<br>學習記錄儲存於此瀏覽器。</div></aside>
 <main class="main"><div class="top"><div><div class="eyebrow">YOUR DAILY ENGLISH ROUTINE</div><h1 id="motivation">先開始，再慢慢熟悉。</h1><p id="motivationnote" class="muted" style="margin:0">給自己一點時間，從今天的第一個單字開始。</p></div></div>
