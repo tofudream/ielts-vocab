@@ -195,6 +195,25 @@
 }
 @media(max-width:760px) and (max-height:700px){.layout:has(#quiz.active) .top .eyebrow,.layout:has(#quiz.active) #motivationnote{display:none}.layout:has(#quiz.active) h1{font-size:21px}}
 @media(max-width:760px) and (max-height:620px){.layout:has(#quiz.active) .top,.layout:has(#quiz.active) .brand{display:none}.layout:has(#quiz.active) .main{padding-top:8px}#quiz .toolbar{margin-top:4px}}
+/* Mobile Edge/Chrome polish: no mid-word breaks, stable text size, tidy nav scrolling. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+button,.navbtn,select,summary{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.layout{min-height:100vh;min-height:100dvh}
+#learn .word,#quiz #quizword{overflow-wrap:break-word;word-break:normal;hyphens:manual}
+#learn .phonetic{overflow-wrap:anywhere}
+@media(max-width:760px){
+ .side nav{overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;margin:0 -12px;padding:0 12px;mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent)}
+ .side nav::-webkit-scrollbar{display:none}
+ .navbtn{scroll-snap-align:start;flex:0 0 auto}
+ #learn .word-head{flex-wrap:nowrap}
+ #learn .word-head .word{flex:1 1 auto;text-align:center;white-space:nowrap}
+ #learn .toolbar{flex-wrap:nowrap;gap:8px}
+ #learn .toolbox{flex-wrap:nowrap;min-width:0}
+ #learn .toolbox .control{min-width:0;text-overflow:ellipsis}
+ #learn #resume{white-space:nowrap}
+ #learn .card{min-height:0}
+ .learn-controls{padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px))}
+}
 </style></head>
 <body><div class="layout"><aside class="side"><div class="brand">vocab<span style="color:#b2dc97">.</span>studio<small>IELTS LEARNING SPACE</small></div><nav aria-label="主要導覽"><button class="navbtn active" data-tab="learn">今日學習</button><button class="navbtn" data-tab="history">學習記錄</button><button class="navbtn" data-tab="library">單字總覽</button><button class="navbtn" data-tab="quiz">單字測驗</button><button class="navbtn" data-tab="review">複習清單</button></nav><div class="sidefoot">每天一點，穩定累積。<br>學習記錄儲存於此瀏覽器。</div></aside>
 <main class="main"><div class="top"><div><div class="eyebrow">YOUR DAILY ENGLISH ROUTINE</div><h1 id="motivation">先開始，再慢慢熟悉。</h1><p id="motivationnote" class="muted" style="margin:0">給自己一點時間，從今天的第一個單字開始。</p></div></div>
@@ -368,6 +387,15 @@ function stats() {
   text('#masterytext', `已記住 ${known} / ${words.length} 個單字（${rate}%）`);
   renderDaily();
 }
+function fitWord() {
+  const el = $('#word'); if (!el) return;
+  el.style.fontSize = '';
+  const base = parseFloat(getComputedStyle(el).fontSize);
+  let size = base;
+  while (size > 22 && el.scrollWidth > el.clientWidth + 1) { size -= 1; el.style.fontSize = size + 'px'; }
+}
+window.addEventListener('resize', fitWord);
+if (document.fonts?.ready) document.fonts.ready.then(fitWord);
 function renderCard() {
   const word = sequence[index];
   $('#answer').classList.add('hidden');
@@ -378,7 +406,7 @@ function renderCard() {
   $('#reveal').ariaExpanded = 'false'; $('#revealtranslation').ariaExpanded = 'false';
   $('#again').classList.add('hidden'); $('#remember').classList.add('hidden');
   text('#count', word ? `${String(index + 1).padStart(2, '0')} / ${String(sequence.length).padStart(2, '0')}${currentDay().studied[getId(word)] ? ' · 今日已學' : ''}` : '0 / 0');
-  text('#word', word ? word.word : '沒有符合條件的今日單字');
+  text('#word', word ? word.word : '沒有符合條件的今日單字'); fitWord();
   text('#phonetic', word ? [word.phonetic, word.part_of_speech].filter(Boolean).join(' · ') : '可切換「今日全部」繼續複習');
   const day = currentDay(), id = word ? getId(word) : '';
   const kind = !word ? '' : day.groups?.new?.includes(id) ? '新單字' : day.groups?.priority?.includes(id) ? (day.priorityWrongIds?.includes(id) ? '複習 · 測驗錯字優先' : '複習 · 已學單字') : day.groups?.random?.includes(id) ? '隨機複習' : '原清單';
