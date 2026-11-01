@@ -4,46 +4,312 @@
 <title>IELTS Vocabulary Studio</title>
 <style>
 :root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;color:#1d2b28;background:#f7f5f0}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #87af9c;outline-offset:2px}.layout{display:grid;grid-template-columns:250px minmax(0,1fr);min-height:100vh}.side{background:#173c33;color:#eef6f1;padding:30px 22px;display:flex;flex-direction:column;gap:32px}.brand{font-size:21px;font-weight:800;letter-spacing:-.7px}.brand small{display:block;font-size:11px;font-weight:500;color:#a6c9b9;letter-spacing:2px;margin-top:6px}.side nav{display:grid;gap:8px}.navbtn{border:0;color:#d4e5db;background:transparent;text-align:left;padding:13px 16px;border-radius:12px}.navbtn.active,.navbtn:hover{background:#2b594d;color:#fff}.sidefoot{margin-top:auto;color:#a6c9b9;font-size:12px;line-height:1.7}.main{max-width:1160px;width:100%;margin:auto;padding:42px 52px 75px}.top{display:flex;justify-content:space-between;align-items:start;gap:20px;flex-wrap:wrap}.eyebrow{color:#638a7b;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase}h1{font-family:Georgia,"Noto Serif TC",serif;font-size:clamp(30px,4vw,44px);letter-spacing:-1.5px;margin:7px 0 12px}p{line-height:1.6}.muted{color:#6e8078}.pill{display:inline-flex;background:#e3eee7;color:#356d54;border-radius:50px;font-size:12px;font-weight:700;padding:9px 15px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0}.stat,.panel{background:#fff;border:1px solid #e8eae4;border-radius:20px;box-shadow:0 8px 28px #25483a08}.stat{padding:23px}.stat b{display:block;font-size:32px;letter-spacing:-1px;margin-top:9px}.stat span{color:#7a8982;font-size:13px}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:25px 0 18px}.toolbar h2{font-size:22px;margin:0}.toolbox{display:flex;gap:8px;flex-wrap:wrap}.control{background:white;border:1px solid #d9e3db;border-radius:10px;padding:10px 12px;color:#25463a;max-width:100%}.card{min-height:350px;padding:40px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;position:relative}.card .counter{position:absolute;top:19px;left:24px;font-size:12px;color:#8b9a91}.word{font-family:Georgia,serif;font-size:clamp(33px,5vw,54px);margin:0;overflow-wrap:anywhere}.phonetic{font-size:17px;color:#789183}.definition{font-weight:700;font-size:21px;margin:0}.example{font-size:16px;margin:0;max-width:600px}.translation{color:#7b8980;margin:0}.hidden{display:none!important}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:20px}.btn{border:0;border-radius:12px;padding:13px 20px;font-weight:700}.primary{background:#245b47;color:white}.primary:hover{background:#194a39}.light{background:#e7eee9;color:#285542}.outline{background:white;border:1px solid #d7e4dc;color:#285542}.section{display:none}.section.active{display:block}.section-title{font-size:22px}.progressbar{height:10px;border-radius:10px;background:#e7eee7;overflow:hidden;margin-top:16px}.progressbar>div{height:100%;background:#3f8d69;transition:width .2s}.list{display:grid;gap:10px}.item{background:#fff;border:1px solid #e6e9e2;padding:16px 18px;border-radius:13px;display:flex;justify-content:space-between;gap:12px;align-items:center}.item strong{font-size:18px}.item p{margin:5px 0 0;font-size:13px;color:#73877b}.chip{border-radius:50px;background:#eef4ef;padding:6px 10px;color:#547665;font-size:12px;white-space:nowrap}.notice{padding:14px 18px;border-radius:13px;background:#eff5ed;color:#46604f;margin:16px 0;line-height:1.6}.footer{font-size:12px;color:#87948a;margin-top:35px}.empty{padding:45px 20px;text-align:center;color:#74877c}.quizopt{display:grid;gap:10px;margin-top:20px}.quizopt button{text-align:left;background:white;border:1px solid #dbe5dc;padding:16px;border-radius:12px}.quizopt button:hover{background:#eaf2ea}.quizopt button:disabled{cursor:default}.right{border-color:#4b9674!important;background:#e7f5ed!important}.wrong{border-color:#c77a71!important;background:#faeae7!important}#feedback{font-weight:700;margin:14px 0}.searchpanel{margin:16px 0} @media(max-width:760px){.layout{display:block}.side{padding:16px;gap:13px}.brand{font-size:18px}.side nav{display:flex;overflow:auto}.navbtn{white-space:nowrap;padding:10px 12px}.sidefoot{display:none}.main{padding:26px 18px 60px}.stats{gap:9px}.stat{padding:15px}.stat b{font-size:24px}.card{min-height:345px;padding:45px 16px}.top{gap:10px}}
+
+.daily-date{font-size:14px;margin:8px 0 0}.daily-summary{padding:20px 24px;margin-bottom:18px}.daily-summary-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.daily-summary p{font-size:13px;margin:12px 0 0}.example-block{width:min(100%,600px);border-top:1px solid #e4ebe4;margin-top:7px;padding-top:20px;text-align:left}.example-block .eyebrow{font-size:10px;margin-bottom:10px}.example-block p{margin:7px 0;overflow-wrap:anywhere}.history-day{padding:0;overflow:hidden}.history-day summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:20px 22px;list-style:none}.history-day summary::-webkit-details-marker{display:none}.history-day summary:focus-visible{outline:3px solid #87af9c;outline-offset:-4px}.history-day summary strong:before{content:'▸';display:inline-block;margin-right:10px;color:#638a7b}.history-day[open] summary strong:before{content:'▾'}.history-day summary p{font-size:13px;color:#6e8078;margin:5px 0 0}.history-words{padding:0 20px 20px;display:grid;gap:10px}.history-word{border:1px solid #e6e9e2;border-radius:12px;padding:15px;overflow-wrap:anywhere}.history-word-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.history-word p{font-size:14px;margin:7px 0 0}.history-word .example{color:#36594a}.history-word .translation{font-size:13px}.history-stats{margin:20px 0}#storagewarning{background:#fff1db;color:#755120}@media(max-width:420px){.history-stats{grid-template-columns:1fr}.history-stats .stat{display:flex;justify-content:space-between;align-items:center}.history-stats .stat b{margin:0}.daily-summary{padding:17px}.history-words{padding:0 12px 12px}}
 </style></head>
-<body><div class="layout"><aside class="side"><div class="brand">vocab<span style="color:#b2dc97">.</span>studio<small>IELTS LEARNING SPACE</small></div><nav aria-label="主要導覽"><button class="navbtn active" data-tab="learn">單字學習</button><button class="navbtn" data-tab="library">單字總覽</button><button class="navbtn" data-tab="quiz">單字測驗</button><button class="navbtn" data-tab="review">複習清單</button></nav><div class="sidefoot">每天一點，穩定累積。<br>所有進度暫存在此瀏覽器。</div></aside>
+<body><div class="layout"><aside class="side"><div class="brand">vocab<span style="color:#b2dc97">.</span>studio<small>IELTS LEARNING SPACE</small></div><nav aria-label="主要導覽"><button class="navbtn active" data-tab="learn">今日學習</button><button class="navbtn" data-tab="history">學習記錄</button><button class="navbtn" data-tab="library">單字總覽</button><button class="navbtn" data-tab="quiz">單字測驗</button><button class="navbtn" data-tab="review">複習清單</button></nav><div class="sidefoot">每天一點，穩定累積。<br>學習記錄儲存於此瀏覽器。</div></aside>
 <main class="main"><div class="top"><div><div class="eyebrow">YOUR DAILY ENGLISH ROUTINE</div><h1>今天，學會更多單字。</h1><p class="muted" style="margin:0">從認識、記住，到真正能在雅思考試中使用。</p></div><span class="pill">IELTS · 5.5–6.5</span></div>
+<div id="storagewarning" class="notice hidden" role="alert"></div>
 <div class="stats"><div class="stat"><span>單字總數</span><b id="total">—</b></div><div class="stat"><span>已掌握</span><b id="known">0</b></div><div class="stat"><span>待複習</span><b id="due">0</b></div></div>
-<section class="section active" id="learn"><div class="toolbar"><h2>學習卡片</h2><div class="toolbox"><select class="control" id="filter"><option value="all">全部單字</option><option value="new">尚未學習</option><option value="review">需要複習</option></select><button class="btn light" id="shuffle">隨機順序</button></div></div><div class="panel card" id="flashcard"><div class="counter" id="count">01 / 01</div><h2 class="word" id="word">Loading...</h2><div class="phonetic" id="phonetic"></div><button class="btn light" id="sound" aria-label="播放英文發音">▶ 播放發音</button><div id="answer" class="hidden"><p class="definition" id="definition"></p><p class="example" id="example"></p><p class="translation" id="translation"></p></div></div><div class="actions"><button class="btn outline" id="previous">← 上一個</button><button class="btn primary" id="reveal">顯示答案</button><button class="btn light hidden" id="again">還不熟悉</button><button class="btn primary hidden" id="remember">已經記住</button><button class="btn outline" id="next">下一個 →</button></div><div class="notice">先回想中文意思，再按「顯示答案」。標記「已經記住」後，系統會安排下次複習。</div></section>
+<section class="section active" id="learn">
+<div class="toolbar"><div><h2>今日學習</h2><p class="muted daily-date" id="dailydate"></p></div><div class="toolbox"><select class="control" id="filter" aria-label="篩選今日單字"><option value="all">今日全部</option><option value="new">今日未完成</option><option value="review">今日待複習</option></select><button class="btn light" id="resume">繼續未完成</button></div></div>
+<div class="panel daily-summary"><div class="daily-summary-top"><strong id="dailycount">今日已學 0 / 30</strong><span class="chip" id="dailystatus">尚未完成</span></div><div class="progressbar"><div id="dailyprogress" style="width:0%"></div></div><p class="muted" id="dailyhint"></p></div>
+<div class="panel card" id="flashcard"><div class="counter" id="count">00 / 00</div><h2 class="word" id="word">Loading...</h2><div class="phonetic" id="phonetic"></div><button class="btn light" id="sound" aria-label="播放英文發音">▶ 播放發音</button><div id="answer" class="hidden"><p class="definition" id="definition"></p></div><div class="example-block" id="exampleblock"><div class="eyebrow">EXAMPLE · 例句</div><p class="example" id="example"></p><p class="translation" id="translation"></p></div></div>
+<div class="actions"><button class="btn outline" id="previous">← 上一個</button><button class="btn primary" id="reveal">顯示中文意思</button><button class="btn light hidden" id="again">還不熟悉</button><button class="btn primary hidden" id="remember">已經記住</button><button class="btn outline" id="next">下一個 →</button></div>
+<div class="notice">每天隨機抽取最多 30 個不重複單字，同一天不會重抽。讀完單字與例句後，按「還不熟悉」或「已經記住」才計入今日已學；切換卡片不會自動記錄。「已學」代表完成練習，不代表已經記熟。</div>
+</section>
+<section class="section" id="history"><div class="toolbar"><h2>學習記錄</h2><button class="btn outline" id="exporthistory">匯出學習記錄 JSON</button></div><p class="muted">按日期查看實際學過的單字與例句。重複練習同一個單字，在同一天只計算一次。</p><div class="stats history-stats"><div class="stat"><span>學習天數</span><b id="studydays">0</b></div><div class="stat"><span>累計學過（不重複）</span><b id="studiedtotal">0</b></div><div class="stat"><span>完成每日任務</span><b id="completeddays">0</b></div></div><div class="list" id="historylist"></div><div class="notice">記錄保存在目前瀏覽器，不會跨裝置同步。清除網站資料會刪除記錄，建議定期匯出備份。舊版未保存每日記錄，因此不會自動補上過去的學習日期。</div></section>
 <section class="section" id="library"><div class="toolbar"><h2>所有單字</h2><input id="search" class="control" placeholder="搜尋英文或中文..." aria-label="搜尋單字"></div><div class="list" id="wordlist"></div></section>
 <section class="section" id="quiz"><div class="toolbar"><h2>四選一測驗</h2><button class="btn outline" id="newquiz">換一題</button></div><div class="panel" style="padding:28px"><div class="eyebrow">CHOOSE THE MEANING</div><h3 class="word" style="font-size:38px" id="quizword"></h3><div class="quizopt" id="quizoptions"></div><p id="feedback" role="status"></p></div></section>
 <section class="section" id="review"><h2 class="section-title">需要複習的單字</h2><p class="muted">系統依照你的熟悉程度安排複習，沒有需要複習的單字時會顯示空清單。</p><div class="list" id="reviewlist"></div><div class="progressbar"><div id="mastery" style="width:0%"></div></div><p class="muted" id="masterytext"></p><button class="btn outline" id="export">匯出學習進度 JSON</button></section>
 <p class="footer">Vocabulary Studio · GitHub Pages · 學習進度儲存於目前瀏覽器（localStorage），不會跨裝置同步。</p>
 </main></div>
 <script>
-const $=s=>document.querySelector(s);
-let words=[],sequence=[],index=0,visible=false,quizAnswer=null;
-const STORAGE='ielts-vocab-progress-v1';
-let progress={};try{progress=JSON.parse(localStorage.getItem(STORAGE)||'{}')||{}}catch{progress={}};
-const today=()=>new Date().toLocaleDateString('en-CA');
-const getId=w=>w.word.trim().toLowerCase();
-const learned=w=>(progress[getId(w)]?.level||0)>0;
-const due=w=>!!progress[getId(w)]&&progress[getId(w)].due<=today();
-const save=()=>{try{localStorage.setItem(STORAGE,JSON.stringify(progress))}catch(e){alert('瀏覽器無法儲存學習進度，請檢查隱私設定或空間。')}};
-const text=(s,v)=>{$(s).textContent=v};
-const shuffle=a=>{let b=[...a];for(let i=b.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b};
-function stats(){text('#total',words.length);text('#known',words.filter(learned).length);text('#due',words.filter(due).length);let rate=words.length?Math.round(words.filter(learned).length/words.length*100):0;$('#mastery').style.width=rate+'%';text('#masterytext','已記住 '+words.filter(learned).length+' / '+words.length+' 個單字（'+rate+'%）')}
-function filtered(){let f=$('#filter').value;return words.filter(w=>f==='all'||(f==='new'?!progress[getId(w)]:due(w)))}
-function renderCard(){sequence=sequence.filter(w=>words.includes(w));let w=sequence[index];visible=false;$('#answer').classList.add('hidden');$('#reveal').classList.remove('hidden');$('#again').classList.add('hidden');$('#remember').classList.add('hidden');text('#count',sequence.length?String(index+1).padStart(2,'0')+' / '+String(sequence.length).padStart(2,'0'):'0 / 0');text('#word',w?w.word:'沒有符合條件的單字');text('#phonetic',w?(w.phonetic||'')+' · '+(w.part_of_speech||''):'');text('#definition',w?.definition||'');text('#example',w?.example_sentence||'');text('#translation',w?.example_translation||'');$('#sound').disabled=!w;$('#reveal').disabled=!w;$('#previous').disabled=!w;$('#next').disabled=!w}
-function refresh(reset=true){sequence=filtered();if(reset)index=0;else index=Math.max(0,Math.min(index,sequence.length-1));renderCard();stats();renderList();renderReview()}
-function mark(remember){let w=sequence[index];if(!w)return;let key=getId(w),old=progress[key]||{level:0};let level=remember?Math.min(5,old.level+1):0;let date=new Date();date.setDate(date.getDate()+(remember?[1,3,7,14,30][level-1]:0));progress[key]={level,due:date.toLocaleDateString('en-CA'),updated:new Date().toISOString()};save();let previousWord=w;refresh(false);let pos=sequence.findIndex(x=>getId(x)===getId(previousWord));if(pos>=0){index=(pos+1)%sequence.length;renderCard()}}
-function renderList(){let query=$('#search').value.trim().toLowerCase();let arr=words.filter(w=>(w.word+' '+w.definition).toLowerCase().includes(query));$('#wordlist').replaceChildren(...arr.map(w=>item(w)));if(!arr.length)$('#wordlist').innerHTML='<div class="empty">找不到符合的單字</div>'}
-function item(w){let el=document.createElement('div');el.className='item';let info=document.createElement('div');let name=document.createElement('strong');name.textContent=w.word;let sub=document.createElement('p');sub.textContent=(w.part_of_speech||'')+' · '+(w.definition||'');info.append(name,sub);let tag=document.createElement('span');tag.className='chip';tag.textContent=due(w)?'待複習':learned(w)?'已學習':'未學習';el.append(info,tag);return el}
-function renderReview(){let arr=words.filter(due);$('#reviewlist').replaceChildren(...arr.map(w=>item(w)));if(!arr.length)$('#reviewlist').innerHTML='<div class="empty">目前沒有待複習單字</div>'}
-function renderQuiz(){if(words.length<4){text('#quizword','至少需要四個單字才能測驗');$('#quizoptions').replaceChildren();return}let options=shuffle(words).slice(0,4);quizAnswer=options[Math.floor(Math.random()*4)];text('#quizword',quizAnswer.word);text('#feedback','');$('#quizoptions').replaceChildren(...shuffle(options).map(w=>{let b=document.createElement('button');b.textContent=w.definition;b.onclick=()=>{[...$('#quizoptions').children].forEach(e=>{e.disabled=true;if(e.textContent===quizAnswer.definition)e.classList.add('right')});if(w!==quizAnswer)b.classList.add('wrong');text('#feedback',w===quizAnswer?'答對了！':'正確答案：'+quizAnswer.definition)};return b}))}
-document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.section').forEach(s=>s.classList.toggle('active',s.id===b.dataset.tab));if(b.dataset.tab==='quiz')renderQuiz()});
-$('#reveal').onclick=()=>{$('#answer').classList.remove('hidden');$('#reveal').classList.add('hidden');$('#again').classList.remove('hidden');$('#remember').classList.remove('hidden')};
-$('#previous').onclick=()=>{index=(index-1+sequence.length)%sequence.length;renderCard()};
-$('#next').onclick=()=>{index=(index+1)%sequence.length;renderCard()};
-$('#again').onclick=()=>mark(false);$('#remember').onclick=()=>mark(true);
-$('#filter').onchange=()=>refresh();$('#shuffle').onclick=()=>{sequence=shuffle(filtered());index=0;renderCard()};$('#search').oninput=renderList;
-$('#sound').onclick=()=>{let w=sequence[index];if(!w||!('speechSynthesis' in window))return;window.speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(w.word);u.lang='en-GB';u.rate=.85;window.speechSynthesis.speak(u)};
-$('#newquiz').onclick=renderQuiz;
-$('#export').onclick=()=>{let blob=new Blob([JSON.stringify(progress,null,2)],{type:'application/json'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='vocabulary-progress.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
-async function init(){try{let response=await fetch('./words.json',{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);let data=await response.json();if(!Array.isArray(data))throw Error('words.json 必須是陣列');words=data.filter(w=>w&&typeof w.word==='string'&&w.word.trim()&&typeof w.definition==='string');if(!words.length)throw Error('沒有有效的單字');refresh();renderQuiz()}catch(e){text('#word','單字資料載入失敗');text('#phonetic',e.message);$('#sound').disabled=true;$('#reveal').disabled=true;console.error(e)}}
+const $ = selector => document.querySelector(selector);
+const STORAGE = 'ielts-vocab-progress-v1';
+const DAILY_STORAGE = 'ielts-vocab-daily-v1';
+const DAILY_TARGET = 30;
+let words = [], sequence = [], index = 0, quizAnswer = null, activeDate = '';
+const text = (selector, value) => { $(selector).textContent = value; };
+const getId = word => word.word.trim().toLowerCase();
+const isObject = value => value !== null && typeof value === 'object' && !Array.isArray(value);
+function storageWarning(message) {
+  text('#storagewarning', message);
+  $('#storagewarning').classList.remove('hidden');
+}
+function readStorage(key, fallback) {
+  try {
+    const value = JSON.parse(localStorage.getItem(key) || 'null');
+    if (value === null) return fallback;
+    if (!isObject(value)) throw Error('Invalid storage');
+    return value;
+  } catch {
+    storageWarning('無法讀取瀏覽器中的部分記錄；目前以可用資料繼續。請確認儲存空間與隱私設定。');
+    return fallback;
+  }
+}
+let progress = readStorage(STORAGE, {});
+let journal = readStorage(DAILY_STORAGE, { version: 1, days: {} });
+if (!isObject(journal.days)) journal = { version: 1, days: {} };
+function today(date = new Date()) {
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+}
+const learned = word => (progress[getId(word)]?.level || 0) > 0;
+const due = word => !!progress[getId(word)] && progress[getId(word)].due <= today();
+function save() {
+  try {
+    localStorage.setItem(DAILY_STORAGE, JSON.stringify(journal));
+    localStorage.setItem(STORAGE, JSON.stringify(progress));
+  } catch {
+    storageWarning('無法儲存學習記錄；目前進度只保留在此頁面，關閉後可能遺失。請匯出備份並檢查瀏覽器儲存設定。');
+  }
+}
+function shuffle(array) {
+  const result = [...array];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+function validDay(day) {
+  return isObject(day) && Array.isArray(day.ids) && day.ids.length > 0 &&
+    day.ids.every(id => typeof id === 'string') && new Set(day.ids).size === day.ids.length && isObject(day.studied);
+}
+function ensureDay() {
+  const date = today();
+  const changed = activeDate !== date;
+  activeDate = date;
+  if (!validDay(journal.days[date])) {
+    journal.days[date] = {
+      ids: shuffle(words).slice(0, DAILY_TARGET).map(getId),
+      studied: {}, createdAt: new Date().toISOString(), completedAt: null
+    };
+    save();
+  }
+  return changed;
+}
+const currentDay = () => journal.days[activeDate];
+const studiedIds = day => day.ids.filter(id => isObject(day.studied[id]));
+function dailyWords() {
+  const byId = new Map(words.map(word => [getId(word), word]));
+  return currentDay().ids.map(id => byId.get(id)).filter(Boolean);
+}
+function filtered() {
+  const filter = $('#filter').value;
+  return dailyWords().filter(word => filter === 'all' ||
+    (filter === 'new' ? !currentDay().studied[getId(word)] : due(word)));
+}
+function renderDaily() {
+  const day = currentDay(), count = studiedIds(day).length, total = day.ids.length;
+  text('#dailydate', activeDate.replaceAll('-', ' / '));
+  text('#dailycount', `今日已學 ${count} / ${total}`);
+  text('#dailystatus', count === total ? '今日任務完成 ✓' : `還有 ${total - count} 個`);
+  $('#dailyprogress').style.width = `${total ? count / total * 100 : 0}%`;
+  const available = dailyWords().length;
+  let hint = total < DAILY_TARGET ? `每日目標 30 個；抽取時詞庫只有 ${total} 個，今天學習全部 ${total} 個。` : '今日 30 個單字已固定，重新整理或切換分頁都不會重抽。';
+  if (available < total) hint += ` 有 ${total - available} 個單字已從詞庫移除；記錄仍保留。`;
+  if (count === total) hint += ' 今天已完成，仍可繼續複習。';
+  text('#dailyhint', hint);
+  $('#resume').disabled = count === total || !available;
+}
+function stats() {
+  const known = words.filter(learned).length;
+  text('#total', words.length); text('#known', known); text('#due', words.filter(due).length);
+  const rate = words.length ? Math.round(known / words.length * 100) : 0;
+  $('#mastery').style.width = rate + '%';
+  text('#masterytext', `已記住 ${known} / ${words.length} 個單字（${rate}%）`);
+  renderDaily();
+}
+function renderCard() {
+  const word = sequence[index];
+  $('#answer').classList.add('hidden');
+  $('#reveal').classList.remove('hidden');
+  $('#again').classList.add('hidden'); $('#remember').classList.add('hidden');
+  text('#count', word ? `${String(index + 1).padStart(2, '0')} / ${String(sequence.length).padStart(2, '0')}${currentDay().studied[getId(word)] ? ' · 今日已學' : ''}` : '0 / 0');
+  text('#word', word ? word.word : '沒有符合條件的今日單字');
+  text('#phonetic', word ? [word.phonetic, word.part_of_speech].filter(Boolean).join(' · ') : '可切換「今日全部」繼續複習');
+  text('#definition', word?.definition || '');
+  text('#example', word?.example_sentence || '此單字尚未提供例句。');
+  text('#translation', word?.example_translation || '');
+  $('#exampleblock').classList.toggle('hidden', !word);
+  ['#sound', '#reveal', '#previous', '#next'].forEach(selector => { $(selector).disabled = !word; });
+}
+function refresh(reset = true) {
+  ensureDay(); sequence = filtered();
+  index = reset ? 0 : Math.max(0, Math.min(index, sequence.length - 1));
+  renderCard(); stats(); renderList(); renderReview(); renderHistory();
+}
+function rollover() {
+  if (!words.length || activeDate === today()) return false;
+  $('#filter').value = 'all'; refresh(); return true;
+}
+function mark(remember) {
+  if (rollover()) return;
+  const word = sequence[index];
+  if (!word) return;
+  const key = getId(word), oldLevel = Number(progress[key]?.level) || 0;
+  const level = remember ? Math.min(5, Math.max(0, oldLevel) + 1) : 0;
+  const date = new Date();
+  date.setDate(date.getDate() + (remember ? [1, 3, 7, 14, 30][level - 1] : 0));
+  const timestamp = new Date().toISOString();
+  progress[key] = { level, due: today(date), updated: timestamp };
+  const day = currentDay(), prior = day.studied[key];
+  day.studied[key] = {
+    word: word.word, phonetic: word.phonetic || '', part_of_speech: word.part_of_speech || '',
+    definition: word.definition, example_sentence: word.example_sentence || '',
+    example_translation: word.example_translation || '',
+    firstStudiedAt: prior?.firstStudiedAt || timestamp, lastStudiedAt: timestamp,
+    status: remember ? 'remembered' : 'practicing'
+  };
+  if (studiedIds(day).length === day.ids.length && !day.completedAt) day.completedAt = timestamp;
+  save();
+  const oldIndex = index;
+  sequence = filtered();
+  const position = sequence.findIndex(item => getId(item) === key);
+  index = sequence.length ? (position >= 0 ? (position + 1) % sequence.length : Math.min(oldIndex, sequence.length - 1)) : 0;
+  renderCard(); stats(); renderList(); renderReview(); renderHistory();
+}
+function item(word) {
+  const el = document.createElement('div'); el.className = 'item';
+  const info = document.createElement('div'), name = document.createElement('strong'), sub = document.createElement('p');
+  name.textContent = word.word;
+  sub.textContent = [word.part_of_speech, word.definition].filter(Boolean).join(' · ');
+  info.append(name, sub);
+  const tag = document.createElement('span'); tag.className = 'chip';
+  tag.textContent = due(word) ? '待複習' : learned(word) ? '已學習' : '未學習';
+  el.append(info, tag); return el;
+}
+function empty(message) {
+  const el = document.createElement('div'); el.className = 'empty'; el.textContent = message; return el;
+}
+function renderList() {
+  const query = $('#search').value.trim().toLowerCase();
+  const arr = words.filter(word => (word.word + ' ' + word.definition).toLowerCase().includes(query));
+  $('#wordlist').replaceChildren(...(arr.length ? arr.map(item) : [empty('找不到符合的單字')]));
+}
+function renderReview() {
+  const arr = words.filter(due);
+  $('#reviewlist').replaceChildren(...(arr.length ? arr.map(item) : [empty('目前沒有待複習單字')]));
+}
+function historyWord(record) {
+  const el = document.createElement('div'); el.className = 'history-word';
+  const head = document.createElement('div'); head.className = 'history-word-head';
+  const name = document.createElement('strong'); name.textContent = record.word;
+  const tag = document.createElement('span'); tag.className = 'chip';
+  tag.textContent = record.status === 'remembered' ? '已經記住' : '還不熟悉';
+  head.append(name, tag); el.append(head);
+  [[record.part_of_speech, record.definition].filter(Boolean).join(' · '), record.example_sentence, record.example_translation].forEach((value, position) => {
+    if (!value) return;
+    const p = document.createElement('p'); p.textContent = value;
+    if (position > 0) p.className = position === 1 ? 'example' : 'translation';
+    el.append(p);
+  });
+  return el;
+}
+function renderHistory() {
+  const openDates = new Set([...$('#historylist').children].filter(el => el.open).map(el => el.dataset.date));
+  const dates = Object.keys(journal.days).filter(date => validDay(journal.days[date]) && studiedIds(journal.days[date]).length).sort().reverse();
+  const unique = new Set(); let completed = 0;
+  const entries = dates.map((date, position) => {
+    const day = journal.days[date], ids = studiedIds(day), done = ids.length === day.ids.length;
+    ids.forEach(id => unique.add(id)); if (done) completed++;
+    const details = document.createElement('details'); details.className = 'panel history-day';
+    details.dataset.date = date; details.open = openDates.has(date) || position === 0;
+    const summary = document.createElement('summary'), label = document.createElement('div');
+    const title = document.createElement('strong'); title.textContent = date;
+    const sub = document.createElement('p'); sub.textContent = `已學 ${ids.length} / ${day.ids.length} 個 · 點擊展開單字與例句`;
+    label.append(title, sub);
+    const tag = document.createElement('span'); tag.className = 'chip'; tag.textContent = done ? '每日任務完成 ✓' : '學習中';
+    summary.append(label, tag);
+    const list = document.createElement('div'); list.className = 'history-words';
+    list.append(...ids.map(id => historyWord(day.studied[id])));
+    details.append(summary, list); return details;
+  });
+  text('#studydays', dates.length); text('#studiedtotal', unique.size); text('#completeddays', completed);
+  $('#historylist').replaceChildren(...(entries.length ? entries : [empty('還沒有學習記錄。到「今日學習」完成第一個單字後，就會在這裡看到日期與單字。')]));
+}
+function renderQuiz() {
+  text('#feedback', '');
+  if (words.length < 4) { text('#quizword', '至少需要四個單字才能測驗'); $('#quizoptions').replaceChildren(); return; }
+  const options = shuffle(words).slice(0, 4);
+  quizAnswer = options[Math.floor(Math.random() * 4)]; text('#quizword', quizAnswer.word);
+  $('#quizoptions').replaceChildren(...shuffle(options).map(word => {
+    const button = document.createElement('button'); button.textContent = word.definition;
+    button.onclick = () => {
+      [...$('#quizoptions').children].forEach(el => { el.disabled = true; if (el.textContent === quizAnswer.definition) el.classList.add('right'); });
+      if (word !== quizAnswer) button.classList.add('wrong');
+      text('#feedback', word === quizAnswer ? '答對了！' : '正確答案：' + quizAnswer.definition);
+    };
+    return button;
+  }));
+}
+function download(data, filename) {
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = filename;
+  a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+document.querySelectorAll('[data-tab]').forEach(button => button.onclick = () => {
+  rollover();
+  document.querySelectorAll('[data-tab]').forEach(el => el.classList.toggle('active', el === button));
+  document.querySelectorAll('.section').forEach(el => el.classList.toggle('active', el.id === button.dataset.tab));
+  if (button.dataset.tab === 'quiz') renderQuiz();
+  if (button.dataset.tab === 'history') renderHistory();
+});
+$('#reveal').onclick = () => {
+  if (rollover() || !sequence[index]) return;
+  $('#answer').classList.remove('hidden'); $('#reveal').classList.add('hidden');
+  $('#again').classList.remove('hidden'); $('#remember').classList.remove('hidden');
+};
+$('#previous').onclick = () => { if (rollover() || !sequence.length) return; index = (index - 1 + sequence.length) % sequence.length; renderCard(); };
+$('#next').onclick = () => { if (rollover() || !sequence.length) return; index = (index + 1) % sequence.length; renderCard(); };
+$('#again').onclick = () => mark(false); $('#remember').onclick = () => mark(true);
+$('#filter').onchange = () => { if (words.length) refresh(); };
+$('#resume').onclick = () => {
+  if (!words.length) return;
+  rollover(); $('#filter').value = 'new'; refresh();
+};
+$('#search').oninput = renderList;
+$('#sound').onclick = () => {
+  if (rollover()) return;
+  const word = sequence[index]; if (!word || !('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel(); const speech = new SpeechSynthesisUtterance(word.word);
+  speech.lang = 'en-GB'; speech.rate = .85; window.speechSynthesis.speak(speech);
+};
+$('#newquiz').onclick = renderQuiz;
+$('#export').onclick = () => download(progress, 'vocabulary-progress.json');
+$('#exporthistory').onclick = () => download({ ...journal, progress, exportedAt: new Date().toISOString() }, 'vocabulary-learning-history.json');
+window.addEventListener('focus', rollover);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) rollover(); });
+window.addEventListener('storage', event => {
+  if (event.key !== STORAGE && event.key !== DAILY_STORAGE && event.key !== null) return;
+  progress = readStorage(STORAGE, {}); journal = readStorage(DAILY_STORAGE, { version: 1, days: {} });
+  if (!isObject(journal.days)) journal = { version: 1, days: {} };
+  if (words.length) refresh(false);
+});
+setInterval(rollover, 30000);
+async function init() {
+  try {
+    const response = await fetch('./words.json', { cache: 'no-store' });
+    if (!response.ok) throw Error('HTTP ' + response.status);
+    const data = await response.json(); if (!Array.isArray(data)) throw Error('words.json 必須是陣列');
+    const unique = new Map();
+    data.filter(word => word && typeof word.word === 'string' && word.word.trim() && typeof word.definition === 'string').forEach(word => {
+      const normalized = { ...word, word: word.word.trim() };
+      ['phonetic', 'part_of_speech', 'example_sentence', 'example_translation'].forEach(key => { if (typeof normalized[key] !== 'string') normalized[key] = ''; });
+      if (!unique.has(getId(normalized))) unique.set(getId(normalized), normalized);
+    });
+    words = [...unique.values()]; if (!words.length) throw Error('沒有有效的單字');
+    ensureDay(); sequence = filtered();
+    const pending = sequence.findIndex(word => !currentDay().studied[getId(word)]);
+    index = pending >= 0 ? pending : 0;
+    renderCard(); stats(); renderList(); renderReview(); renderHistory(); renderQuiz();
+  } catch (error) {
+    text('#word', '單字資料載入失敗'); text('#phonetic', error.message);
+    ['#sound', '#reveal', '#previous', '#next', '#resume'].forEach(selector => { $(selector).disabled = true; });
+    console.error(error);
+  }
+}
 init();
+
 </script></body></html>
