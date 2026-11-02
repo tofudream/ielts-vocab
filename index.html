@@ -949,7 +949,7 @@ renderMotivation();
 
 /* ---------- Cloud login and sync (Supabase). Active only when CLOUD_CONFIG exists. ---------- */
 const CLOUD_USER_KEY = 'ielts-vocab-cloud-user-v1';
-let sb = null, cloudUid = null, pushTimer = null, pushing = false, pushAgain = false;
+let sb = null, cloudUid = null, pushTimer = null;
 const stampOf = (item, key) => (isObject(item) && typeof item[key] === 'string') ? item[key] : '';
 const newerItem = (a, b, key) => stampOf(b, key) > stampOf(a, key) ? b : a;
 function mergeMap(a, b, key) {
@@ -990,22 +990,28 @@ async function cloudFetch() {
   if (error) throw error;
   return data?.data || null;
 }
-async function pushNow() {
-  if (!sb || !cloudUid) return;
-  if (pushing) { pushAgain = true; return; }
-  pushing = true; clearTimeout(pushTimer); setCloud('同步中…');
-  try {
-    const merged = mergeState(localState(), await cloudFetch());
-    const { error } = await sb.from('user_data').upsert({ user_id: cloudUid, data: merged, updated_at: new Date().toISOString() });
-    if (error) throw error;
-    const now = new Date();
-    setCloud(`已同步到雲端 · ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`);
-  } catch (error) {
-    console.error(error); setCloud('雲端同步失敗，之後會自動重試；進度仍保留在此裝置。');
-  } finally {
-    pushing = false;
-    if (pushAgain) { pushAgain = false; schedulePush(); }
-  }
+let pushQueue = Promise.resolve();
+// Pushes are serialised; resolves true only when the cloud copy was written successfully.
+function pushNow() {
+  if (!sb || !cloudUid) return Promise.resolve(false);
+  clearTimeout(pushTimer);
+  const run = async () => {
+    setCloud('同步中…');
+    try {
+      const merged = mergeState(localState(), await cloudFetch());
+      const { error } = await sb.from('user_data').upsert({ user_id: cloudUid, data: merged, updated_at: new Date().toISOString() });
+      if (error) throw error;
+      const now = new Date();
+      setCloud(`已同步到雲端 · ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`);
+      return true;
+    } catch (error) {
+      console.error(error); setCloud('雲端同步失敗，之後會自動重試；進度仍保留在此裝置。');
+      clearTimeout(pushTimer); pushTimer = setTimeout(pushNow, 15000);
+      return false;
+    }
+  };
+  pushQueue = pushQueue.then(run);
+  return pushQueue;
 }
 function schedulePush() { clearTimeout(pushTimer); pushTimer = setTimeout(pushNow, 2000); }
 function clearLocalProgress() {
@@ -1032,7 +1038,12 @@ async function startApp(session) {
   const logout = $('#logout'); logout.classList.remove('hidden');
   logout.onclick = async () => {
     logout.disabled = true;
-    try { await pushNow(); } catch { /* best effort */ }
+    // Never wipe local progress unless the latest state really reached the cloud.
+    if (!(await pushNow())) {
+      logout.disabled = false;
+      setCloud('同步失敗，為避免遺失進度已取消登出，請檢查網路後再試一次。');
+      return;
+    }
     clearTimeout(pushTimer);
     await sb.auth.signOut(); clearLocalProgress(); location.reload();
   };
