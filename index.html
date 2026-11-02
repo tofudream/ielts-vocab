@@ -1073,7 +1073,7 @@ async function cloudBoot() {
     if (registering && password !== $('#authpass2').value) { authError('兩次輸入的密碼不一致。'); return; }
     $('#authsubmit').disabled = true; text('#authsubmit', registering ? '註冊中…' : '登入中…');
     try {
-      const result = registering ? await sb.auth.signUp({ email, password }) : await sb.auth.signInWithPassword({ email, password });
+      const result = registering ? await sb.auth.signUp({ email, password, options: { emailRedirectTo: location.origin + location.pathname } }) : await sb.auth.signInWithPassword({ email, password });
       if (result.error) { authError(registering ? signupMessage(result.error) : /invalid login/i.test(result.error.message) ? 'Email 或密碼錯誤。' : /not confirmed/i.test(result.error.message) ? '請先到信箱點擊驗證連結後再登入。' : `登入失敗：${result.error.message}`); return; }
       const session = result.data?.session;
       if (registering && !session) {
