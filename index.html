@@ -202,7 +202,7 @@
 .authcard label{font-size:13px;font-weight:700;color:#356d54;margin-top:6px}
 .authcard .control{font-size:16px;min-height:46px;width:100%}
 .authcard .btn{min-height:48px;margin-top:10px}
-#autherror{color:#a3382d;min-height:1.4em;font-weight:700}
+#authnote{margin:0}.authlink{background:none;border:0;color:#356d54;font-weight:700;text-decoration:underline;padding:8px;justify-self:center}#autherror{color:#a3382d;min-height:1.4em;font-weight:700}
 .brandrow{display:flex;align-items:center;justify-content:space-between;gap:10px}.logoutbtn{border:1px solid #4d7a6b;background:transparent;color:#d4e5db;border-radius:10px;padding:7px 12px;font-size:12px;white-space:nowrap}.logoutbtn:hover{background:#2b594d;color:#fff}.logoutbtn:disabled{opacity:.6}
 /* Mobile Edge/Chrome polish: no mid-word breaks, stable text size, tidy nav scrolling. */
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
@@ -250,7 +250,7 @@ button,.navbtn,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
 <section class="section" id="review"><h2 class="section-title">需要複習的單字</h2><p class="muted">系統依照你的熟悉程度安排複習，沒有需要複習的單字時會顯示空清單。</p><div class="list" id="reviewlist"></div><div class="progressbar"><div id="mastery" style="width:0%"></div></div><p class="muted" id="masterytext"></p><button class="btn outline" id="export">匯出學習進度 JSON</button></section>
 <p class="footer">Vocabulary Studio · GitHub Pages · 學習進度需登入後同步到雲端。</p>
 </main></div>
-<div id="authgate" class="authgate"><form id="authform" class="authcard" novalidate><div class="brand">vocab.studio</div><h2>登入以繼續</h2><p class="muted">此網站僅限受邀使用者。登入後，學習進度與測驗紀錄會同步到雲端。</p><label for="authemail">Email</label><input id="authemail" class="control" type="email" autocomplete="username" inputmode="email" required><label for="authpass">密碼</label><input id="authpass" class="control" type="password" autocomplete="current-password" required><button id="authsubmit" class="btn primary" type="submit">登入</button><p id="autherror" role="alert"></p></form></div>
+<div id="authgate" class="authgate"><form id="authform" class="authcard" novalidate><div class="brand">vocab.studio</div><h2 id="authtitle">登入以繼續</h2><p class="muted" id="authnote">登入後，學習進度與測驗紀錄會同步到雲端。名額有限（最多 10 人）。</p><label for="authemail">Email</label><input id="authemail" class="control" type="email" autocomplete="username" inputmode="email" required><label for="authpass">密碼</label><input id="authpass" class="control" type="password" autocomplete="current-password" required><label for="authpass2" id="authpass2label" class="hidden">再輸入一次密碼</label><input id="authpass2" class="control hidden" type="password" autocomplete="new-password"><button id="authsubmit" class="btn primary" type="submit">登入</button><p id="autherror" role="alert"></p><button id="authswitch" class="authlink" type="button">還沒有帳號？註冊</button></form></div>
 <script id="cloud-config">window.CLOUD_CONFIG={url:"https://klljwnqocjjfkhqanbos.supabase.co",key:"sb_publishable_AmOmwjXzZrCNcnkzyLWM0g_5OzurEPT"};</script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.js" integrity="sha384-TcHRA3zBbn+Lexh5n+Oil4guNPOS3rjNDpGRAN46u/s/mB2IZ50ceC6TYDU2yvgK" crossorigin="anonymous"></script>
 <script>
@@ -1028,19 +1028,46 @@ async function cloudBoot() {
   const config = window.CLOUD_CONFIG, lib = window.supabase;
   if (!lib || typeof lib.createClient !== 'function') { authError('無法載入登入服務，請檢查網路後重新整理頁面。'); $('#authsubmit').disabled = true; return; }
   sb = lib.createClient(config.url, config.key, { auth: { persistSession: true, autoRefreshToken: true } });
+  let registering = false;
+  const setMode = value => {
+    registering = value; authError('');
+    text('#authtitle', registering ? '註冊新帳號' : '登入以繼續');
+    text('#authsubmit', registering ? '註冊' : '登入');
+    text('#authswitch', registering ? '已有帳號？登入' : '還沒有帳號？註冊');
+    ['#authpass2', '#authpass2label'].forEach(selector => $(selector).classList.toggle('hidden', !registering));
+    $('#authpass').autocomplete = registering ? 'new-password' : 'current-password';
+  };
+  $('#authswitch').onclick = () => setMode(!registering);
+  const signupMessage = error => {
+    const message = error.message || '';
+    if (/database error saving new user|signup limit/i.test(message)) return '名額已滿（最多 10 人），目前無法註冊。';
+    if (/already registered|already been registered/i.test(message)) return '這個 Email 已經註冊過，請直接登入。';
+    if (/password/i.test(message)) return '密碼至少需要 6 個字元。';
+    if (/valid email|invalid email/i.test(message)) return 'Email 格式不正確。';
+    if (/rate limit/i.test(message)) return '操作太頻繁，請稍後再試。';
+    return `註冊失敗：${message}`;
+  };
   $('#authform').onsubmit = async event => {
     event.preventDefault(); authError('');
     const email = $('#authemail').value.trim(), password = $('#authpass').value;
     if (!email || !password) { authError('請輸入 Email 與密碼。'); return; }
-    $('#authsubmit').disabled = true; text('#authsubmit', '登入中…');
+    if (registering && password.length < 6) { authError('密碼至少需要 6 個字元。'); return; }
+    if (registering && password !== $('#authpass2').value) { authError('兩次輸入的密碼不一致。'); return; }
+    $('#authsubmit').disabled = true; text('#authsubmit', registering ? '註冊中…' : '登入中…');
     try {
-      const { data, error } = await sb.auth.signInWithPassword({ email, password });
-      if (error) { authError(/invalid login/i.test(error.message) ? 'Email 或密碼錯誤。' : `登入失敗：${error.message}`); return; }
-      $('#authpass').value = '';
-      await startApp(data.session);
+      const result = registering ? await sb.auth.signUp({ email, password }) : await sb.auth.signInWithPassword({ email, password });
+      if (result.error) { authError(registering ? signupMessage(result.error) : /invalid login/i.test(result.error.message) ? 'Email 或密碼錯誤。' : /not confirmed/i.test(result.error.message) ? '請先到信箱點擊驗證連結後再登入。' : `登入失敗：${result.error.message}`); return; }
+      const session = result.data?.session;
+      if (registering && !session) {
+        // Supabase hides duplicate emails when confirmation is on: an empty identities list means "already registered".
+        if (result.data?.user && Array.isArray(result.data.user.identities) && !result.data.user.identities.length) { authError('這個 Email 已經註冊過，請直接登入。'); return; }
+        setMode(false); authError('註冊成功！請到信箱點擊驗證連結後再登入。'); return;
+      }
+      $('#authpass').value = ''; $('#authpass2').value = '';
+      await startApp(session);
     } catch (error) {
-      console.error(error); authError('登入失敗，請檢查網路後再試一次。');
-    } finally { $('#authsubmit').disabled = false; text('#authsubmit', '登入'); }
+      console.error(error); authError('操作失敗，請檢查網路後再試一次。');
+    } finally { $('#authsubmit').disabled = false; text('#authsubmit', registering ? '註冊' : '登入'); }
   };
   sb.auth.onAuthStateChange(event => { if (event === 'SIGNED_OUT' && cloudUid) location.reload(); });
   try {
