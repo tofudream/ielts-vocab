@@ -250,7 +250,7 @@ button,.navbtn,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
 <section class="section" id="review"><h2 class="section-title">需要複習的單字</h2><p class="muted">系統依照你的熟悉程度安排複習，沒有需要複習的單字時會顯示空清單。</p><div class="list" id="reviewlist"></div><div class="progressbar"><div id="mastery" style="width:0%"></div></div><p class="muted" id="masterytext"></p><button class="btn outline" id="export">匯出學習進度 JSON</button></section>
 <p class="footer">Vocabulary Studio · GitHub Pages · 學習進度需登入後同步到雲端。</p>
 </main></div>
-<div id="authgate" class="authgate"><form id="authform" class="authcard" novalidate><div class="brand">vocab.studio</div><h2 id="authtitle">登入以繼續</h2><p class="muted" id="authnote">登入後，學習進度與測驗紀錄會同步到雲端。名額有限（最多 10 人）。</p><label for="authemail">Email</label><input id="authemail" class="control" type="email" autocomplete="username" inputmode="email" required><label for="authpass">密碼</label><input id="authpass" class="control" type="password" autocomplete="current-password" required><label for="authpass2" id="authpass2label" class="hidden">再輸入一次密碼</label><input id="authpass2" class="control hidden" type="password" autocomplete="new-password"><button id="authsubmit" class="btn primary" type="submit">登入</button><p id="autherror" role="alert"></p><button id="authswitch" class="authlink" type="button">還沒有帳號？註冊</button></form></div>
+<div id="authgate" class="authgate"><form id="authform" class="authcard" novalidate><div class="brand">vocab.studio</div><h2 id="authtitle">登入以繼續</h2><p class="muted" id="authnote">登入後，學習進度與測驗紀錄會同步到雲端。名額有限（最多 15 人）。</p><label for="authemail">Email</label><input id="authemail" class="control" type="email" autocomplete="username" inputmode="email" required><label for="authpass">密碼</label><input id="authpass" class="control" type="password" autocomplete="current-password" required><label for="authpass2" id="authpass2label" class="hidden">再輸入一次密碼</label><input id="authpass2" class="control hidden" type="password" autocomplete="new-password"><button id="authsubmit" class="btn primary" type="submit">登入</button><p id="autherror" role="alert"></p><button id="authswitch" class="authlink" type="button">還沒有帳號？註冊</button></form></div>
 <script id="cloud-config">window.CLOUD_CONFIG={url:"https://klljwnqocjjfkhqanbos.supabase.co",key:"sb_publishable_AmOmwjXzZrCNcnkzyLWM0g_5OzurEPT"};</script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.js" integrity="sha384-TcHRA3zBbn+Lexh5n+Oil4guNPOS3rjNDpGRAN46u/s/mB2IZ50ceC6TYDU2yvgK" crossorigin="anonymous"></script>
 <script>
@@ -1040,7 +1040,7 @@ async function cloudBoot() {
   $('#authswitch').onclick = () => setMode(!registering);
   const signupMessage = error => {
     const message = error.message || '';
-    if (/database error saving new user|signup limit/i.test(message)) return '名額已滿（最多 10 人），目前無法註冊。';
+    if (/database error saving new user|signup limit/i.test(message)) return '名額已滿（最多 15 人），目前無法註冊。';
     if (/already registered|already been registered/i.test(message)) return '這個 Email 已經註冊過，請直接登入。';
     if (/password/i.test(message)) return '密碼至少需要 6 個字元。';
     if (/valid email|invalid email/i.test(message)) return 'Email 格式不正確。';
