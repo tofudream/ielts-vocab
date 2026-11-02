@@ -323,19 +323,27 @@ function everStudiedIds() {
   });
   return ids;
 }
+function isFirstPlan() {
+  // First time = no word has been studied yet (regardless of the date).
+  return !everStudiedIds().size;
+}
 function createDailyPlan() {
   const seen = everStudiedIds();
-  const newWords = shuffle(words.filter(word => !seen.has(getId(word)))).slice(0, DAILY_QUOTAS.new);
+  // The first time has no review pool, so the review quotas are filled with new words instead.
+  const quotas = isFirstPlan()
+    ? { new: DAILY_QUOTAS.new + DAILY_QUOTAS.priority + DAILY_QUOTAS.random, priority: 0, random: 0 }
+    : { ...DAILY_QUOTAS };
+  const newWords = shuffle(words.filter(word => !seen.has(getId(word)))).slice(0, quotas.new);
   const oldWords = words.filter(word => seen.has(getId(word)));
-  const wrongWords = shuffle(oldWords.filter(word => (quizResults[getId(word)]?.wrongCount || 0) > 0)).slice(0, DAILY_QUOTAS.priority);
+  const wrongWords = shuffle(oldWords.filter(word => (quizResults[getId(word)]?.wrongCount || 0) > 0)).slice(0, quotas.priority);
   const priorityUsed = new Set(wrongWords.map(getId));
-  const filler = shuffle(oldWords.filter(word => !priorityUsed.has(getId(word)))).slice(0, DAILY_QUOTAS.priority - wrongWords.length);
+  const filler = shuffle(oldWords.filter(word => !priorityUsed.has(getId(word)))).slice(0, quotas.priority - wrongWords.length);
   const priority = [...wrongWords, ...filler];
   const used = new Set(priority.map(getId));
-  const random = shuffle(oldWords.filter(word => !used.has(getId(word)))).slice(0, DAILY_QUOTAS.random);
+  const random = shuffle(oldWords.filter(word => !used.has(getId(word)))).slice(0, quotas.random);
   const groups = { new: newWords.map(getId), priority: priority.map(getId), random: random.map(getId) };
   return {
-    ruleVersion: DAILY_RULE_VERSION, groups,
+    ruleVersion: DAILY_RULE_VERSION, groups, quotas, firstDay: quotas.priority === 0 && quotas.random === 0,
     priorityWrongIds: wrongWords.map(getId),
     ids: [...groups.new, ...groups.priority, ...groups.random],
     studied: {}, createdAt: new Date().toISOString(), completedAt: null
@@ -346,8 +354,8 @@ function ensureDay() {
   const changed = activeDate !== date;
   activeDate = date;
   const existing = journal.days[date];
-  if (!validDay(existing) || (existing.ruleVersion !== DAILY_RULE_VERSION && !studiedIds(existing).length)) {
-    // Apply new rules immediately only if today's previous plan was unstarted.
+  if (!validDay(existing)) {
+    // Today's list is created once and then stays fixed for the whole day, studied or not.
     journal.days[date] = createDailyPlan();
     save();
   }
@@ -373,18 +381,25 @@ function renderDaily() {
   const available = dailyWords().length;
   const groups = day.groups;
   const currentRules = day.ruleVersion === DAILY_RULE_VERSION && groups;
+  const quotas = day.quotas || DAILY_QUOTAS;
   const labels = { new: '新單字', priority: '錯字優先複習', random: '隨機複習' };
-  $('#dailygroups').replaceChildren(...(currentRules ? Object.keys(DAILY_QUOTAS).map(key => {
+  $('#dailygroups').replaceChildren(...(currentRules ? Object.keys(DAILY_QUOTAS).filter(key => quotas[key] > 0).map(key => {
     const chip = document.createElement('span'); chip.className = 'chip';
-    chip.textContent = `${labels[key]} ${groups[key].length} / ${DAILY_QUOTAS[key]}`;
+    chip.textContent = `${labels[key]} ${groups[key].length} / ${quotas[key]}`;
     return chip;
   }) : []));
   let hint;
   if (currentRules) {
-    const shortages = Object.keys(DAILY_QUOTAS).filter(key => groups[key].length < DAILY_QUOTAS[key]).map(key => `${labels[key]}缺 ${DAILY_QUOTAS[key] - groups[key].length} 個`);
-    hint = `每日目標為 20 個新字＋5 個錯字優先複習＋5 個隨機複習，今天實際抽取 ${total} 個，三組不重複。`;
-    if (shortages.length) hint += ` 候選單字不足（${shortages.join('、')}），各組不互相補足。`;
-    hint += ` 優先複習組包含 ${day.priorityWrongIds?.length || 0} 個曾答錯的單字；其餘由已學字隨機補足。今日清單已固定。`;
+    const shortages = Object.keys(DAILY_QUOTAS).filter(key => groups[key].length < quotas[key]).map(key => `${labels[key]}缺 ${quotas[key] - groups[key].length} 個`);
+    if (day.firstDay) {
+      hint = `還沒有可複習的單字，複習名額（5 個錯字優先＋5 個隨機）直接改抽新字，今天共抽取 ${total} 個；開始學習後，之後的清單採用「20 個新字＋5 個錯字優先複習＋5 個隨機複習」。`;
+      if (shortages.length) hint += ` 詞庫新字不足（${shortages.join('、')}）。`;
+      hint += ' 今日清單已固定。';
+    } else {
+      hint = `每日目標為 20 個新字＋5 個錯字優先複習＋5 個隨機複習，今天實際抽取 ${total} 個，三組不重複。`;
+      if (shortages.length) hint += ` 候選單字不足（${shortages.join('、')}），各組不互相補足。`;
+      hint += ` 優先複習組包含 ${day.priorityWrongIds?.length || 0} 個曾答錯的單字；其餘由已學字隨機補足。今日清單已固定。`;
+    }
   } else {
     hint = '今天已開始學習，保留原清單與進度；明日起採用「20 個新字＋5 個錯字優先複習＋5 個隨機複習」。';
   }
@@ -945,7 +960,10 @@ function mergeMap(a, b, key) {
 const studiedCount = day => isObject(day?.studied) ? Object.keys(day.studied).length : 0;
 function mergeDay(x, y) {
   if (!x) return y; if (!y) return x;
-  const [base, other] = studiedCount(x) >= studiedCount(y) ? [x, y] : [y, x];
+  const sx = studiedCount(x), sy = studiedCount(y);
+  // Equal progress: keep the earliest-created list so every device converges on the same one.
+  const xFirst = sx !== sy ? sx > sy : stampOf(x, 'createdAt') <= stampOf(y, 'createdAt');
+  const [base, other] = xFirst ? [x, y] : [y, x];
   return { ...other, ...base, studied: { ...(other.studied || {}), ...(base.studied || {}) } };
 }
 const examRank = exam => (exam?.completedAt ? 1e6 : 0) + (Array.isArray(exam?.questions) ? exam.questions.filter(q => q && q.answer).length : 0);
