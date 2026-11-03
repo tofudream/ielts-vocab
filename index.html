@@ -225,18 +225,20 @@ button,.navbtn,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
  #learn .card{min-height:0}
  .learn-controls{padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px))}
 }
+
+.example-sound{font-size:12px;padding:4px 10px;min-height:0;margin:2px 0 8px}
 </style></head>
 <body><div class="layout"><aside class="side"><div class="brandrow"><div class="brand">vocab<span style="color:#b2dc97">.</span>studio<small>IELTS LEARNING SPACE</small></div><button id="logout" class="logoutbtn hidden" type="button">登出</button></div><nav aria-label="主要導覽"><button class="navbtn active" data-tab="learn">今日學習</button><button class="navbtn" data-tab="quiz">單字測驗</button><button class="navbtn" data-tab="review">複習清單</button><button class="navbtn" data-tab="history">學習記錄</button><button class="navbtn" data-tab="library">單字總覽</button></nav><div class="sidefoot">每天一點，穩定累積。<br><span id="cloudstate">學習記錄儲存於此瀏覽器。</span></div></aside>
 <main class="main"><div class="top"><div><div class="eyebrow">YOUR DAILY ENGLISH ROUTINE</div><h1 id="motivation">先開始，再慢慢熟悉。</h1><p id="motivationnote" class="muted" style="margin:0">給自己一點時間，從今天的第一個單字開始。</p></div></div>
 <div id="storagewarning" class="notice hidden" role="alert"></div>
 <section class="section active" id="learn">
-<div class="toolbar"><div><h2>今日學習</h2><p class="muted daily-date" id="dailydate"></p></div><div class="toolbox"><select class="control" id="filter" aria-label="篩選今日單字"><option value="all">今日全部</option><option value="new">今日未完成</option><option value="review">今日待複習</option></select><button class="btn light" id="resume">繼續未完成</button></div></div>
+<div class="toolbar"><div><h2>今日學習</h2><p class="muted daily-date" id="dailydate"></p></div><div class="toolbox"><select class="control" id="filter" aria-label="篩選今日單字"><option value="new">未學習</option><option value="done">已學習</option></select><button class="btn light" id="resume">繼續未學習</button></div></div>
 <div class="panel daily-summary"><div class="daily-summary-top"><strong id="dailycount">今日已學 0 / 30</strong><span class="chip" id="dailystatus">尚未完成</span></div><div class="progressbar"><div id="dailyprogress" style="width:0%"></div></div><details class="daily-details"><summary>抽取說明與缺額</summary><div class="daily-groups" id="dailygroups" aria-label="今日單字分配"></div><p class="muted" id="dailyhint"></p></details></div>
-<div class="panel card" id="flashcard"><div class="counter" id="count">00 / 00</div><div class="word-head"><h2 class="word" id="word">Loading...</h2><button class="btn light" id="sound" aria-label="播放英文發音"><span aria-hidden="true">▶</span><span class="sound-label"> 播放發音</span></button></div><div class="word-meta"><div class="phonetic" id="phonetic"></div><span class="chip hidden" id="cardkind"></span></div><div id="answer" class="hidden"><p class="definition" id="definition"></p><details id="extrasenses" class="hidden"><summary>查看其他詞義</summary><div id="othersenses" class="sense-list"></div></details><div class="learn-assessment"><button class="btn light hidden" id="again">還不熟悉</button><button class="btn primary hidden" id="remember">已經記住</button></div></div><div class="example-block" id="exampleblock"><div class="eyebrow">EXAMPLE · 例句</div><p class="example" id="example"></p><p class="translation hidden" id="translation"></p></div></div>
+<div class="panel card" id="flashcard"><div class="counter" id="count">00 / 00</div><div class="word-head"><h2 class="word" id="word">Loading...</h2><button class="btn light" id="sound" aria-label="播放英文發音"><span aria-hidden="true">▶</span><span class="sound-label"> 播放發音</span></button></div><div class="word-meta"><div class="phonetic" id="phonetic"></div><span class="chip hidden" id="cardkind"></span></div><div id="answer" class="hidden"><p class="definition" id="definition"></p><details id="extrasenses" class="hidden"><summary>查看其他詞義</summary><div id="othersenses" class="sense-list"></div></details><div class="learn-assessment"><button class="btn primary hidden" id="remember">已學習</button></div></div><div class="example-block" id="exampleblock"><div class="eyebrow">EXAMPLE · 例句</div><button class="btn light example-sound" id="soundexample" type="button" aria-label="播放例句發音"><span aria-hidden="true">▶</span> 播放例句</button><p class="example" id="example"></p><p class="translation hidden" id="translation"></p></div></div>
 <div class="learn-controls" role="group" aria-label="單字學習操作"><div class="learn-nav"><button class="btn outline" id="previous">← 上一個</button><div class="learn-rating"><button class="btn primary" id="reveal" aria-controls="answer" aria-expanded="false">顯示單字中文</button><button class="btn outline" id="revealtranslation" aria-controls="translation" aria-expanded="false">顯示例句中文</button></div><button class="btn outline" id="next">下一個 →</button></div></div>
-<details class="learn-guide"><summary>學習方式與抽取規則</summary><div class="notice">每日配置：20 個從未學過的新單字、5 個已學字（測驗錯字優先，名額不足以其他已學字補足）、5 個隨機已學字。三組不重複，各組候選不足時不跨組補足，同一天不會重抽。讀完單字與例句後，按「還不熟悉」或「已經記住」才計入今日已學；切換卡片不會自動記錄。「已學」代表完成練習，不代表已經記熟。</div></details>
+<details class="learn-guide"><summary>學習方式與抽取規則</summary><div class="notice">每日配置：20 個從未學過的新單字、5 個已學字（測驗錯字優先，名額不足以其他已學字補足）、5 個隨機已學字。三組不重複，各組候選不足時不跨組補足，同一天不會重抽。讀完單字與例句後，按「已學習」才計入今日已學；切換卡片不會自動記錄。右上角可切換「未學習」與「已學習」兩種清單。</div></details>
 </section>
-<section class="section" id="history"><div class="toolbar"><h2>學習記錄</h2><button class="btn outline" id="exporthistory">匯出學習記錄 JSON</button></div><p class="muted">按日期查看學過的單字、例句及測驗成績。重複練習同一個單字，在同一天只計算一次。</p><div class="stats history-stats" aria-label="單字學習統計"><div class="stat"><span>單字總數</span><b id="total">—</b></div><div class="stat"><span>已掌握</span><b id="known">0</b></div><div class="stat"><span>待複習</span><b id="due">0</b></div></div><div class="stats history-stats"><div class="stat"><span>學習天數</span><b id="studydays">0</b></div><div class="stat"><span>累計學過（不重複）</span><b id="studiedtotal">0</b></div><div class="stat"><span>完成每日任務</span><b id="completeddays">0</b></div></div><div class="list" id="historylist"></div><div class="notice">登入後記錄會自動同步到雲端，可在不同裝置使用；同步狀態顯示在側邊欄。仍建議定期匯出備份。舊版未保存每日記錄，因此不會自動補上過去的學習日期。</div></section>
+<section class="section" id="history"><div class="toolbar"><h2>學習記錄</h2><button class="btn outline" id="exporthistory">匯出學習記錄 JSON</button></div><p class="muted">按日期查看學過的單字、例句及測驗成績。重複練習同一個單字，在同一天只計算一次。</p><div class="stats history-stats" aria-label="單字學習統計"><div class="stat"><span>單字總數</span><b id="total">—</b></div><div class="stat"><span>已學習</span><b id="known">0</b></div><div class="stat"><span>未學習</span><b id="due">0</b></div></div><div class="stats history-stats"><div class="stat"><span>學習天數</span><b id="studydays">0</b></div><div class="stat"><span>累計學過（不重複）</span><b id="studiedtotal">0</b></div><div class="stat"><span>完成每日任務</span><b id="completeddays">0</b></div></div><div class="list" id="historylist"></div><div class="notice">登入後記錄會自動同步到雲端，可在不同裝置使用；同步狀態顯示在側邊欄。仍建議定期匯出備份。舊版未保存每日記錄，因此不會自動補上過去的學習日期。</div></section>
 <section class="section" id="library"><div class="toolbar"><h2>所有單字</h2><input id="search" class="control" placeholder="搜尋英文或中文..." aria-label="搜尋單字"></div><p class="muted" id="librarycount"></p><div class="list" id="wordlist"></div><div class="actions"><button class="btn outline hidden" id="loadmore">載入更多單字</button></div></section>
 <section class="section" id="quiz">
 <div class="toolbar"><div><h2>每日單字測驗</h2><p class="muted daily-date" id="examdate"></p></div></div>
@@ -247,7 +249,7 @@ button,.navbtn,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
 <div id="examresult" class="panel exam-result hidden"></div>
 
 </section>
-<section class="section" id="review"><h2 class="section-title">需要複習的單字</h2><p class="muted">系統依照你的熟悉程度安排複習，沒有需要複習的單字時會顯示空清單。</p><div class="list" id="reviewlist"></div><div class="progressbar"><div id="mastery" style="width:0%"></div></div><p class="muted" id="masterytext"></p><button class="btn outline" id="export">匯出學習進度 JSON</button></section>
+<section class="section" id="review"><h2 class="section-title">已學習的單字</h2><p class="muted">列出所有已學習的單字，可隨時回頭複習；點開單字可查看所有詞義與例句。</p><div class="list" id="reviewlist"></div><div class="progressbar"><div id="mastery" style="width:0%"></div></div><p class="muted" id="masterytext"></p><button class="btn outline" id="export">匯出學習進度 JSON</button></section>
 <p class="footer">Vocabulary Studio · GitHub Pages · 學習進度需登入後同步到雲端。</p>
 </main></div>
 <div id="authgate" class="authgate"><form id="authform" class="authcard" novalidate><div class="brand">vocab.studio</div><h2 id="authtitle">登入以繼續</h2><p class="muted" id="authnote">登入後，學習進度與測驗紀錄會同步到雲端。名額有限（最多 15 人）。</p><label for="authemail">Email</label><input id="authemail" class="control" type="email" autocomplete="username" inputmode="email" required><label for="authpass">密碼</label><input id="authpass" class="control" type="password" autocomplete="current-password" required><label for="authpass2" id="authpass2label" class="hidden">再輸入一次密碼</label><input id="authpass2" class="control hidden" type="password" autocomplete="new-password"><button id="authsubmit" class="btn primary" type="submit">登入</button><p id="autherror" role="alert"></p><button id="authswitch" class="authlink" type="button">還沒有帳號？註冊</button></form></div>
@@ -290,8 +292,7 @@ if (!isObject(exams.days)) exams = { version: 1, days: {} };
 function today(date = new Date()) {
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
 }
-const learned = word => (progress[getId(word)]?.level || 0) > 0;
-const due = word => !!progress[getId(word)] && progress[getId(word)].due <= today();
+const learned = word => isObject(progress[getId(word)]);
 function save() {
   try {
     localStorage.setItem(DAILY_STORAGE, JSON.stringify(journal));
@@ -369,8 +370,8 @@ function dailyWords() {
 }
 function filtered() {
   const filter = $('#filter').value;
-  return dailyWords().filter(word => filter === 'all' ||
-    (filter === 'new' ? !currentDay().studied[getId(word)] : due(word)));
+  const studied = currentDay().studied;
+  return dailyWords().filter(word => filter === 'done' ? !!studied[getId(word)] : !studied[getId(word)]);
 }
 function renderDaily() {
   const day = currentDay(), count = studiedIds(day).length, total = day.ids.length;
@@ -410,10 +411,10 @@ function renderDaily() {
 }
 function stats() {
   const known = words.filter(learned).length;
-  text('#total', words.length); text('#known', known); text('#due', words.filter(due).length);
+  text('#total', words.length); text('#known', known); text('#due', words.length - known);
   const rate = words.length ? Math.round(known / words.length * 100) : 0;
   $('#mastery').style.width = rate + '%';
-  text('#masterytext', `已記住 ${known} / ${words.length} 個單字（${rate}%）`);
+  text('#masterytext', `已學習 ${known} / ${words.length} 個單字（${rate}%）`);
   renderDaily();
 }
 function fitWord() {
@@ -435,10 +436,10 @@ function renderCard() {
   $('#flashcard').classList.remove('example-chinese-visible');
   text('#reveal', '顯示單字中文'); text('#revealtranslation', '顯示例句中文');
   $('#reveal').ariaExpanded = 'false'; $('#revealtranslation').ariaExpanded = 'false';
-  $('#again').classList.add('hidden'); $('#remember').classList.add('hidden');
+  $('#remember').classList.add('hidden');
   text('#count', word ? `${String(index + 1).padStart(2, '0')} / ${String(sequence.length).padStart(2, '0')}${currentDay().studied[getId(word)] ? ' · 今日已學' : ''}` : '0 / 0');
-  text('#word', word ? word.word : '沒有符合條件的今日單字'); fitWord();
-  text('#phonetic', word ? [word.phonetic, word.part_of_speech].filter(Boolean).join(' · ') : '可切換「今日全部」繼續複習');
+  text('#word', word ? word.word : ($('#filter').value === 'done' ? '尚無已學習單字' : '今日已全部學習 ✓')); fitWord();
+  text('#phonetic', word ? [word.phonetic, word.part_of_speech].filter(Boolean).join(' · ') : ($('#filter').value === 'done' ? '今天還沒有已學習的單字' : '今天的單字都已學習完畢，可切換「已學習」回頭複習'));
   const day = currentDay(), id = word ? getId(word) : '';
   const kind = !word ? '' : day.groups?.new?.includes(id) ? '新單字' : day.groups?.priority?.includes(id) ? (day.priorityWrongIds?.includes(id) ? '複習 · 測驗錯字優先' : '複習 · 已學單字') : day.groups?.random?.includes(id) ? '隨機複習' : '原清單';
   text('#cardkind', kind); $('#cardkind').classList.toggle('hidden', !word);
@@ -454,7 +455,7 @@ function renderCard() {
   highlightedExample($('#example'), word || {word:'',example_sentence:''});
   text('#translation', word?.example_translation || '');
   $('#exampleblock').classList.toggle('hidden', !word);
-  ['#sound', '#reveal', '#revealtranslation', '#previous', '#next'].forEach(selector => { $(selector).disabled = !word; });
+  ['#sound', '#soundexample', '#reveal', '#revealtranslation', '#previous', '#next'].forEach(selector => { $(selector).disabled = !word; });
   $('#revealtranslation').disabled = !word || !word.example_translation;
 }
 function refresh(reset = true) {
@@ -464,25 +465,22 @@ function refresh(reset = true) {
 }
 function rollover() {
   if (!words.length || activeDate === today()) return false;
-  $('#filter').value = 'all'; refresh(); renderQuiz(); return true;
+  $('#filter').value = 'new'; refresh(); renderQuiz(); return true;
 }
-function mark(remember) {
+function mark() {
   if (rollover()) return;
   const word = sequence[index];
   if (!word) return;
-  const key = getId(word), oldLevel = Number(progress[key]?.level) || 0;
-  const level = remember ? Math.min(5, Math.max(0, oldLevel) + 1) : 0;
-  const date = new Date();
-  date.setDate(date.getDate() + (remember ? [1, 3, 7, 14, 30][level - 1] : 0));
+  const key = getId(word);
   const timestamp = new Date().toISOString();
-  progress[key] = { level, due: today(date), updated: timestamp };
+  progress[key] = { level: 1, due: today(), updated: timestamp };
   const day = currentDay(), prior = day.studied[key];
   day.studied[key] = {
     word: word.word, phonetic: word.phonetic || '', part_of_speech: word.part_of_speech || '',
     definition: word.definition, example_sentence: word.example_sentence || '',
     example_translation: word.example_translation || '',
     firstStudiedAt: prior?.firstStudiedAt || timestamp, lastStudiedAt: timestamp,
-    status: remember ? 'remembered' : 'practicing'
+    status: 'learned'
   };
   if (studiedIds(day).length === day.ids.length && !day.completedAt) day.completedAt = timestamp;
   save();
@@ -498,9 +496,11 @@ function senseElement(word, sense) {
   title.textContent = [sense.part_of_speech, sense.phonetic, sense.definition].filter(Boolean).join(' · ');
   const example = document.createElement('p'); example.className = 'example';
   highlightedExample(example, {...word, ...sense});
+  const play = document.createElement('button'); play.type = 'button'; play.className = 'btn light example-sound'; play.textContent = '▶ 播放例句';
+  play.onclick = () => playSentence(sense.example_sentence);
   const translation = document.createElement('p'); translation.className = 'translation';
   translation.textContent = sense.example_translation || '';
-  el.append(title, example, translation);
+  el.append(title, play, example, translation);
   return el;
 }
 function item(word) {
@@ -512,7 +512,7 @@ function item(word) {
   sub.textContent = [word.part_of_speech, word.definition, senses.length > 1 ? `${senses.length} 個詞義` : ''].filter(Boolean).join(' · ');
   info.append(name, sub);
   const tag = document.createElement('span'); tag.className = 'chip';
-  tag.textContent = due(word) ? '待複習' : isObject(progress[getId(word)]) ? '已學習' : '未學習';
+  tag.textContent = learned(word) ? '已學習' : '未學習';
   summary.append(info, tag); el.append(summary);
   // Build expanded examples only when opened: large dictionaries stay responsive.
   el.ontoggle = () => {
@@ -535,15 +535,16 @@ function renderList() {
   $('#loadmore').classList.toggle('hidden', visible.length >= arr.length);
 }
 function renderReview() {
-  const arr = words.filter(due);
-  $('#reviewlist').replaceChildren(...(arr.length ? arr.map(item) : [empty('目前沒有待複習單字')]));
+  const stamp = word => String(progress[getId(word)]?.updated || '');
+  const arr = words.filter(learned).sort((a, b) => stamp(b).localeCompare(stamp(a)));
+  $('#reviewlist').replaceChildren(...(arr.length ? arr.map(item) : [empty('還沒有已學習的單字')]));
 }
 function historyWord(record) {
   const el = document.createElement('div'); el.className = 'history-word';
   const head = document.createElement('div'); head.className = 'history-word-head';
   const name = document.createElement('strong'); name.textContent = record.word;
   const tag = document.createElement('span'); tag.className = 'chip';
-  tag.textContent = record.status === 'remembered' ? '已經記住' : '還不熟悉';
+  tag.textContent = '已學習';
   head.append(name, tag); el.append(head);
   [[record.part_of_speech, record.definition].filter(Boolean).join(' · '), record.example_sentence, record.example_translation].forEach((value, position) => {
     if (!value) return;
@@ -554,8 +555,8 @@ function historyWord(record) {
   });
   return el;
 }
-const EXAM_QUOTAS = { today: 10, previous: 10, wrong: 10, fill: 10 };
-const SOURCE_LABELS = { today: '今天學習', previous: '上次學過且尚未測驗', wrong: '答錯待複習', fill: '句子填空' };
+const EXAM_QUOTAS = { today: 20, previous: 5, wrong: 5, fill: 10 };
+const SOURCE_LABELS = { today: '今日已學習', previous: '已學習・尚未測驗', wrong: '已測驗但答錯', fill: '句子填空' };
 const EXAMPLE_PHRASES = {
   accomplish: 'accomplished her goal', analyze: 'analyze the results', approach: 'approach to this problem',
   benefit: 'health benefits', consequence: 'serious consequences', demonstrate: 'demonstrates the effect',
@@ -640,7 +641,8 @@ function quizPools() {
   const todayDay = journal.days[today()];
   const todayIds = validDay(todayDay) ? studiedIds(todayDay) : [];
   const previousDate = Object.keys(journal.days).filter(date => date < today() && validDay(journal.days[date]) && studiedIds(journal.days[date]).length).sort().pop();
-  const previousIds = previousDate ? studiedIds(journal.days[previousDate]).filter(id => !testedBefore(id)) : [];
+  // Any learned word that has never been quizzed (not only the previous day's words).
+  const previousIds = [...everStudiedIds()].filter(id => !testedBefore(id));
   const resolve = ids => ids.map(id => byId.get(id)).filter(Boolean);
   const wrong = words.filter(word => (quizResults[getId(word)]?.wrongCount || 0) > 0 && quizResults[getId(word)]?.lastCorrect !== true);
   return { today: resolve(todayIds), previous: resolve(previousIds), wrong, previousDate };
@@ -664,7 +666,7 @@ function buildExam() {
   ['previous','wrong','today'].forEach(group => {
     const candidates=shuffle(pools[group].filter(word => !used.has(getId(word)) && eligible(word)));
     if(group!=='today') candidates.sort((a,b)=>Number(todayIds.has(getId(a)))-Number(todayIds.has(getId(b))));
-    selected[group] = candidates.slice(0,10);
+    selected[group] = candidates.slice(0,EXAM_QUOTAS[group]);
     selected[group].forEach(word => used.add(getId(word)));
   });
   const choices = [];
@@ -700,7 +702,7 @@ function renderQuiz() {
   text('#examdate', today().replaceAll('-',' / '));
   text('#examprogress', `已答 ${summary.answered} / ${summary.total} 題`);
   text('#examscore', `得分 ${summary.score} / ${summary.max}`);
-  text('#examnotice', summary.full ? '作答會自動儲存，可稍後繼續。' : `練習卷：共 ${summary.total} 題，滿分 ${summary.max} 分（不是百分制）。`);
+  text('#examnotice', (summary.full ? '作答會自動儲存，可稍後繼續。' : `練習卷：共 ${summary.total} 題，滿分 ${summary.max} 分（不是百分制）。`) + ' 抽題規則：今日已學習 20 題、已學習但尚未測驗 5 題、已測驗但答錯 5 題，另加 10 題句子填空。');
   $('#examnotice').classList.toggle('hidden', !!exam);
   $('#startexam').classList.toggle('hidden', !!exam);
   $('#startexam').disabled = !draft.questions.length;
@@ -851,7 +853,7 @@ $('#reveal').onclick = () => {
   $('#answer').classList.toggle('hidden', !show);
   text('#reveal', show ? '隱藏單字中文' : '顯示單字中文');
   $('#reveal').ariaExpanded = String(show);
-  $('#again').classList.toggle('hidden', !show); $('#remember').classList.toggle('hidden', !show);
+  $('#remember').classList.toggle('hidden', !show);
 };
 $('#revealtranslation').onclick = () => {
   if (rollover() || !sequence[index]?.example_translation) return;
@@ -863,7 +865,7 @@ $('#revealtranslation').onclick = () => {
 };
 $('#previous').onclick = () => { if (rollover() || !sequence.length) return; index = (index - 1 + sequence.length) % sequence.length; renderCard(); };
 $('#next').onclick = () => { if (rollover() || !sequence.length) return; index = (index + 1) % sequence.length; renderCard(); };
-$('#again').onclick = () => mark(false); $('#remember').onclick = () => mark(true);
+$('#remember').onclick = () => mark();
 $('#filter').onchange = () => { if (words.length) refresh(); };
 $('#resume').onclick = () => {
   if (!words.length) return;
@@ -892,25 +894,46 @@ function pickVoice() {
 }
 try { window.speechSynthesis?.addEventListener?.('voiceschanged', () => { voiceCache = null; }); } catch { /* ignore */ }
 function audioSlug(text) { return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
-function speakFallback(word) {
-  if (!('speechSynthesis' in window)) return;
-  window.speechSynthesis.cancel(); const speech = new SpeechSynthesisUtterance(word.word);
+// cyrb53 over UTF-16 code units; data-tools/generate_audio.py implements the identical function.
+function textHash(str) {
+  let h1 = 0xdeadbeef, h2 = 0x41c6ce57;
+  for (let i = 0; i < str.length; i++) {
+    const ch = str.charCodeAt(i);
+    h1 = Math.imul(h1 ^ ch, 2654435761); h2 = Math.imul(h2 ^ ch, 1597334677);
+  }
+  h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507); h1 ^= Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+  h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507); h2 ^= Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+  return (4294967296 * (2097151 & h2) + (h1 >>> 0)).toString(16);
+}
+function speakText(text) {
+  if (!text || !('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel(); const speech = new SpeechSynthesisUtterance(text);
   const voice = pickVoice();
   if (voice) speech.voice = voice;
   speech.lang = voice ? voice.lang : 'en-GB'; speech.rate = .85; window.speechSynthesis.speak(speech);
 }
 let currentAudio = null;
+// Prefer the pre-generated neural-voice mp3; fall back to the browser voice if it is missing.
+function playAudio(url, fallbackText) {
+  try { window.speechSynthesis?.cancel?.(); currentAudio?.pause(); } catch { /* ignore */ }
+  if (typeof Audio === 'undefined') { speakText(fallbackText); return; }
+  let fellBack = false;
+  const fallback = () => { if (!fellBack) { fellBack = true; speakText(fallbackText); } };
+  const audio = new Audio(url);
+  currentAudio = audio; audio.onerror = fallback;
+  audio.play().catch(fallback);
+}
+const playWord = text => playAudio(`audio/${audioSlug(text)}.mp3`, text);
+const playSentence = text => { const clean = String(text || '').trim(); if (clean) playAudio(`audio/ex/${textHash(clean)}.mp3`, clean); };
 $('#sound').onclick = () => {
   if (rollover()) return;
   const word = sequence[index]; if (!word) return;
-  try { window.speechSynthesis?.cancel?.(); currentAudio?.pause(); } catch { /* ignore */ }
-  // Prefer the pre-generated neural-voice mp3; fall back to the browser voice if it is missing.
-  if (typeof Audio === 'undefined') { speakFallback(word); return; }
-  let fellBack = false;
-  const fallback = () => { if (!fellBack) { fellBack = true; speakFallback(word); } };
-  const audio = new Audio(`audio/${audioSlug(word.word)}.mp3`);
-  currentAudio = audio; audio.onerror = fallback;
-  audio.play().catch(fallback);
+  playWord(word.word);
+};
+$('#soundexample').onclick = () => {
+  if (rollover()) return;
+  const word = sequence[index]; if (!word) return;
+  playSentence(word.example_sentence);
 };
 $('#newquiz').onclick = nextQuestion;
 $('#startexam').onclick = startExam;
