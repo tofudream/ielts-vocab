@@ -333,8 +333,8 @@
         "additional_examples": [
           {
             "example_sentence": "There is a lot of evidence that stress is partly responsible for disease.",
-            "example_translation": "有很多證指證明壓力是造成疾病的原因之一。",
-            "example_origin": "supplied"
+            "example_translation": "有很多證據表明壓力是造成疾病的原因之一。",
+            "example_origin": "editorial"
           }
         ]
       }
@@ -402,14 +402,14 @@
         "part_of_speech": "noun",
         "definition": "影響，衝擊",
         "example_sentence": "The mining industry's devastating impact on the environment",
-        "example_translation": "採礦業對環境的產生真正影響的領域",
+        "example_translation": "採礦業對環境的破壞性影響",
         "sources": [
           {
             "file": "intermediate",
             "row": 560
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈɪmpækt/",
@@ -551,14 +551,14 @@
         "part_of_speech": "verb",
         "definition": "需要",
         "example_sentence": "If you require further information, you should consult the registrar.",
-        "example_translation": "如果你需要進一步的資訊，應該諮詢序號產生器構。",
+        "example_translation": "如果你需要進一步的資訊，應該諮詢註冊組。",
         "sources": [
           {
             "file": "intermediate",
             "row": 998
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/rɪˈkwaɪə/",
@@ -666,8 +666,8 @@
         "additional_examples": [
           {
             "example_sentence": "Next week, health ministers gather in Amsterdam to agree a strategy for controlling malaria.",
-            "example_translation": "下週，衛生部長們將齊聚阿姆斯特丹，就控制疤疾的戰略達成一致。",
-            "example_origin": "supplied"
+            "example_translation": "下週，衛生部長們將齊聚阿姆斯特丹，就控制瘧疾的策略達成一致。",
+            "example_origin": "editorial"
           }
         ]
       }
@@ -1121,7 +1121,7 @@
         "phonetic": "/əkˈsɛptəbəl/",
         "part_of_speech": "adjective",
         "definition": "受認可的",
-        "example_sentence": "Lt is becoming more acceptable for women to drink alcohol.",
+        "example_sentence": "It is becoming more acceptable for women to drink alcohol.",
         "example_translation": "女性飲酒正越來越被人們所接受。",
         "sources": [
           {
@@ -1129,13 +1129,13 @@
             "row": 11
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/əkˈsɛptəbəl/",
     "part_of_speech": "adjective",
     "definition": "受認可的",
-    "example_sentence": "Lt is becoming more acceptable for women to drink alcohol.",
+    "example_sentence": "It is becoming more acceptable for women to drink alcohol.",
     "example_translation": "女性飲酒正越來越被人們所接受。"
   },
   {
@@ -2248,21 +2248,21 @@
         "part_of_speech": "noun",
         "definition": "成年",
         "example_sentence": "Most people catch the illness before they reach adulthood.",
-        "example_translation": "大多數人在成年之前就婁上了這種疾病。",
+        "example_translation": "大多數人在成年之前就染上了這種疾病。",
         "sources": [
           {
             "file": "elementary",
             "row": 17
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/əˈdəlˌthʊd/",
     "part_of_speech": "noun",
     "definition": "成年",
     "example_sentence": "Most people catch the illness before they reach adulthood.",
-    "example_translation": "大多數人在成年之前就婁上了這種疾病。"
+    "example_translation": "大多數人在成年之前就染上了這種疾病。"
   },
   {
     "word": "advance",
@@ -2644,14 +2644,14 @@
         "part_of_speech": "noun",
         "definition": "年代",
         "example_sentence": "We're living in the digital age.",
-        "example_translation": "我們處在數字時代。",
+        "example_translation": "我們生活在數位時代。",
         "sources": [
           {
             "file": "elementary",
             "row": 33
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/eɪʤ/",
@@ -2716,35 +2716,35 @@
         "part_of_speech": "adjective",
         "definition": "逐漸變老的",
         "example_sentence": "Ageing aircraft need more frequent safety inspections.",
-        "example_translation": "老舊的飛機雪要更頻繁的安全檢查。",
+        "example_translation": "老舊的飛機需要更頻繁的安全檢查。",
         "sources": [
           {
             "file": "elementary",
             "row": 35
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/ˈeɪdʒɪŋ/",
         "part_of_speech": "noun",
         "definition": "老化；衰老",
         "example_sentence": "Her skin showed signs of ageing.",
-        "example_translation": "他的皮膚顯出衰老的跡象。",
+        "example_translation": "她的皮膚顯出衰老的跡象。",
         "sources": [
           {
             "file": "elementary",
             "row": 36
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈeɪdʒɪŋ/",
     "part_of_speech": "adjective",
     "definition": "逐漸變老的",
     "example_sentence": "Ageing aircraft need more frequent safety inspections.",
-    "example_translation": "老舊的飛機雪要更頻繁的安全檢查。"
+    "example_translation": "老舊的飛機需要更頻繁的安全檢查。"
   },
   {
     "word": "agree",
@@ -4651,21 +4651,21 @@
         "part_of_speech": "noun",
         "definition": "軍隊",
         "example_sentence": "He joined the army after leaving school.",
-        "example_translation": "離校後他就人參軍入伍了。",
+        "example_translation": "離校後他就參軍入伍了。",
         "sources": [
           {
             "file": "elementary",
             "row": 76
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈɑrmi/",
     "part_of_speech": "noun",
     "definition": "軍隊",
     "example_sentence": "He joined the army after leaving school.",
-    "example_translation": "離校後他就人參軍入伍了。"
+    "example_translation": "離校後他就參軍入伍了。"
   },
   {
     "word": "arrange",
@@ -5111,21 +5111,21 @@
         "part_of_speech": "adjective",
         "definition": "相關的",
         "example_sentence": "These symptoms are particularly associated with migraine headaches.",
-        "example_translation": "這些症狀尤其與偏頭痛相麗·居里的名字仍然與科學基金有關。",
+        "example_translation": "這些症狀尤其與偏頭痛有關。",
         "sources": [
           {
             "file": "intermediate",
             "row": 106
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/əˈsoʊʃiˌeɪtəd/",
     "part_of_speech": "adjective",
     "definition": "相關的",
     "example_sentence": "These symptoms are particularly associated with migraine headaches.",
-    "example_translation": "這些症狀尤其與偏頭痛相麗·居里的名字仍然與科學基金有關。"
+    "example_translation": "這些症狀尤其與偏頭痛有關。"
   },
   {
     "word": "association",
@@ -5767,14 +5767,14 @@
         "part_of_speech": "noun",
         "definition": "平均數",
         "example_sentence": "Take the average of those ratios and multiply by a hundred.",
-        "example_translation": "先算出那些比率的平均數再乘以。",
+        "example_translation": "先算出那些比率的平均數，再乘以一百。",
         "sources": [
           {
             "file": "elementary",
             "row": 100
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/ˈævərɪʤ/",
@@ -5809,7 +5809,7 @@
     "part_of_speech": "noun",
     "definition": "平均數",
     "example_sentence": "Take the average of those ratios and multiply by a hundred.",
-    "example_translation": "先算出那些比率的平均數再乘以。"
+    "example_translation": "先算出那些比率的平均數，再乘以一百。"
   },
   {
     "word": "avoid",
@@ -6072,7 +6072,7 @@
         "phonetic": "/ˈbæŋkrəpt/",
         "part_of_speech": "adjective",
         "definition": "破產的",
-        "example_sentence": "Lf the firm cannot sell its products, it will go bankrupt.",
+        "example_sentence": "If the firm cannot sell its products, it will go bankrupt.",
         "example_translation": "如果這家公司無法銷售其產品，它將面臨破產。",
         "sources": [
           {
@@ -6080,13 +6080,13 @@
             "row": 126
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈbæŋkrəpt/",
     "part_of_speech": "adjective",
     "definition": "破產的",
-    "example_sentence": "Lf the firm cannot sell its products, it will go bankrupt.",
+    "example_sentence": "If the firm cannot sell its products, it will go bankrupt.",
     "example_translation": "如果這家公司無法銷售其產品，它將面臨破產。"
   },
   {
@@ -6371,14 +6371,14 @@
         "part_of_speech": "verb",
         "definition": "(物質) 呈現……狀態",
         "example_sentence": "Under certain conditions, electrons can behave like waves rather than particles.",
-        "example_translation": "在某種條件下，電子可以作波狀而不是粒子狀運動。",
+        "example_translation": "在某些條件下，電子的行為可以像波，而不像粒子。",
         "sources": [
           {
             "file": "elementary",
             "row": 115
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/bɪˈheɪv/",
@@ -6821,14 +6821,14 @@
         "part_of_speech": "noun",
         "definition": "邊界",
         "example_sentence": "They fled across the border.",
-        "example_translation": "他們飛越了邊界。",
+        "example_translation": "他們越過邊界逃走了。",
         "sources": [
           {
             "file": "elementary",
             "row": 133
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/ˈbɔrdər/",
@@ -6849,7 +6849,7 @@
     "part_of_speech": "noun",
     "definition": "邊界",
     "example_sentence": "They fled across the border.",
-    "example_translation": "他們飛越了邊界。"
+    "example_translation": "他們越過邊界逃走了。"
   },
   {
     "word": "bracket",
@@ -7250,21 +7250,21 @@
         "part_of_speech": "adjective",
         "definition": "官僚的；繁文縟節的",
         "example_sentence": "Diplomats believe that bureaucratic delays are inevitable.",
-        "example_translation": "外交官們認為繁文節造成的延遲是在所難免的。",
+        "example_translation": "外交官們認為繁文縟節造成的延遲在所難免。",
         "sources": [
           {
             "file": "intermediate",
             "row": 143
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˌbjʊrəˈkrætɪk/",
     "part_of_speech": "adjective",
     "definition": "官僚的；繁文縟節的",
     "example_sentence": "Diplomats believe that bureaucratic delays are inevitable.",
-    "example_translation": "外交官們認為繁文節造成的延遲是在所難免的。"
+    "example_translation": "外交官們認為繁文縟節造成的延遲在所難免。"
   },
   {
     "word": "burn",
@@ -7741,21 +7741,21 @@
         "part_of_speech": "noun",
         "definition": "碳排放量",
         "example_sentence": "We all need to look for ways to reduce our carbon footprint.",
-        "example_translation": "我們都需要想方設法降低自已的碳排放量。",
+        "example_translation": "我們都需要想方設法降低自己的碳排放量。",
         "sources": [
           {
             "file": "intermediate",
             "row": 155
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈkɑrbən ˈfʊtˌprɪnt/",
     "part_of_speech": "noun",
     "definition": "碳排放量",
     "example_sentence": "We all need to look for ways to reduce our carbon footprint.",
-    "example_translation": "我們都需要想方設法降低自已的碳排放量。"
+    "example_translation": "我們都需要想方設法降低自己的碳排放量。"
   },
   {
     "word": "carbon neutral",
@@ -7827,21 +7827,21 @@
         "part_of_speech": "phrase",
         "definition": "貫徹，執行",
         "example_sentence": "Zuboff carried out case studies in three paper mills.",
-        "example_translation": "扎波夫在 3 家造紙廠和進行了案例研究。",
+        "example_translation": "扎波夫在 3 家造紙廠進行了案例研究。",
         "sources": [
           {
             "file": "elementary",
             "row": 158
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈkɛri aʊt/",
     "part_of_speech": "phrase",
     "definition": "貫徹，執行",
     "example_sentence": "Zuboff carried out case studies in three paper mills.",
-    "example_translation": "扎波夫在 3 家造紙廠和進行了案例研究。",
+    "example_translation": "扎波夫在 3 家造紙廠進行了案例研究。",
     "forms": [
       "carries out",
       "carrying out",
@@ -8072,21 +8072,21 @@
         "part_of_speech": "noun",
         "definition": "細胞",
         "example_sentence": "Those cells divide and give many other different types of cells.",
-        "example_translation": "那些細胞分裂後形成許多其他不。",
+        "example_translation": "那些細胞分裂後形成許多其他不同類型的細胞。",
         "sources": [
           {
             "file": "intermediate",
             "row": 161
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/sɛl/",
     "part_of_speech": "noun",
     "definition": "細胞",
     "example_sentence": "Those cells divide and give many other different types of cells.",
-    "example_translation": "那些細胞分裂後形成許多其他不。"
+    "example_translation": "那些細胞分裂後形成許多其他不同類型的細胞。"
   },
   {
     "word": "celsius",
@@ -8306,14 +8306,14 @@
         "part_of_speech": "adjective",
         "definition": "某個；某些",
         "example_sentence": "This can create a marked improvement in certain skin conditions.",
-        "example_translation": "這可以顯著改善某些皮膚病注狀。",
+        "example_translation": "這可以顯著改善某些皮膚症狀。",
         "sources": [
           {
             "file": "elementary",
             "row": 169
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈsərtən/",
@@ -8354,7 +8354,7 @@
         "part_of_speech": "noun",
         "definition": "電影片道",
         "example_sentence": "The documentary is on a local television channel.",
-        "example_translation": "這部紀錄片在當地電影片道播出。",
+        "example_translation": "這部紀錄片在當地電視頻道播出。",
         "sources": [
           {
             "file": "elementary",
@@ -8368,7 +8368,7 @@
     "part_of_speech": "noun",
     "definition": "電影片道",
     "example_sentence": "The documentary is on a local television channel.",
-    "example_translation": "這部紀錄片在當地電影片道播出。"
+    "example_translation": "這部紀錄片在當地電視頻道播出。"
   },
   {
     "word": "chapter",
@@ -9173,21 +9173,21 @@
         "part_of_speech": "verb",
         "definition": "分類",
         "example_sentence": "It is necessary initially to classify the headaches into certain types.",
-        "example_translation": "首先，必須將頭痛分為兒個型別。",
+        "example_translation": "首先，必須將頭痛分為幾個類型。",
         "sources": [
           {
             "file": "intermediate",
             "row": 184
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈklæsəˌfaɪ/",
     "part_of_speech": "verb",
     "definition": "分類",
     "example_sentence": "It is necessary initially to classify the headaches into certain types.",
-    "example_translation": "首先，必須將頭痛分為兒個型別。"
+    "example_translation": "首先，必須將頭痛分為幾個類型。"
   },
   {
     "word": "clear",
@@ -9441,14 +9441,14 @@
         "part_of_speech": "noun",
         "definition": "程式碼；符號；密碼",
         "example_sentence": "It will need different microchips to reconvert the digital code back normal TV signals.",
-        "example_translation": "需要這用其他晶片把數字程式碼重新轉換成普通的電視信和號。",
+        "example_translation": "需要用其他晶片把數位編碼重新轉換成普通的電視訊號。",
         "sources": [
           {
             "file": "elementary",
             "row": 198
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/koʊd/",
@@ -9513,21 +9513,21 @@
         "part_of_speech": "verb",
         "definition": "蒐集，收集",
         "example_sentence": "They collected rock samples and fossils.",
-        "example_translation": "他們蒐集了內石樣本和化石標本。",
+        "example_translation": "他們蒐集了岩石樣本和化石標本。",
         "sources": [
           {
             "file": "elementary",
             "row": 200
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/kəˈlɛkt/",
     "part_of_speech": "verb",
     "definition": "蒐集，收集",
     "example_sentence": "They collected rock samples and fossils.",
-    "example_translation": "他們蒐集了內石樣本和化石標本。"
+    "example_translation": "他們蒐集了岩石樣本和化石標本。"
   },
   {
     "word": "collection",
@@ -9537,14 +9537,14 @@
         "part_of_speech": "noun",
         "definition": "收藏品",
         "example_sentence": "The Art Gallery of Ontario has the world's largest collection of sculptures by Henry Moore.",
-        "example_translation": "安大略美術館擁有的亨利 \"摩爾的雕塑收藏品數量居世界之最。",
+        "example_translation": "安大略美術館擁有全世界數量最多的亨利．摩爾雕塑收藏。",
         "sources": [
           {
             "file": "elementary",
             "row": 201
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/kəˈlɛkʃən/",
@@ -9565,7 +9565,7 @@
     "part_of_speech": "noun",
     "definition": "收藏品",
     "example_sentence": "The Art Gallery of Ontario has the world's largest collection of sculptures by Henry Moore.",
-    "example_translation": "安大略美術館擁有的亨利 \"摩爾的雕塑收藏品數量居世界之最。"
+    "example_translation": "安大略美術館擁有全世界數量最多的亨利．摩爾雕塑收藏。"
   },
   {
     "word": "college",
@@ -9885,21 +9885,21 @@
         "part_of_speech": "adverb",
         "definition": "常見地，平凡地",
         "example_sentence": "Depression occurs most commonly in winter.",
-        "example_translation": "抑鬱證通常在冬天最常見。",
+        "example_translation": "憂鬱症最常見於冬季。",
         "sources": [
           {
             "file": "elementary",
             "row": 209
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈkɑmənli/",
     "part_of_speech": "adverb",
     "definition": "常見地，平凡地",
     "example_sentence": "Depression occurs most commonly in winter.",
-    "example_translation": "抑鬱證通常在冬天最常見。"
+    "example_translation": "憂鬱症最常見於冬季。"
   },
   {
     "word": "communicate",
@@ -10115,21 +10115,21 @@
         "part_of_speech": "adjective",
         "definition": "相對而言的",
         "example_sentence": "Those who manage to reach comparative safety",
-        "example_translation": "達到相對安全標準的那些（藥品）",
+        "example_translation": "那些設法抵達相對安全地帶的人",
         "sources": [
           {
             "file": "intermediate",
             "row": 198
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/kəmˈpærətɪv/",
     "part_of_speech": "adjective",
     "definition": "相對而言的",
     "example_sentence": "Those who manage to reach comparative safety",
-    "example_translation": "達到相對安全標準的那些（藥品）"
+    "example_translation": "那些設法抵達相對安全地帶的人"
   },
   {
     "word": "comparatively",
@@ -10235,21 +10235,21 @@
         "part_of_speech": "noun",
         "definition": "競爭",
         "example_sentence": "The farmers have been seeking higher prices as better protection from foreign competition.",
-        "example_translation": "農場主們一直在尋求更高價格保護自己應對外國競和爭。",
+        "example_translation": "農場主們一直在尋求更高的價格，以更好地保護自己免受外國競爭。",
         "sources": [
           {
             "file": "elementary",
             "row": 218
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˌkɑmpəˈtɪʃən/",
     "part_of_speech": "noun",
     "definition": "競爭",
     "example_sentence": "The farmers have been seeking higher prices as better protection from foreign competition.",
-    "example_translation": "農場主們一直在尋求更高價格保護自己應對外國競和爭。"
+    "example_translation": "農場主們一直在尋求更高的價格，以更好地保護自己免受外國競爭。"
   },
   {
     "word": "competitive",
@@ -10872,7 +10872,7 @@
         "phonetic": "/kənˈdɪʃən/",
         "part_of_speech": "noun",
         "definition": "狀況；狀態",
-        "example_sentence": "He remains ina critical condition in a California hospital.",
+        "example_sentence": "He remains in a critical condition in a California hospital.",
         "example_translation": "他在加州一家醫院，情況十分嚴重。",
         "sources": [
           {
@@ -10880,7 +10880,7 @@
             "row": 225
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/kənˈdɪʃən/",
@@ -10914,7 +10914,7 @@
     "phonetic": "/kənˈdɪʃən/",
     "part_of_speech": "noun",
     "definition": "狀況；狀態",
-    "example_sentence": "He remains ina critical condition in a California hospital.",
+    "example_sentence": "He remains in a critical condition in a California hospital.",
     "example_translation": "他在加州一家醫院，情況十分嚴重。"
   },
   {
@@ -10972,7 +10972,7 @@
         "phonetic": "/ˈkɑndəkt/",
         "part_of_speech": "verb",
         "definition": "執行，實施",
-        "example_sentence": "Decided to conduct an experiment.",
+        "example_sentence": "I decided to conduct an experiment.",
         "example_translation": "我決定進行一次實驗。",
         "sources": [
           {
@@ -10980,13 +10980,13 @@
             "row": 225
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈkɑndəkt/",
     "part_of_speech": "verb",
     "definition": "執行，實施",
-    "example_sentence": "Decided to conduct an experiment.",
+    "example_sentence": "I decided to conduct an experiment.",
     "example_translation": "我決定進行一次實驗。"
   },
   {
@@ -11433,21 +11433,21 @@
         "part_of_speech": "noun (uncountable)",
         "definition": "一貫；相符",
         "example_sentence": "He scores goals with remarkable consistency.",
-        "example_translation": "他的進球一氣呵成。",
+        "example_translation": "他進球的穩定性十分出色。",
         "sources": [
           {
             "file": "intermediate",
             "row": 241
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/kənˈsɪstənsi/",
     "part_of_speech": "noun (uncountable)",
     "definition": "一貫；相符",
     "example_sentence": "He scores goals with remarkable consistency.",
-    "example_translation": "他的進球一氣呵成。"
+    "example_translation": "他進球的穩定性十分出色。"
   },
   {
     "word": "consistent",
@@ -11787,21 +11787,21 @@
         "part_of_speech": "noun (uncountable)",
         "definition": "溝通，接觸",
         "example_sentence": "Opposition leaders are denying any contact with the government in Kabul.",
-        "example_translation": "反對派領導人否認與喀布林政府有任何接觸。",
+        "example_translation": "反對派領導人否認與喀布爾的政府有任何接觸。",
         "sources": [
           {
             "file": "intermediate",
             "row": 251
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈkɑnˌtækt/",
     "part_of_speech": "noun (uncountable)",
     "definition": "溝通，接觸",
     "example_sentence": "Opposition leaders are denying any contact with the government in Kabul.",
-    "example_translation": "反對派領導人否認與喀布林政府有任何接觸。"
+    "example_translation": "反對派領導人否認與喀布爾的政府有任何接觸。"
   },
   {
     "word": "contain",
@@ -12581,21 +12581,21 @@
         "part_of_speech": "verb",
         "definition": "轉變",
         "example_sentence": "The signal will be converted into digital code.",
-        "example_translation": "訊號會被轉變為數字程式碼。",
+        "example_translation": "訊號會被轉換成數位編碼。",
         "sources": [
           {
             "file": "intermediate",
             "row": 271
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈkɑnvərt/",
     "part_of_speech": "verb",
     "definition": "轉變",
     "example_sentence": "The signal will be converted into digital code.",
-    "example_translation": "訊號會被轉變為數字程式碼。"
+    "example_translation": "訊號會被轉換成數位編碼。"
   },
   {
     "word": "cool",
@@ -13338,7 +13338,7 @@
         "part_of_speech": "noun",
         "definition": "標準",
         "example_sentence": "The most important criterion for entry is that applicants must design and make their own work.",
-        "example_translation": "最重要的參賽標準是申請者必須設計並製作自已的作品。",
+        "example_translation": "最重要的參賽標準是申請者必須設計並製作自己的作品。",
         "sources": [
           {
             "file": "intermediate",
@@ -13352,7 +13352,7 @@
     "part_of_speech": "noun",
     "definition": "標準",
     "example_sentence": "The most important criterion for entry is that applicants must design and make their own work.",
-    "example_translation": "最重要的參賽標準是申請者必須設計並製作自已的作品。"
+    "example_translation": "最重要的參賽標準是申請者必須設計並製作自己的作品。"
   },
   {
     "word": "critic",
@@ -13530,21 +13530,21 @@
         "part_of_speech": "adjective",
         "definition": "(人群) 擁擠的",
         "example_sentence": "He peered slowly around the small crowded room.",
-        "example_translation": "他慢慢環視這個擁擠的小量。",
+        "example_translation": "他慢慢環視這間擁擠的小房間。",
         "sources": [
           {
             "file": "elementary",
             "row": 273
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈkraʊdɪd/",
     "part_of_speech": "adjective",
     "definition": "(人群) 擁擠的",
     "example_sentence": "He peered slowly around the small crowded room.",
-    "example_translation": "他慢慢環視這個擁擠的小量。"
+    "example_translation": "他慢慢環視這間擁擠的小房間。"
   },
   {
     "word": "cube",
@@ -14539,21 +14539,21 @@
         "part_of_speech": "noun",
         "definition": "法庭辯護",
         "example_sentence": "He has insisted on conducting his own defence.",
-        "example_translation": "他堅持自已進行法庭辯護。",
+        "example_translation": "他堅持自己進行法庭辯護。",
         "sources": [
           {
             "file": "intermediate",
             "row": 308
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/dɪˈfɛns/",
     "part_of_speech": "noun",
     "definition": "法庭辯護",
     "example_sentence": "He has insisted on conducting his own defence.",
-    "example_translation": "他堅持自已進行法庭辯護。"
+    "example_translation": "他堅持自己進行法庭辯護。"
   },
   {
     "word": "defend",
@@ -14587,21 +14587,21 @@
         "part_of_speech": "noun",
         "definition": "被告人",
         "example_sentence": "All six defendants pleaded not guilty to the charges.",
-        "example_translation": "名被告均不承認自已的罪行。",
+        "example_translation": "六名被告均不認罪。",
         "sources": [
           {
             "file": "intermediate",
             "row": 309
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/dɪˈfɛndənt/",
     "part_of_speech": "noun",
     "definition": "被告人",
     "example_sentence": "All six defendants pleaded not guilty to the charges.",
-    "example_translation": "名被告均不承認自已的罪行。"
+    "example_translation": "六名被告均不認罪。"
   },
   {
     "word": "define",
@@ -14634,7 +14634,7 @@
         "phonetic": "/ˈdɛfənət/",
         "part_of_speech": "adjective",
         "definition": "明確的",
-        "example_sentence": "Lt's too soon to give a definite answer.",
+        "example_sentence": "It's too soon to give a definite answer.",
         "example_translation": "要給出一個明確的答覆還為時過早。",
         "sources": [
           {
@@ -14642,13 +14642,13 @@
             "row": 312
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈdɛfənət/",
     "part_of_speech": "adjective",
     "definition": "明確的",
-    "example_sentence": "Lt's too soon to give a definite answer.",
+    "example_sentence": "It's too soon to give a definite answer.",
     "example_translation": "要給出一個明確的答覆還為時過早。"
   },
   {
@@ -14682,22 +14682,22 @@
         "phonetic": "/ˌdɛfəˈnɪʃən/",
         "part_of_speech": "noun",
         "definition": "釋義",
-        "example_sentence": "There is no general agreement on a standard definition of intelligence.“",
-        "example_translation": "智力一詞目前還沒有一個普遍認可的標準釋義",
+        "example_sentence": "There is no general agreement on a standard definition of intelligence.",
+        "example_translation": "智力一詞目前還沒有一個普遍認可的標準定義。",
         "sources": [
           {
             "file": "intermediate",
             "row": 311
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˌdɛfəˈnɪʃən/",
     "part_of_speech": "noun",
     "definition": "釋義",
-    "example_sentence": "There is no general agreement on a standard definition of intelligence.“",
-    "example_translation": "智力一詞目前還沒有一個普遍認可的標準釋義"
+    "example_sentence": "There is no general agreement on a standard definition of intelligence.",
+    "example_translation": "智力一詞目前還沒有一個普遍認可的標準定義。"
   },
   {
     "word": "degree",
@@ -14721,14 +14721,14 @@
         "part_of_speech": "noun",
         "definition": "角度數",
         "example_sentence": "It was pointing outward at an angle of 45 degrees.",
-        "example_translation": "它呈 45 度角的角度向外什。",
+        "example_translation": "它以 45 度角向外指著。",
         "sources": [
           {
             "file": "elementary",
             "row": 306
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/dɪˈgri/",
@@ -14797,21 +14797,21 @@
         "part_of_speech": "adjective",
         "definition": "故意的；審慎的",
         "example_sentence": "Witnesses say the firing was deliberate and sustained.",
-        "example_translation": "目擊者說開槍是某意且持續的。",
+        "example_translation": "目擊者說開槍是蓄意且持續的。",
         "sources": [
           {
             "file": "elementary",
             "row": 308
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/dɪˈlɪbərˌeɪt/",
     "part_of_speech": "adjective",
     "definition": "故意的；審慎的",
     "example_sentence": "Witnesses say the firing was deliberate and sustained.",
-    "example_translation": "目擊者說開槍是某意且持續的。"
+    "example_translation": "目擊者說開槍是蓄意且持續的。"
   },
   {
     "word": "deliberately",
@@ -15652,7 +15652,7 @@
         "phonetic": "/dɪˈvɛləpt/",
         "part_of_speech": "adjective",
         "definition": "（國家）發達的",
-        "example_sentence": "The developed nations have to recognize the growing gap between rich and poor around the wo rid.",
+        "example_sentence": "The developed nations have to recognize the growing gap between rich and poor around the world.",
         "example_translation": "發達國家必須認識到世界範圍內的貧富差距正在不斷擴大。",
         "sources": [
           {
@@ -15660,13 +15660,13 @@
             "row": 337
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/dɪˈvɛləpt/",
     "part_of_speech": "adjective",
     "definition": "（國家）發達的",
-    "example_sentence": "The developed nations have to recognize the growing gap between rich and poor around the wo rid.",
+    "example_sentence": "The developed nations have to recognize the growing gap between rich and poor around the world.",
     "example_translation": "發達國家必須認識到世界範圍內的貧富差距正在不斷擴大。"
   },
   {
@@ -16547,21 +16547,21 @@
         "part_of_speech": "verb",
         "definition": "消失",
         "example_sentence": "The immediate security threat has disappeared.",
-        "example_translation": "迪在屆睫的安全威脅消失了。",
+        "example_translation": "迫在眉睫的安全威脅已經消失。",
         "sources": [
           {
             "file": "elementary",
             "row": 352
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˌdɪsəˈpɪr/",
     "part_of_speech": "verb",
     "definition": "消失",
     "example_sentence": "The immediate security threat has disappeared.",
-    "example_translation": "迪在屆睫的安全威脅消失了。"
+    "example_translation": "迫在眉睫的安全威脅已經消失。"
   },
   {
     "word": "disappearance",
@@ -17668,14 +17668,14 @@
         "part_of_speech": "noun",
         "definition": "戲劇文學",
         "example_sentence": "She met him when she was at drama school.",
-        "example_translation": "地在戲劇學校上學時認識了他。",
+        "example_translation": "她在戲劇學校上學時認識了他。",
         "sources": [
           {
             "file": "elementary",
             "row": 374
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈdrɑmə/",
@@ -18199,7 +18199,7 @@
         "phonetic": "/ɛkəˈlɑʤɪkəl/",
         "part_of_speech": "adjective",
         "definition": "生態的",
-        "example_sentence": "Arge dams have harmed Siberia's delicate ecological balance.",
+        "example_sentence": "Large dams have harmed Siberia's delicate ecological balance.",
         "example_translation": "大型水壩破壞了西伯利亞脆弱的生態平衡。",
         "sources": [
           {
@@ -18207,13 +18207,13 @@
             "row": 384
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ɛkəˈlɑʤɪkəl/",
     "part_of_speech": "adjective",
     "definition": "生態的",
-    "example_sentence": "Arge dams have harmed Siberia's delicate ecological balance.",
+    "example_sentence": "Large dams have harmed Siberia's delicate ecological balance.",
     "example_translation": "大型水壩破壞了西伯利亞脆弱的生態平衡。"
   },
   {
@@ -18487,7 +18487,7 @@
         "phonetic": "/ˈɛdɪtər/",
         "part_of_speech": "noun",
         "definition": "編者",
-        "example_sentence": "[+ of Michael Rosen is the editor of the anthology.",
+        "example_sentence": "Michael Rosen is the editor of the anthology.",
         "example_translation": "邁克爾·羅森是這部文集的編者。",
         "sources": [
           {
@@ -18495,13 +18495,13 @@
             "row": 392
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈɛdɪtər/",
     "part_of_speech": "noun",
     "definition": "編者",
-    "example_sentence": "[+ of Michael Rosen is the editor of the anthology.",
+    "example_sentence": "Michael Rosen is the editor of the anthology.",
     "example_translation": "邁克爾·羅森是這部文集的編者。"
   },
   {
@@ -19376,21 +19376,21 @@
         "part_of_speech": "verb",
         "definition": "強調",
         "example_sentence": "But it's also been emphasized that no major policy changes can be expected.",
-        "example_translation": "但是預計不會出現重大政策變化，這一點也強調過。",
+        "example_translation": "但也有人強調，預計不會有重大的政策改變。",
         "sources": [
           {
             "file": "intermediate",
             "row": 408
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈɛmfəˌsaɪz/",
     "part_of_speech": "verb",
     "definition": "強調",
     "example_sentence": "But it's also been emphasized that no major policy changes can be expected.",
-    "example_translation": "但是預計不會出現重大政策變化，這一點也強調過。"
+    "example_translation": "但也有人強調，預計不會有重大的政策改變。"
   },
   {
     "word": "employ",
@@ -19768,21 +19768,21 @@
         "part_of_speech": "verb",
         "definition": "確保",
         "example_sentence": "Britain's negotiators had ensured that the treaty was a significant change in direction.",
-        "example_translation": "英國的談判代表們已經確認該條約將是方向上的重大改變。",
+        "example_translation": "英國的談判代表已確保該條約成為方向上的重大轉變。",
         "sources": [
           {
             "file": "intermediate",
             "row": 413
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ɪnˈʃʊr/",
     "part_of_speech": "verb",
     "definition": "確保",
     "example_sentence": "Britain's negotiators had ensured that the treaty was a significant change in direction.",
-    "example_translation": "英國的談判代表們已經確認該條約將是方向上的重大改變。"
+    "example_translation": "英國的談判代表已確保該條約成為方向上的重大轉變。"
   },
   {
     "word": "entail",
@@ -19891,7 +19891,7 @@
         "phonetic": "/ɪnˈtaɪərli/",
         "part_of_speech": "adverb",
         "definition": "完全地",
-        "example_sentence": "Theirprice depended almost entirely on their scarcity.",
+        "example_sentence": "Their price depended almost entirely on their scarcity.",
         "example_translation": "它們的價格幾乎完全取決於它們的稀有程度。",
         "sources": [
           {
@@ -19899,13 +19899,13 @@
             "row": 431
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ɪnˈtaɪərli/",
     "part_of_speech": "adverb",
     "definition": "完全地",
-    "example_sentence": "Theirprice depended almost entirely on their scarcity.",
+    "example_sentence": "Their price depended almost entirely on their scarcity.",
     "example_translation": "它們的價格幾乎完全取決於它們的稀有程度。"
   },
   {
@@ -19988,14 +19988,14 @@
         "part_of_speech": "adjective",
         "definition": "相等的",
         "example_sentence": "Investors can borrow an amount equal to the property's purchase price.",
-        "example_translation": "投資者可以借到等同於房價數額的。",
+        "example_translation": "投資者可以借到等同於房價數額的款項。",
         "sources": [
           {
             "file": "elementary",
             "row": 436
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/ˈikwəl/",
@@ -20030,7 +20030,7 @@
     "part_of_speech": "adjective",
     "definition": "相等的",
     "example_sentence": "Investors can borrow an amount equal to the property's purchase price.",
-    "example_translation": "投資者可以借到等同於房價數額的。"
+    "example_translation": "投資者可以借到等同於房價數額的款項。"
   },
   {
     "word": "equality",
@@ -20339,14 +20339,14 @@
         "part_of_speech": "adjective",
         "definition": "必要的，必須的",
         "example_sentence": "Jordan promised to trim the city budget without cutting essential services.",
-        "example_translation": "喬上丹承諾在不減少基本服務的前提下縮減市政預算。",
+        "example_translation": "喬丹承諾在不減少基本服務的前提下縮減市政預算。",
         "sources": [
           {
             "file": "elementary",
             "row": 446
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/ɛˈsɛnʃəl/",
@@ -20367,7 +20367,7 @@
     "part_of_speech": "adjective",
     "definition": "必要的，必須的",
     "example_sentence": "Jordan promised to trim the city budget without cutting essential services.",
-    "example_translation": "喬上丹承諾在不減少基本服務的前提下縮減市政預算。"
+    "example_translation": "喬丹承諾在不減少基本服務的前提下縮減市政預算。"
   },
   {
     "word": "establish",
@@ -20822,7 +20822,7 @@
         "phonetic": "/ɪgˌzæməˈneɪʃən/",
         "part_of_speech": "noun",
         "definition": "檢查：診斷：評估",
-        "example_sentence": "The Navy is to carryout an examination of the wreck tomorrow.",
+        "example_sentence": "The Navy is to carry out an examination of the wreck tomorrow.",
         "example_translation": "海軍明天將對失事船隻進行調查。",
         "sources": [
           {
@@ -20830,13 +20830,13 @@
             "row": 431
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ɪgˌzæməˈneɪʃən/",
     "part_of_speech": "noun",
     "definition": "檢查：診斷：評估",
-    "example_sentence": "The Navy is to carryout an examination of the wreck tomorrow.",
+    "example_sentence": "The Navy is to carry out an examination of the wreck tomorrow.",
     "example_translation": "海軍明天將對失事船隻進行調查。"
   },
   {
@@ -21039,7 +21039,7 @@
         "part_of_speech": "adverb",
         "definition": "過多地，過分地",
         "example_sentence": "Managers are also accused of paying themselves excessively high salaries.",
-        "example_translation": "輿論還指責經理們給自已定薪過高。",
+        "example_translation": "輿論還指責經理們給自己定薪過高。",
         "sources": [
           {
             "file": "intermediate",
@@ -21053,7 +21053,7 @@
     "part_of_speech": "adverb",
     "definition": "過多地，過分地",
     "example_sentence": "Managers are also accused of paying themselves excessively high salaries.",
-    "example_translation": "輿論還指責經理們給自已定薪過高。"
+    "example_translation": "輿論還指責經理們給自己定薪過高。"
   },
   {
     "word": "exchange",
@@ -21532,14 +21532,14 @@
         "part_of_speech": "verb",
         "definition": "解釋；說明",
         "example_sentence": "Not every judge, however, has the ability to explain the law in simple terms.",
-        "example_translation": "然而連法官都無法用簡單的話說明這部法律。",
+        "example_translation": "然而，並非每位法官都有能力用簡單的話說明法律。",
         "sources": [
           {
             "file": "elementary",
             "row": 472
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/ɪkˈspleɪn/",
@@ -21560,7 +21560,7 @@
     "part_of_speech": "verb",
     "definition": "解釋；說明",
     "example_sentence": "Not every judge, however, has the ability to explain the law in simple terms.",
-    "example_translation": "然而連法官都無法用簡單的話說明這部法律。"
+    "example_translation": "然而，並非每位法官都有能力用簡單的話說明法律。"
   },
   {
     "word": "explanation",
@@ -21689,7 +21689,7 @@
         "phonetic": "/ˈɛkspɔrt/",
         "part_of_speech": "verb",
         "definition": "出口",
-        "example_sentence": "The national so exports beef.",
+        "example_sentence": "The country also exports beef.",
         "example_translation": "該國也出口牛肉。",
         "sources": [
           {
@@ -21697,13 +21697,13 @@
             "row": 448
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈɛkspɔrt/",
     "part_of_speech": "verb",
     "definition": "出口",
-    "example_sentence": "The national so exports beef.",
+    "example_sentence": "The country also exports beef.",
     "example_translation": "該國也出口牛肉。"
   },
   {
@@ -21762,21 +21762,21 @@
         "part_of_speech": "noun (uncountable)",
         "definition": "有害接觸",
         "example_sentence": "Exposure to lead is known to damage the brains of young children.",
-        "example_translation": "眾所周知，鉛接觸會傷害幼兒的大腦。",
+        "example_translation": "眾所周知，接觸鉛會損害幼兒的大腦。",
         "sources": [
           {
             "file": "intermediate",
             "row": 451
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ɪkˈspoʊʒər/",
     "part_of_speech": "noun (uncountable)",
     "definition": "有害接觸",
     "example_sentence": "Exposure to lead is known to damage the brains of young children.",
-    "example_translation": "眾所周知，鉛接觸會傷害幼兒的大腦。"
+    "example_translation": "眾所周知，接觸鉛會損害幼兒的大腦。"
   },
   {
     "word": "express",
@@ -24641,14 +24641,14 @@
         "part_of_speech": "adjective",
         "definition": "未來的",
         "example_sentence": "She said if the world did not act conclusively now, it would only bequeath the problem to future generations.",
-        "example_translation": "她說如果人類現在不採取決定性的行動，那就只會把問題留給予孫後代。",
+        "example_translation": "她說如果人類現在不採取決定性的行動，就只會把問題留給子孫後代。",
         "sources": [
           {
             "file": "elementary",
             "row": 547
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/fˈjuʧər/",
@@ -24751,14 +24751,14 @@
         "part_of_speech": "noun",
         "definition": "氣體",
         "example_sentence": "Helium is a very light gas.",
-        "example_translation": "所是一種非常輕的氣體。",
+        "example_translation": "氦是一種非常輕的氣體。",
         "sources": [
           {
             "file": "elementary",
             "row": 551
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/gæs/",
@@ -24927,7 +24927,7 @@
         "phonetic": "/ˈʤɛnərəli/",
         "part_of_speech": "adverb",
         "definition": "通常；一般而言",
-        "example_sentence": "Itis generally true that the darker the fruit the higher its iron content.",
+        "example_sentence": "It is generally true that the darker the fruit the higher its iron content.",
         "example_translation": "顏色越深的水果含鐵量就越高，這通常是真的。",
         "sources": [
           {
@@ -24935,7 +24935,7 @@
             "row": 555
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈʤɛnərəli/",
@@ -24976,14 +24976,14 @@
         "part_of_speech": "noun",
         "definition": "一代人",
         "example_sentence": "David Mamet has long been considered the leading American playwright of his generation.",
-        "example_translation": "戴維馬梅特一直以來被視為同代人中最傑出的美國劇作家。",
+        "example_translation": "戴維．馬梅特一直以來被視為同代人中最傑出的美國劇作家。",
         "sources": [
           {
             "file": "elementary",
             "row": 556
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/ˌʤɛnərˈeɪʃən/",
@@ -25004,7 +25004,7 @@
     "part_of_speech": "noun",
     "definition": "一代人",
     "example_sentence": "David Mamet has long been considered the leading American playwright of his generation.",
-    "example_translation": "戴維馬梅特一直以來被視為同代人中最傑出的美國劇作家。"
+    "example_translation": "戴維．馬梅特一直以來被視為同代人中最傑出的美國劇作家。"
   },
   {
     "word": "geographical",
@@ -25325,22 +25325,22 @@
         "phonetic": "/gloʊb/",
         "part_of_speech": "noun",
         "definition": "全球",
-        "example_sentence": "Anti capitalism protests spanning the globe from Seattle to Genoa",
-        "example_translation": "從西雅圖到熱那亞、遍佈全球的",
+        "example_sentence": "Anti-capitalism protests spanning the globe from Seattle to Genoa",
+        "example_translation": "從西雅圖到熱那亞、遍及全球的反資本主義抗議活動",
         "sources": [
           {
             "file": "intermediate",
             "row": 519
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/gloʊb/",
     "part_of_speech": "noun",
     "definition": "全球",
-    "example_sentence": "Anti capitalism protests spanning the globe from Seattle to Genoa",
-    "example_translation": "從西雅圖到熱那亞、遍佈全球的"
+    "example_sentence": "Anti-capitalism protests spanning the globe from Seattle to Genoa",
+    "example_translation": "從西雅圖到熱那亞、遍及全球的反資本主義抗議活動"
   },
   {
     "word": "glossary",
@@ -26040,14 +26040,14 @@
         "part_of_speech": "verb",
         "definition": "傷害",
         "example_sentence": "The hijackers seemed anxious not to harm anyone.",
-        "example_translation": "動機者似乎很緊張，不想傷害任何人。",
+        "example_translation": "劫機者似乎很緊張，不想傷害任何人。",
         "sources": [
           {
             "file": "elementary",
             "row": 582
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/hɑrm/",
@@ -26068,7 +26068,7 @@
     "part_of_speech": "verb",
     "definition": "傷害",
     "example_sentence": "The hijackers seemed anxious not to harm anyone.",
-    "example_translation": "動機者似乎很緊張，不想傷害任何人。"
+    "example_translation": "劫機者似乎很緊張，不想傷害任何人。"
   },
   {
     "word": "harmful",
@@ -26078,21 +26078,21 @@
         "part_of_speech": "adjective",
         "definition": "有害的",
         "example_sentence": "The chemical is potentially harmful to fish.",
-        "example_translation": "這種化學物質對魚類有洪在危害。",
+        "example_translation": "這種化學物質對魚類有潛在危害。",
         "sources": [
           {
             "file": "elementary",
             "row": 584
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈhɑrmfəl/",
     "part_of_speech": "adjective",
     "definition": "有害的",
     "example_sentence": "The chemical is potentially harmful to fish.",
-    "example_translation": "這種化學物質對魚類有洪在危害。"
+    "example_translation": "這種化學物質對魚類有潛在危害。"
   },
   {
     "word": "harmless",
@@ -26102,21 +26102,21 @@
         "part_of_speech": "adjective",
         "definition": "無害的",
         "example_sentence": "Scientists are trying to develop harmless substitutes for these gases.",
-        "example_translation": "科學家們正在努力開發蔡代這些氣體的無害物質。",
+        "example_translation": "科學家們正在努力開發這些氣體的無害替代物質。",
         "sources": [
           {
             "file": "elementary",
             "row": 585
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈhɑːmləs/",
     "part_of_speech": "adjective",
     "definition": "無害的",
     "example_sentence": "Scientists are trying to develop harmless substitutes for these gases.",
-    "example_translation": "科學家們正在努力開發蔡代這些氣體的無害物質。"
+    "example_translation": "科學家們正在努力開發這些氣體的無害替代物質。"
   },
   {
     "word": "harsh",
@@ -26198,21 +26198,21 @@
         "part_of_speech": "noun",
         "definition": "健康",
         "example_sentence": "Salty food is bad for your health.",
-        "example_translation": "成的食物對你的健康有害。",
+        "example_translation": "鹹的食物對你的健康有害。",
         "sources": [
           {
             "file": "elementary",
             "row": 587
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/hɛlθ/",
     "part_of_speech": "noun",
     "definition": "健康",
     "example_sentence": "Salty food is bad for your health.",
-    "example_translation": "成的食物對你的健康有害。"
+    "example_translation": "鹹的食物對你的健康有害。"
   },
   {
     "word": "healthily",
@@ -26548,21 +26548,21 @@
         "part_of_speech": "noun",
         "definition": "高等教育",
         "example_sentence": "The government wants more young people to go into higher education.",
-        "example_translation": "政府想讓更多的年經人接受高等教育。",
+        "example_translation": "政府想讓更多的年輕人接受高等教育。",
         "sources": [
           {
             "file": "elementary",
             "row": 595
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/haɪər ˌɛʤəˈkeɪʃən/",
     "part_of_speech": "noun",
     "definition": "高等教育",
     "example_sentence": "The government wants more young people to go into higher education.",
-    "example_translation": "政府想讓更多的年經人接受高等教育。"
+    "example_translation": "政府想讓更多的年輕人接受高等教育。"
   },
   {
     "word": "highlight",
@@ -27094,14 +27094,14 @@
         "part_of_speech": "noun",
         "definition": "觀念；看法",
         "example_sentence": "Some of his ideas about democracy are entirely his own.",
-        "example_translation": "他對民主的一些觀唸完全是個人的。",
+        "example_translation": "他對民主的一些觀念完全是個人的。",
         "sources": [
           {
             "file": "elementary",
             "row": 609
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/aɪˈdiə/",
@@ -27338,14 +27338,14 @@
         "part_of_speech": "verb",
         "definition": "不理會；忽視",
         "example_sentence": "She ignored legal advice to drop the case.",
-        "example_translation": "她沒有理皮律師關於放棄訴訟的建議。",
+        "example_translation": "她沒有理睬律師關於放棄訴訟的建議。",
         "sources": [
           {
             "file": "elementary",
             "row": 613
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/ˌɪgˈnɔr/",
@@ -27366,7 +27366,7 @@
     "part_of_speech": "verb",
     "definition": "不理會；忽視",
     "example_sentence": "She ignored legal advice to drop the case.",
-    "example_translation": "她沒有理皮律師關於放棄訴訟的建議。"
+    "example_translation": "她沒有理睬律師關於放棄訴訟的建議。"
   },
   {
     "word": "illegal",
@@ -28220,21 +28220,21 @@
         "part_of_speech": "noun",
         "definition": "納入",
         "example_sentence": "His performance justified his inclusion in the team.",
-        "example_translation": "他的表現證明他有資格加入該了從。",
+        "example_translation": "他的表現證明他有資格入選該隊。",
         "sources": [
           {
             "file": "elementary",
             "row": 628
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˌɪnˈkluʒən/",
     "part_of_speech": "noun",
     "definition": "納入",
     "example_sentence": "His performance justified his inclusion in the team.",
-    "example_translation": "他的表現證明他有資格加入該了從。"
+    "example_translation": "他的表現證明他有資格入選該隊。"
   },
   {
     "word": "income",
@@ -28268,21 +28268,21 @@
         "part_of_speech": "noun",
         "definition": "不一致",
         "example_sentence": "A series of inconsistencies in the data",
-        "example_translation": "資料中的多處不一致+",
+        "example_translation": "資料中有多處不一致。",
         "sources": [
           {
             "file": "intermediate",
             "row": 578
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˌɪnkənˈsɪstənsi/",
     "part_of_speech": "noun",
     "definition": "不一致",
     "example_sentence": "A series of inconsistencies in the data",
-    "example_translation": "資料中的多處不一致+"
+    "example_translation": "資料中有多處不一致。"
   },
   {
     "word": "inconsistent",
@@ -29274,21 +29274,21 @@
         "part_of_speech": "verb",
         "definition": "居住；棲息",
         "example_sentence": "The valley is inhabited by the Dani tribe.",
-        "example_translation": "山谷里居住著達尼部落。",
+        "example_translation": "山谷裡居住著達尼部落。",
         "sources": [
           {
             "file": "intermediate",
             "row": 601
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˌɪnˈhæbət/",
     "part_of_speech": "verb",
     "definition": "居住；棲息",
     "example_sentence": "The valley is inhabited by the Dani tribe.",
-    "example_translation": "山谷里居住著達尼部落。"
+    "example_translation": "山谷裡居住著達尼部落。"
   },
   {
     "word": "inhabitants",
@@ -29418,21 +29418,21 @@
         "part_of_speech": "noun",
         "definition": "傷害",
         "example_sentence": "Four police officers sustained serious injuries in the explosion.",
-        "example_translation": "名警察在這場爆炸中受了重傷。",
+        "example_translation": "四名警察在這場爆炸中受了重傷。",
         "sources": [
           {
             "file": "elementary",
             "row": 652
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈɪnʤəri/",
     "part_of_speech": "noun",
     "definition": "傷害",
     "example_sentence": "Four police officers sustained serious injuries in the explosion.",
-    "example_translation": "名警察在這場爆炸中受了重傷。"
+    "example_translation": "四名警察在這場爆炸中受了重傷。"
   },
   {
     "word": "inner",
@@ -29791,7 +29791,7 @@
         "phonetic": "/ˌɪnˈstɪŋktɪv/",
         "part_of_speech": "adjective",
         "definition": "直覺的，本能的",
-        "example_sentence": "Ms Senator ova showed an instinctive feel for market economics.",
+        "example_sentence": "Ms Senatorova showed an instinctive feel for market economics.",
         "example_translation": "謝納託羅娃女士對市場經濟學有一種天生的敏感。",
         "sources": [
           {
@@ -29799,13 +29799,13 @@
             "row": 616
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˌɪnˈstɪŋktɪv/",
     "part_of_speech": "adjective",
     "definition": "直覺的，本能的",
-    "example_sentence": "Ms Senator ova showed an instinctive feel for market economics.",
+    "example_sentence": "Ms Senatorova showed an instinctive feel for market economics.",
     "example_translation": "謝納託羅娃女士對市場經濟學有一種天生的敏感。"
   },
   {
@@ -30056,21 +30056,21 @@
         "part_of_speech": "verb",
         "definition": "打算；意圖",
         "example_sentence": "I didn't intend coming to Germany to work.",
-        "example_translation": "我原沒打算來德國工作。",
+        "example_translation": "我原本沒打算來德國工作。",
         "sources": [
           {
             "file": "intermediate",
             "row": 624
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˌɪnˈtɛnd/",
     "part_of_speech": "verb",
     "definition": "打算；意圖",
     "example_sentence": "I didn't intend coming to Germany to work.",
-    "example_translation": "我原沒打算來德國工作。"
+    "example_translation": "我原本沒打算來德國工作。"
   },
   {
     "word": "intense",
@@ -30688,21 +30688,21 @@
         "part_of_speech": "verb",
         "definition": "使不成立",
         "example_sentence": "Any form of physical activity will invalidate the results.",
-        "example_translation": "任何形式的體育活動都會證明這些結果不成立。",
+        "example_translation": "任何形式的體育活動都會使這些結果無效。",
         "sources": [
           {
             "file": "intermediate",
             "row": 644
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˌɪnˈvælɪˌdeɪt/",
     "part_of_speech": "verb",
     "definition": "使不成立",
     "example_sentence": "Any form of physical activity will invalidate the results.",
-    "example_translation": "任何形式的體育活動都會證明這些結果不成立。"
+    "example_translation": "任何形式的體育活動都會使這些結果無效。"
   },
   {
     "word": "invent",
@@ -30783,22 +30783,22 @@
         "phonetic": "/ˌɪnˈvɛstəˌgeɪt/",
         "part_of_speech": "verb",
         "definition": "調查",
-        "example_sentence": "Research in Oxford is now investigating a",
-        "example_translation": "正在調查子宮內膜異位症與免疫系統之間可能存在的聯絡",
+        "example_sentence": "Research in Oxford is now investigating a possible link between endometriosis and the immune system.",
+        "example_translation": "牛津的研究目前正在調查子宮內膜異位症與免疫系統之間可能存在的關聯。",
         "sources": [
           {
             "file": "intermediate",
             "row": 648
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˌɪnˈvɛstəˌgeɪt/",
     "part_of_speech": "verb",
     "definition": "調查",
-    "example_sentence": "Research in Oxford is now investigating a",
-    "example_translation": "正在調查子宮內膜異位症與免疫系統之間可能存在的聯絡"
+    "example_sentence": "Research in Oxford is now investigating a possible link between endometriosis and the immune system.",
+    "example_translation": "牛津的研究目前正在調查子宮內膜異位症與免疫系統之間可能存在的關聯。"
   },
   {
     "word": "investigation",
@@ -31254,21 +31254,21 @@
         "part_of_speech": "noun",
         "definition": "法官",
         "example_sentence": "The judge adjourned the hearing until next Tuesday.",
-        "example_translation": "法官宣佈休許至下週二再審。",
+        "example_translation": "法官宣布休庭，下週二再審。",
         "sources": [
           {
             "file": "elementary",
             "row": 677
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ʤəʤ/",
     "part_of_speech": "noun",
     "definition": "法官",
     "example_sentence": "The judge adjourned the hearing until next Tuesday.",
-    "example_translation": "法官宣佈休許至下週二再審。"
+    "example_translation": "法官宣布休庭，下週二再審。"
   },
   {
     "word": "jury",
@@ -31302,21 +31302,21 @@
         "part_of_speech": "noun (uncountable)",
         "definition": "公正",
         "example_sentence": "He has a good overall sense of justice and fairness.",
-        "example_translation": "他極富正義感和公平意2731識。",
+        "example_translation": "他極富正義感和公平意識。",
         "sources": [
           {
             "file": "intermediate",
             "row": 658
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈʤəstɪs/",
     "part_of_speech": "noun (uncountable)",
     "definition": "公正",
     "example_sentence": "He has a good overall sense of justice and fairness.",
-    "example_translation": "他極富正義感和公平意2731識。"
+    "example_translation": "他極富正義感和公平意識。"
   },
   {
     "word": "justification",
@@ -31903,21 +31903,21 @@
         "part_of_speech": "phrasal verb",
         "definition": "導致；造成",
         "example_sentence": "He warned yesterday that a pay rise for teachers would lead to job cuts.",
-        "example_translation": "他上昨天警告稱教師工資上漲會導致戴員。",
+        "example_translation": "他昨天警告說，教師加薪會導致裁員。",
         "sources": [
           {
             "file": "elementary",
             "row": 697
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈliːd tuː/",
     "part_of_speech": "phrasal verb",
     "definition": "導致；造成",
     "example_sentence": "He warned yesterday that a pay rise for teachers would lead to job cuts.",
-    "example_translation": "他上昨天警告稱教師工資上漲會導致戴員。",
+    "example_translation": "他昨天警告說，教師加薪會導致裁員。",
     "forms": [
       "leads to",
       "leading to",
@@ -32161,7 +32161,7 @@
         "phonetic": "/ˈligəli/",
         "part_of_speech": "adverb",
         "definition": "法律上，合法地",
-        "example_sentence": "Alorry driver can legally work eighty-two hours a week.",
+        "example_sentence": "A lorry driver can legally work eighty-two hours a week.",
         "example_translation": "貨車司機每週法定工作時長為 82 小時。",
         "sources": [
           {
@@ -32169,13 +32169,13 @@
             "row": 702
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈligəli/",
     "part_of_speech": "adverb",
     "definition": "法律上，合法地",
-    "example_sentence": "Alorry driver can legally work eighty-two hours a week.",
+    "example_sentence": "A lorry driver can legally work eighty-two hours a week.",
     "example_translation": "貨車司機每週法定工作時長為 82 小時。"
   },
   {
@@ -32808,14 +32808,14 @@
         "part_of_speech": "verb",
         "definition": "聯絡起來",
         "example_sentence": "The study further strengthens the evidence linking smoking with early death.",
-        "example_translation": "該項研究進一步補充了吸菸和早亡關聯的證指。",
+        "example_translation": "該項研究進一步補充了吸菸與早亡之間關聯的證據。",
         "sources": [
           {
             "file": "elementary",
             "row": 719
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/lɪŋk/",
@@ -33134,14 +33134,14 @@
         "part_of_speech": "adverb",
         "definition": "長時間地；多久",
         "example_sentence": "How long have you lived around here?",
-        "example_translation": "你住在附近多久了 9?",
+        "example_translation": "你住在附近多久了？",
         "sources": [
           {
             "file": "elementary",
             "row": 728
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/lɔŋ/",
@@ -33162,7 +33162,7 @@
     "part_of_speech": "adverb",
     "definition": "長時間地；多久",
     "example_sentence": "How long have you lived around here?",
-    "example_translation": "你住在附近多久了 9?"
+    "example_translation": "你住在附近多久了？"
   },
   {
     "word": "long-term",
@@ -33922,14 +33922,14 @@
         "part_of_speech": "verb",
         "definition": "營銷，推廣",
         "example_sentence": "The soap is marketed as an anti-acne product.",
-        "example_translation": "這款肥皂是作為抗間產品銷售的。",
+        "example_translation": "這款肥皂是作為抗痘產品銷售的。",
         "sources": [
           {
             "file": "elementary",
             "row": 752
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈmɑrkɪt/",
@@ -34605,7 +34605,7 @@
         "phonetic": "/mɛlt/",
         "part_of_speech": "verb",
         "definition": "融化",
-        "example_sentence": "Theworld's glaciers are melting away.",
+        "example_sentence": "The world's glaciers are melting away.",
         "example_translation": "全球的冰川在逐漸消融。",
         "sources": [
           {
@@ -34613,13 +34613,13 @@
             "row": 775
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/mɛlt/",
     "part_of_speech": "verb",
     "definition": "融化",
-    "example_sentence": "Theworld's glaciers are melting away.",
+    "example_sentence": "The world's glaciers are melting away.",
     "example_translation": "全球的冰川在逐漸消融。"
   },
   {
@@ -34812,21 +34812,21 @@
         "part_of_speech": "noun",
         "definition": "金屬",
         "example_sentence": "The roof is made of corrugated sheet metal.",
-        "example_translation": "屋頂由波紋人金屬板製成。",
+        "example_translation": "屋頂由波紋金屬板製成。",
         "sources": [
           {
             "file": "elementary",
             "row": 781
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈmɛtəl/",
     "part_of_speech": "noun",
     "definition": "金屬",
     "example_sentence": "The roof is made of corrugated sheet metal.",
-    "example_translation": "屋頂由波紋人金屬板製成。"
+    "example_translation": "屋頂由波紋金屬板製成。"
   },
   {
     "word": "metallic",
@@ -35775,7 +35775,7 @@
         "phonetic": "/ˌmoʊtəˈveɪʃən/",
         "part_of_speech": "noun (uncountable)",
         "definition": "動力，動機",
-        "example_sentence": "His poor performance maybe attributed to lack of motivation.",
+        "example_sentence": "His poor performance may be attributed to lack of motivation.",
         "example_translation": "他表現糟糕可能是由於缺乏動力。",
         "sources": [
           {
@@ -35783,13 +35783,13 @@
             "row": 734
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˌmoʊtəˈveɪʃən/",
     "part_of_speech": "noun (uncountable)",
     "definition": "動力，動機",
-    "example_sentence": "His poor performance maybe attributed to lack of motivation.",
+    "example_sentence": "His poor performance may be attributed to lack of motivation.",
     "example_translation": "他表現糟糕可能是由於缺乏動力。"
   },
   {
@@ -35800,21 +35800,21 @@
         "part_of_speech": "noun",
         "definition": "(英) 司機",
         "example_sentence": "Two-thirds (66.3%) of motorists were driving at, or above, the speed limit.",
-        "example_translation": "三分之二 (66.3%) 的司機在駕駛時會超速。",
+        "example_translation": "三分之二（66.3%）的駕駛人時速達到或超過速限。",
         "sources": [
           {
             "file": "elementary",
             "row": 801
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈmoʊtərɪst/",
     "part_of_speech": "noun",
     "definition": "(英) 司機",
     "example_sentence": "Two-thirds (66.3%) of motorists were driving at, or above, the speed limit.",
-    "example_translation": "三分之二 (66.3%) 的司機在駕駛時會超速。"
+    "example_translation": "三分之二（66.3%）的駕駛人時速達到或超過速限。"
   },
   {
     "word": "mountain",
@@ -36551,7 +36551,7 @@
         "phonetic": "/nɪˌɡoʊʃiˈeɪʃən/",
         "part_of_speech": "noun",
         "definition": "談判",
-        "example_sentence": "We have had meaningful negotiations and I believe wear every close to a deal.",
+        "example_sentence": "We have had meaningful negotiations and I believe we're very close to a deal.",
         "example_translation": "我們進行了有意義的談判，我相信我們已經非常接近達成協議。",
         "sources": [
           {
@@ -36559,13 +36559,13 @@
             "row": 744
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/nɪˌɡoʊʃiˈeɪʃən/",
     "part_of_speech": "noun",
     "definition": "談判",
-    "example_sentence": "We have had meaningful negotiations and I believe wear every close to a deal.",
+    "example_sentence": "We have had meaningful negotiations and I believe we're very close to a deal.",
     "example_translation": "我們進行了有意義的談判，我相信我們已經非常接近達成協議。"
   },
   {
@@ -36686,14 +36686,14 @@
         "part_of_speech": "verb",
         "definition": "築巢",
         "example_sentence": "Some species may nest in close proximity to each other.",
-        "example_translation": "一些鳥類可能彼此緊挨著築復。",
+        "example_translation": "一些鳥類可能彼此緊挨著築巢。",
         "sources": [
           {
             "file": "elementary",
             "row": 827
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/nɛst/",
@@ -37341,7 +37341,7 @@
         "phonetic": "/ɑˈbʤɛktɪvli/",
         "part_of_speech": "adverb",
         "definition": "客觀地",
-        "example_sentence": "We simply want to in form people objectively about events.",
+        "example_sentence": "We simply want to inform people objectively about events.",
         "example_translation": "我們只是想如實地向人們通報事件情況。",
         "sources": [
           {
@@ -37349,13 +37349,13 @@
             "row": 765
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ɑˈbʤɛktɪvli/",
     "part_of_speech": "adverb",
     "definition": "客觀地",
-    "example_sentence": "We simply want to in form people objectively about events.",
+    "example_sentence": "We simply want to inform people objectively about events.",
     "example_translation": "我們只是想如實地向人們通報事件情況。"
   },
   {
@@ -37389,7 +37389,7 @@
         "phonetic": "/əˈblɪgəˌtɔri/",
         "part_of_speech": "adjective",
         "definition": "強制的",
-        "example_sentence": "Most women will be offered an ultrasounds can during pregnancy, although it's not obligatory.",
+        "example_sentence": "Most women will be offered an ultrasound scan during pregnancy, although it's not obligatory.",
         "example_translation": "大多數女性在懷孕期間會接受超聲波掃描，儘管這不是強制性的。",
         "sources": [
           {
@@ -37397,13 +37397,13 @@
             "row": 767
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/əˈblɪgəˌtɔri/",
     "part_of_speech": "adjective",
     "definition": "強制的",
-    "example_sentence": "Most women will be offered an ultrasounds can during pregnancy, although it's not obligatory.",
+    "example_sentence": "Most women will be offered an ultrasound scan during pregnancy, although it's not obligatory.",
     "example_translation": "大多數女性在懷孕期間會接受超聲波掃描，儘管這不是強制性的。"
   },
   {
@@ -37558,21 +37558,21 @@
         "part_of_speech": "noun",
         "definition": "場合",
         "example_sentence": "The team repeated the experiment on three separate occasions, with the same results.",
-        "example_translation": "研究小組在 3 個不同的場合重複了這實驗個，結果都是一樣的。",
+        "example_translation": "研究小組在 3 個不同場合重複了這個實驗，結果都是一樣的。",
         "sources": [
           {
             "file": "elementary",
             "row": 841
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/əˈkeɪʒən/",
     "part_of_speech": "noun",
     "definition": "場合",
     "example_sentence": "The team repeated the experiment on three separate occasions, with the same results.",
-    "example_translation": "研究小組在 3 個不同的場合重複了這實驗個，結果都是一樣的。"
+    "example_translation": "研究小組在 3 個不同場合重複了這個實驗，結果都是一樣的。"
   },
   {
     "word": "occupant",
@@ -39375,7 +39375,7 @@
         "part_of_speech": "adjective",
         "definition": "議會的，議員的",
         "example_sentence": "He used his influence to make sure she was not selected as a parliamentary candidate.",
-        "example_translation": "他利用自已的影響力確保她不會被選為議員候選人。",
+        "example_translation": "他利用自己的影響力確保她不會被選為議員候選人。",
         "sources": [
           {
             "file": "intermediate",
@@ -39389,7 +39389,7 @@
     "part_of_speech": "adjective",
     "definition": "議會的，議員的",
     "example_sentence": "He used his influence to make sure she was not selected as a parliamentary candidate.",
-    "example_translation": "他利用自已的影響力確保她不會被選為議員候選人。"
+    "example_translation": "他利用自己的影響力確保她不會被選為議員候選人。"
   },
   {
     "word": "part",
@@ -40089,7 +40089,7 @@
         "part_of_speech": "noun",
         "definition": "表演",
         "example_sentence": "Inside the theatre, they were giving a performance of Bizet’s Carmen.",
-        "example_translation": "在劇院裡，他們正在演出比才的作品 《卡門》。",
+        "example_translation": "在劇院裡，他們正在演出比才的作品《卡門》。",
         "sources": [
           {
             "file": "elementary",
@@ -40117,7 +40117,7 @@
     "part_of_speech": "noun",
     "definition": "表演",
     "example_sentence": "Inside the theatre, they were giving a performance of Bizet’s Carmen.",
-    "example_translation": "在劇院裡，他們正在演出比才的作品 《卡門》。"
+    "example_translation": "在劇院裡，他們正在演出比才的作品《卡門》。"
   },
   {
     "word": "performer",
@@ -40713,7 +40713,7 @@
         "phonetic": "/paɪ ʧɑrt/",
         "part_of_speech": "noun",
         "definition": "餅狀圖",
-        "example_sentence": "The pie chart above show show much more Britain has saved in shares than bonds.",
+        "example_sentence": "The pie chart above shows how much more Britain has saved in shares than bonds.",
         "example_translation": "上面的餅圖顯示了英國人的儲蓄比債券多了多少份額。",
         "sources": [
           {
@@ -40721,13 +40721,13 @@
             "row": 829
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/paɪ ʧɑrt/",
     "part_of_speech": "noun",
     "definition": "餅狀圖",
-    "example_sentence": "The pie chart above show show much more Britain has saved in shares than bonds.",
+    "example_sentence": "The pie chart above shows how much more Britain has saved in shares than bonds.",
     "example_translation": "上面的餅圖顯示了英國人的儲蓄比債券多了多少份額。"
   },
   {
@@ -40851,22 +40851,22 @@
         "phonetic": "/ˈplænət/",
         "part_of_speech": "noun",
         "definition": "行星",
-        "example_sentence": "The picture shows Six of the nine planets in the solar system.",
-        "example_translation": "這幅圖示示了太陽系九大行星中的 6 顆。",
+        "example_sentence": "The picture shows six of the nine planets in the solar system.",
+        "example_translation": "這幅圖顯示了太陽系九大行星中的 6 顆。",
         "sources": [
           {
             "file": "elementary",
             "row": 924
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈplænət/",
     "part_of_speech": "noun",
     "definition": "行星",
-    "example_sentence": "The picture shows Six of the nine planets in the solar system.",
-    "example_translation": "這幅圖示示了太陽系九大行星中的 6 顆。"
+    "example_sentence": "The picture shows six of the nine planets in the solar system.",
+    "example_translation": "這幅圖顯示了太陽系九大行星中的 6 顆。"
   },
   {
     "word": "planning",
@@ -41134,21 +41134,21 @@
         "part_of_speech": "noun",
         "definition": "詩集",
         "example_sentence": "Russian poetry",
-        "example_translation": "俄羅斯詩集",
+        "example_translation": "俄羅斯詩歌",
         "sources": [
           {
             "file": "elementary",
             "row": 930
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈpoʊətri/",
     "part_of_speech": "noun",
     "definition": "詩集",
     "example_sentence": "Russian poetry",
-    "example_translation": "俄羅斯詩集"
+    "example_translation": "俄羅斯詩歌"
   },
   {
     "word": "point",
@@ -41302,21 +41302,21 @@
         "part_of_speech": "noun",
         "definition": "政治人物",
         "example_sentence": "They have arrested a number of leading opposition politicians.",
-        "example_translation": "他們已經巡捕了數名反對黨政治人物。",
+        "example_translation": "他們已經逮捕了數名反對黨政治人物。",
         "sources": [
           {
             "file": "elementary",
             "row": 937
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˌpɑləˈtɪʃən/",
     "part_of_speech": "noun",
     "definition": "政治人物",
     "example_sentence": "They have arrested a number of leading opposition politicians.",
-    "example_translation": "他們已經巡捕了數名反對黨政治人物。"
+    "example_translation": "他們已經逮捕了數名反對黨政治人物。"
   },
   {
     "word": "politics",
@@ -41570,14 +41570,14 @@
         "part_of_speech": "noun",
         "definition": "位置",
         "example_sentence": "The ship was identified, and its name and position were reported to the coastguard.",
-        "example_translation": "那稻船已被找到，其名字和位置已報告給海岸警衛隊。",
+        "example_translation": "那艘船已被找到，其名字和位置已報告給海岸警衛隊。",
         "sources": [
           {
             "file": "elementary",
             "row": 947
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/pəˈzɪʃən/",
@@ -41598,7 +41598,7 @@
     "part_of_speech": "noun",
     "definition": "位置",
     "example_sentence": "The ship was identified, and its name and position were reported to the coastguard.",
-    "example_translation": "那稻船已被找到，其名字和位置已報告給海岸警衛隊。"
+    "example_translation": "那艘船已被找到，其名字和位置已報告給海岸警衛隊。"
   },
   {
     "word": "positive",
@@ -42615,14 +42615,14 @@
         "part_of_speech": "noun",
         "definition": "總裁，主席",
         "example_sentence": "Alexandre de Merode, the president of the medical commission",
-        "example_translation": "醫務委員會的主席亞歷山大。",
+        "example_translation": "醫務委員會主席亞歷山大．德梅羅德",
         "sources": [
           {
             "file": "elementary",
             "row": 963
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈprɛzɪdənt/",
@@ -43596,14 +43596,14 @@
         "part_of_speech": "adjective",
         "definition": "專業的",
         "example_sentence": "My father wanted me to become a professional and have more stability.",
-        "example_translation": "我父親想讓我成為職業人士，這樣能更移定一些。",
+        "example_translation": "我父親想讓我成為專業人士，這樣會更穩定一些。",
         "sources": [
           {
             "file": "elementary",
             "row": 984
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/prəˈfɛʃənəl/",
@@ -44624,7 +44624,7 @@
         "phonetic": "/ˌsaɪkəˈlɑʤɪkəl/",
         "part_of_speech": "adjective",
         "definition": "心理的",
-        "example_sentence": "Hn received constant physical and psychological abuse from his father.",
+        "example_sentence": "John received constant physical and psychological abuse from his father.",
         "example_translation": "約翰曾常常受到父親的身體虐待和精神虐待。",
         "sources": [
           {
@@ -44632,13 +44632,13 @@
             "row": 914
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˌsaɪkəˈlɑʤɪkəl/",
     "part_of_speech": "adjective",
     "definition": "心理的",
-    "example_sentence": "Hn received constant physical and psychological abuse from his father.",
+    "example_sentence": "John received constant physical and psychological abuse from his father.",
     "example_translation": "約翰曾常常受到父親的身體虐待和精神虐待。"
   },
   {
@@ -45751,21 +45751,21 @@
         "part_of_speech": "verb",
         "definition": "反應；作出回應",
         "example_sentence": "It's natural to react with disbelief if your child is accused of bullying.",
-        "example_translation": "如果你的孩子被指控欺凌，你會很自然地做出不相信的。",
+        "example_translation": "如果你的孩子被指控霸凌，你很自然會感到難以置信。",
         "sources": [
           {
             "file": "intermediate",
             "row": 944
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/riækt/",
     "part_of_speech": "verb",
     "definition": "反應；作出回應",
     "example_sentence": "It's natural to react with disbelief if your child is accused of bullying.",
-    "example_translation": "如果你的孩子被指控欺凌，你會很自然地做出不相信的。"
+    "example_translation": "如果你的孩子被指控霸凌，你很自然會感到難以置信。"
   },
   {
     "word": "reaction",
@@ -46129,14 +46129,14 @@
         "part_of_speech": "verb",
         "definition": "建議",
         "example_sentence": "The judge recommended that he serve 20 years in prison.",
-        "example_translation": "法宮建議判他 20 年有期徒刑。",
+        "example_translation": "法官建議判他 20 年有期徒刑。",
         "sources": [
           {
             "file": "elementary",
             "row": 1032
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˌrɛkəˈmɛnd/",
@@ -47090,7 +47090,7 @@
         "phonetic": "/ˈrɛləvəns/",
         "part_of_speech": "noun (uncountable)",
         "definition": "相關，重要性",
-        "example_sentence": "Politicians ' private lives have no relevance to their public roles.",
+        "example_sentence": "Politicians' private lives have no relevance to their public roles.",
         "example_translation": "政客們的私生活與他們的公共角色沒有任何關係。",
         "sources": [
           {
@@ -47098,13 +47098,13 @@
             "row": 981
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈrɛləvəns/",
     "part_of_speech": "noun (uncountable)",
     "definition": "相關，重要性",
-    "example_sentence": "Politicians ' private lives have no relevance to their public roles.",
+    "example_sentence": "Politicians' private lives have no relevance to their public roles.",
     "example_translation": "政客們的私生活與他們的公共角色沒有任何關係。"
   },
   {
@@ -47426,7 +47426,7 @@
         "phonetic": "/rɪˈmuvəl/",
         "part_of_speech": "noun",
         "definition": "去除",
-        "example_sentence": "The removal of a small lump turned out to be major Surgery.",
+        "example_sentence": "The removal of a small lump turned out to be major surgery.",
         "example_translation": "切除小腫塊的手術最後變成了一次大手術。",
         "sources": [
           {
@@ -47434,13 +47434,13 @@
             "row": 1053
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/rɪˈmuvəl/",
     "part_of_speech": "noun",
     "definition": "去除",
-    "example_sentence": "The removal of a small lump turned out to be major Surgery.",
+    "example_sentence": "The removal of a small lump turned out to be major surgery.",
     "example_translation": "切除小腫塊的手術最後變成了一次大手術。"
   },
   {
@@ -47512,7 +47512,7 @@
         "phonetic": "/rɪˈpit/",
         "part_of_speech": "verb",
         "definition": "重做",
-        "example_sentence": "Hold this position for 30 seconds, release and repeat on the other Side.",
+        "example_sentence": "Hold this position for 30 seconds, release and repeat on the other side.",
         "example_translation": "保持這個姿勢 30 秒鐘，放鬆，然後換另一側重複。",
         "sources": [
           {
@@ -47520,7 +47520,7 @@
             "row": 1055
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/rɪˈpit/",
@@ -47613,21 +47613,21 @@
         "part_of_speech": "verb",
         "definition": "替換；取代",
         "example_sentence": "They were planning to pull down the building and replace it with shops and offices.",
-        "example_translation": "他們正計劃拆除建築物將，其蔡換為商店和辦公室。",
+        "example_translation": "他們正計畫拆除這棟建築物，改建為商店和辦公室。",
         "sources": [
           {
             "file": "elementary",
             "row": 1060
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˌriˈpleɪs/",
     "part_of_speech": "verb",
     "definition": "替換；取代",
     "example_sentence": "They were planning to pull down the building and replace it with shops and offices.",
-    "example_translation": "他們正計劃拆除建築物將，其蔡換為商店和辦公室。"
+    "example_translation": "他們正計畫拆除這棟建築物，改建為商店和辦公室。"
   },
   {
     "word": "replacement",
@@ -47750,7 +47750,7 @@
         "phonetic": "/ˌrɛprɪˈzɛnətɪv/",
         "part_of_speech": "adjective",
         "definition": "代表，典型",
-        "example_sentence": "He was in noway representative of dog-trainers in general.",
+        "example_sentence": "He was in no way representative of dog-trainers in general.",
         "example_translation": "總的來說，他根本不能代表犬類訓練師。",
         "sources": [
           {
@@ -47758,7 +47758,7 @@
             "row": 994
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˌrɛprɪˈzɛnətɪv/",
@@ -48008,15 +48008,15 @@
         "phonetic": "/rɪˈspɛkt/",
         "part_of_speech": "phrase",
         "definition": "方面",
-        "example_sentence": "The children are not unintelligent-in fact, they seem quite normal in this respect.",
-        "example_translation": "孩子們並不笨一事實上，他們在這方面似乎很正常。",
+        "example_sentence": "The children are not unintelligent - in fact, they seem quite normal in this respect.",
+        "example_translation": "孩子們並不笨——事實上，他們在這方面似乎很正常。",
         "sources": [
           {
             "file": "intermediate",
             "row": 1002
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/rɪˈspɛkt/",
@@ -48761,21 +48761,21 @@
         "part_of_speech": "adjective",
         "definition": "富強的",
         "example_sentence": "There is hunger in many parts of the world, even in rich countries.",
-        "example_translation": "飢餓在世界許多地方都存在，甚至一些富強的國家。",
+        "example_translation": "世界許多地方都有飢餓，甚至在一些富裕的國家也是如此。",
         "sources": [
           {
             "file": "elementary",
             "row": 1080
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/rɪʧ/",
     "part_of_speech": "adjective",
     "definition": "富強的",
     "example_sentence": "There is hunger in many parts of the world, even in rich countries.",
-    "example_translation": "飢餓在世界許多地方都存在，甚至一些富強的國家。"
+    "example_translation": "世界許多地方都有飢餓，甚至在一些富裕的國家也是如此。"
   },
   {
     "word": "right",
@@ -49106,21 +49106,21 @@
         "part_of_speech": "noun",
         "definition": "一排，一列",
         "example_sentence": "Several men are pushing school desks and chairs into neat rows.",
-        "example_translation": "兒個男人把課桌和椅子排成整齊的幾列。",
+        "example_translation": "幾個男人把課桌和椅子排成整齊的幾列。",
         "sources": [
           {
             "file": "elementary",
             "row": 1091
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/roʊ/",
     "part_of_speech": "noun",
     "definition": "一排，一列",
     "example_sentence": "Several men are pushing school desks and chairs into neat rows.",
-    "example_translation": "兒個男人把課桌和椅子排成整齊的幾列。"
+    "example_translation": "幾個男人把課桌和椅子排成整齊的幾列。"
   },
   {
     "word": "rule",
@@ -49680,21 +49680,21 @@
         "part_of_speech": "noun",
         "definition": "篩查",
         "example_sentence": "Britain has an enviable record on breast screening for cancer.",
-        "example_translation": "英國在乳腺癌篩查方面有令人美慕的紀錄。",
+        "example_translation": "英國在乳腺癌篩查方面有令人羨慕的紀錄。",
         "sources": [
           {
             "file": "intermediate",
             "row": 1040
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈskrinɪŋ/",
     "part_of_speech": "noun",
     "definition": "篩查",
     "example_sentence": "Britain has an enviable record on breast screening for cancer.",
-    "example_translation": "英國在乳腺癌篩查方面有令人美慕的紀錄。"
+    "example_translation": "英國在乳腺癌篩查方面有令人羨慕的紀錄。"
   },
   {
     "word": "season",
@@ -49703,7 +49703,7 @@
         "phonetic": "/ˈsizən/",
         "part_of_speech": "noun",
         "definition": "季節",
-        "example_sentence": "The climate is characterized by hot summers with a four- month rainy season.",
+        "example_sentence": "The climate is characterized by hot summers with a four-month rainy season.",
         "example_translation": "氣候的主要特點在於夏季炎熱並伴有 4 個月的降雨。",
         "sources": [
           {
@@ -49711,7 +49711,7 @@
             "row": 1104
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/ˈsizən/",
@@ -49731,7 +49731,7 @@
     "phonetic": "/ˈsizən/",
     "part_of_speech": "noun",
     "definition": "季節",
-    "example_sentence": "The climate is characterized by hot summers with a four- month rainy season.",
+    "example_sentence": "The climate is characterized by hot summers with a four-month rainy season.",
     "example_translation": "氣候的主要特點在於夏季炎熱並伴有 4 個月的降雨。"
   },
   {
@@ -49885,7 +49885,7 @@
         "phonetic": "/sɪˈkjʊrəti/",
         "part_of_speech": "noun",
         "definition": "安保措施",
-        "example_sentence": "They are now under a great deal of pressure to tighten their airport Security.",
+        "example_sentence": "They are now under a great deal of pressure to tighten their airport security.",
         "example_translation": "他們現在承受著加強機場安保措施的巨大壓力。",
         "sources": [
           {
@@ -49893,13 +49893,13 @@
             "row": 1108
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/sɪˈkjʊrəti/",
     "part_of_speech": "noun",
     "definition": "安保措施",
-    "example_sentence": "They are now under a great deal of pressure to tighten their airport Security.",
+    "example_sentence": "They are now under a great deal of pressure to tighten their airport security.",
     "example_translation": "他們現在承受著加強機場安保措施的巨大壓力。"
   },
   {
@@ -50404,21 +50404,21 @@
         "part_of_speech": "adjective",
         "definition": "嚴重的",
         "example_sentence": "Crime is an increasingly serious problem in Russian society.",
-        "example_translation": "犯罪正在成為俄羅斯日嚴重益的社會問題。",
+        "example_translation": "犯罪正在成為俄羅斯社會日益嚴重的問題。",
         "sources": [
           {
             "file": "elementary",
             "row": 1122
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈsɪriəs/",
     "part_of_speech": "adjective",
     "definition": "嚴重的",
     "example_sentence": "Crime is an increasingly serious problem in Russian society.",
-    "example_translation": "犯罪正在成為俄羅斯日嚴重益的社會問題。"
+    "example_translation": "犯罪正在成為俄羅斯社會日益嚴重的問題。"
   },
   {
     "word": "seriously",
@@ -50891,14 +50891,14 @@
         "part_of_speech": "noun",
         "definition": "景象",
         "example_sentence": "We encountered the pathetic sight of a family packing up its home.",
-        "example_translation": "我們目睹了一家人正在收拾家當準各離開的悽慘景象。",
+        "example_translation": "我們目睹了一家人正在收拾家當準備離開的悽慘景象。",
         "sources": [
           {
             "file": "elementary",
             "row": 1133
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/saɪt/",
@@ -51158,7 +51158,7 @@
         "phonetic": "/ˌsɪmpləfɪˈkeɪʃən/",
         "part_of_speech": "noun",
         "definition": "簡化",
-        "example_sentence": "Ike any such diagram, it is a simplification.",
+        "example_sentence": "Like any such diagram, it is a simplification.",
         "example_translation": "這種圖表都一樣，是一種簡化形式。",
         "sources": [
           {
@@ -51166,13 +51166,13 @@
             "row": 1072
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˌsɪmpləfɪˈkeɪʃən/",
     "part_of_speech": "noun",
     "definition": "簡化",
-    "example_sentence": "Ike any such diagram, it is a simplification.",
+    "example_sentence": "Like any such diagram, it is a simplification.",
     "example_translation": "這種圖表都一樣，是一種簡化形式。"
   },
   {
@@ -52285,14 +52285,14 @@
         "part_of_speech": "verb",
         "definition": "擴充套件；延伸",
         "example_sentence": "The industrial revolution which started a couple of hundred years ago in Europe is now spreading across the world.",
-        "example_translation": "始於兩百多年前的歐洲工業劃命目前正在向世界各地蔓延。",
+        "example_translation": "始於兩百多年前的歐洲工業革命目前正在向世界各地蔓延。",
         "sources": [
           {
             "file": "elementary",
             "row": 1167
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/sprɛd/",
@@ -52313,7 +52313,7 @@
     "part_of_speech": "verb",
     "definition": "擴充套件；延伸",
     "example_sentence": "The industrial revolution which started a couple of hundred years ago in Europe is now spreading across the world.",
-    "example_translation": "始於兩百多年前的歐洲工業劃命目前正在向世界各地蔓延。"
+    "example_translation": "始於兩百多年前的歐洲工業革命目前正在向世界各地蔓延。"
   },
   {
     "word": "square",
@@ -52433,14 +52433,14 @@
         "part_of_speech": "noun",
         "definition": "全體員工",
         "example_sentence": "The staff were very good.",
-        "example_translation": "全體員工都很稜。",
+        "example_translation": "全體員工都很棒。",
         "sources": [
           {
             "file": "elementary",
             "row": 1170
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/stæf/",
@@ -52461,7 +52461,7 @@
     "part_of_speech": "noun",
     "definition": "全體員工",
     "example_sentence": "The staff were very good.",
-    "example_translation": "全體員工都很稜。"
+    "example_translation": "全體員工都很棒。"
   },
   {
     "word": "stage",
@@ -52738,7 +52738,7 @@
         "phonetic": "/ˈstɛdəli/",
         "part_of_speech": "adverb",
         "definition": "穩定地",
-        "example_sentence": "Verse as student numbers in Britain have been rising steadily for a decade.",
+        "example_sentence": "Overseas student numbers in Britain have been rising steadily for a decade.",
         "example_translation": "赴英的留學生人數在過去十年裡一直在穩步上升。",
         "sources": [
           {
@@ -52746,13 +52746,13 @@
             "row": 1109
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈstɛdəli/",
     "part_of_speech": "adverb",
     "definition": "穩定地",
-    "example_sentence": "Verse as student numbers in Britain have been rising steadily for a decade.",
+    "example_sentence": "Overseas student numbers in Britain have been rising steadily for a decade.",
     "example_translation": "赴英的留學生人數在過去十年裡一直在穩步上升。"
   },
   {
@@ -52873,14 +52873,14 @@
         "part_of_speech": "noun",
         "definition": "階段",
         "example_sentence": "The next step is to put the theory into practice.",
-        "example_translation": "下一階段是要將理論付實踐諸。",
+        "example_translation": "下一步是將理論付諸實踐。",
         "sources": [
           {
             "file": "elementary",
             "row": 1177
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/stɛp/",
@@ -53390,14 +53390,14 @@
         "part_of_speech": "adjective",
         "definition": "強硬的",
         "example_sentence": "There has been strong criticism of the military regime.",
-        "example_translation": "該軍事政權一直受到人們的強烈擇擊。",
+        "example_translation": "該軍事政權一直受到人們的強烈抨擊。",
         "sources": [
           {
             "file": "elementary",
             "row": 1187
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/strɔŋ/",
@@ -53438,14 +53438,14 @@
         "part_of_speech": "noun",
         "definition": "結構",
         "example_sentence": "The typical family structure of Freud's patients involved two parents and two children.",
-        "example_translation": "弗洛伊德的疾人的典型家庭結構是父母和兩個孩子。",
+        "example_translation": "弗洛伊德的病人的典型家庭結構是父母和兩個孩子。",
         "sources": [
           {
             "file": "elementary",
             "row": 1190
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/ˈstrəkʧər/",
@@ -53466,7 +53466,7 @@
     "part_of_speech": "noun",
     "definition": "結構",
     "example_sentence": "The typical family structure of Freud's patients involved two parents and two children.",
-    "example_translation": "弗洛伊德的疾人的典型家庭結構是父母和兩個孩子。"
+    "example_translation": "弗洛伊德的病人的典型家庭結構是父母和兩個孩子。"
   },
   {
     "word": "struggle",
@@ -54198,14 +54198,14 @@
         "part_of_speech": "verb",
         "definition": "遭受；患有",
         "example_sentence": "Can you assure me that my father is not suffering?",
-        "example_translation": "你能保證我父親不會受罪嗎 ?",
+        "example_translation": "你能保證我父親不會受苦嗎？",
         "sources": [
           {
             "file": "elementary",
             "row": 1206
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/ˈsəfər/",
@@ -54226,7 +54226,7 @@
     "part_of_speech": "verb",
     "definition": "遭受；患有",
     "example_sentence": "Can you assure me that my father is not suffering?",
-    "example_translation": "你能保證我父親不會受罪嗎 ?"
+    "example_translation": "你能保證我父親不會受苦嗎？"
   },
   {
     "word": "sufferer",
@@ -54418,21 +54418,21 @@
         "part_of_speech": "adjective",
         "definition": "適合的",
         "example_sentence": "Employers usually decide within five minutes whether someone is suitable for the job.",
-        "example_translation": "僱主通常在 5 分鐘內決定某個是人否適合這份工作。",
+        "example_translation": "僱主通常在 5 分鐘內就能判斷某人是否適合這份工作。",
         "sources": [
           {
             "file": "elementary",
             "row": 1212
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈsutəbəl/",
     "part_of_speech": "adjective",
     "definition": "適合的",
     "example_sentence": "Employers usually decide within five minutes whether someone is suitable for the job.",
-    "example_translation": "僱主通常在 5 分鐘內決定某個是人否適合這份工作。"
+    "example_translation": "僱主通常在 5 分鐘內就能判斷某人是否適合這份工作。"
   },
   {
     "word": "suitably",
@@ -56302,22 +56302,22 @@
         "phonetic": "/ˈθɪri/",
         "part_of_speech": "noun",
         "definition": "理論",
-        "example_sentence": "Einstein formulated the Theory of Relativity in 19 o 5.",
-        "example_translation": "愛因斯坦在1905年提出了相對論。",
+        "example_sentence": "Einstein formulated the Theory of Relativity in 1905.",
+        "example_translation": "愛因斯坦在 1905 年提出了相對論。",
         "sources": [
           {
             "file": "intermediate",
             "row": 1185
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈθɪri/",
     "part_of_speech": "noun",
     "definition": "理論",
-    "example_sentence": "Einstein formulated the Theory of Relativity in 19 o 5.",
-    "example_translation": "愛因斯坦在1905年提出了相對論。"
+    "example_sentence": "Einstein formulated the Theory of Relativity in 1905.",
+    "example_translation": "愛因斯坦在 1905 年提出了相對論。"
   },
   {
     "word": "therefore",
@@ -56519,21 +56519,21 @@
         "part_of_speech": "verb",
         "definition": "威脅",
         "example_sentence": "The newcomers directly threaten the livelihood of the established workers.",
-        "example_translation": "新來的工人們直接成脅到老工人們的人飯碗。",
+        "example_translation": "新來的工人直接威脅到老員工的生計。",
         "sources": [
           {
             "file": "elementary",
             "row": 1261
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/θˈrɛtən/",
     "part_of_speech": "verb",
     "definition": "威脅",
     "example_sentence": "The newcomers directly threaten the livelihood of the established workers.",
-    "example_translation": "新來的工人們直接成脅到老工人們的人飯碗。"
+    "example_translation": "新來的工人直接威脅到老員工的生計。"
   },
   {
     "word": "throughout",
@@ -56605,35 +56605,35 @@
         "part_of_speech": "noun",
         "definition": "時間表",
         "example_sentence": "Don’t you realize we're working to a timetable? We have to have results.",
-        "example_translation": "難道你沒意識到我們在按時間錶行事嗎 ? 我們必須出成果。",
+        "example_translation": "難道你沒意識到我們是按時間表行事的嗎？我們必須拿出成果。",
         "sources": [
           {
             "file": "elementary",
             "row": 1264
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       },
       {
         "phonetic": "/ˈtaɪmˌteɪbəl/",
         "part_of_speech": "noun",
         "definition": "課程表",
         "example_sentence": "Options are offered subject to staff availability and the constraints of the timetable.",
-        "example_translation": "課程選擇視教師的時間與課程表的限制頁定。",
+        "example_translation": "課程選擇視師資情況和課表限制而定。",
         "sources": [
           {
             "file": "elementary",
             "row": 1265
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈtaɪmˌteɪbəl/",
     "part_of_speech": "noun",
     "definition": "時間表",
     "example_sentence": "Don’t you realize we're working to a timetable? We have to have results.",
-    "example_translation": "難道你沒意識到我們在按時間錶行事嗎 ? 我們必須出成果。"
+    "example_translation": "難道你沒意識到我們是按時間表行事的嗎？我們必須拿出成果。"
   },
   {
     "word": "title",
@@ -56921,21 +56921,21 @@
         "part_of_speech": "noun",
         "definition": "傳統",
         "example_sentence": "Mary has carried on the family tradition of giving away plants.",
-        "example_translation": "瑪麗承纜了向別人贈送植物的家族傳統。",
+        "example_translation": "瑪麗承襲了向別人贈送植物的家族傳統。",
         "sources": [
           {
             "file": "elementary",
             "row": 1273
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/trəˈdɪʃən/",
     "part_of_speech": "noun",
     "definition": "傳統",
     "example_sentence": "Mary has carried on the family tradition of giving away plants.",
-    "example_translation": "瑪麗承纜了向別人贈送植物的家族傳統。"
+    "example_translation": "瑪麗承襲了向別人贈送植物的家族傳統。"
   },
   {
     "word": "traditional",
@@ -57515,7 +57515,7 @@
         "part_of_speech": "adjective",
         "definition": "熱帶的",
         "example_sentence": "By far the most serious tropical disease is malaria.",
-        "example_translation": "到目前為止，最嚴重的熱帶病是疤疾。",
+        "example_translation": "到目前為止，最嚴重的熱帶病是瘧疾。",
         "sources": [
           {
             "file": "intermediate",
@@ -57529,7 +57529,7 @@
     "part_of_speech": "adjective",
     "definition": "熱帶的",
     "example_sentence": "By far the most serious tropical disease is malaria.",
-    "example_translation": "到目前為止，最嚴重的熱帶病是疤疾。"
+    "example_translation": "到目前為止，最嚴重的熱帶病是瘧疾。"
   },
   {
     "word": "tropics",
@@ -57759,14 +57759,14 @@
         "part_of_speech": "adjective",
         "definition": "常見的",
         "example_sentence": "With typical energy he found new journalistic outlets.",
-        "example_translation": "他賃著自己慣有的幹勁找到了新的新聞機會。",
+        "example_translation": "他憑著自己慣有的幹勁找到了新的新聞機會。",
         "sources": [
           {
             "file": "elementary",
             "row": 1294
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈtɪpɪkəl/",
@@ -57917,7 +57917,7 @@
         "part_of_speech": "adverb",
         "definition": "清楚無誤地",
         "example_sentence": "He has failed to dissociate himself clearly and unambiguously from the attack.",
-        "example_translation": "他未能清楚明確地將自已與襲擊劃清界限。",
+        "example_translation": "他未能清楚明確地將自己與襲擊劃清界限。",
         "sources": [
           {
             "file": "intermediate",
@@ -57931,7 +57931,7 @@
     "part_of_speech": "adverb",
     "definition": "清楚無誤地",
     "example_sentence": "He has failed to dissociate himself clearly and unambiguously from the attack.",
-    "example_translation": "他未能清楚明確地將自已與襲擊劃清界限。"
+    "example_translation": "他未能清楚明確地將自己與襲擊劃清界限。"
   },
   {
     "word": "undergo",
@@ -58455,21 +58455,21 @@
         "part_of_speech": "noun",
         "definition": "大學",
         "example_sentence": "Patrick is now at London University.",
-        "example_translation": "帕特里克現在就讀 (就職 ) 於倫敦大學。",
+        "example_translation": "帕特里克現在就讀於倫敦大學。",
         "sources": [
           {
             "file": "elementary",
             "row": 1304
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˌjuːnɪˈvɜːsəti/",
     "part_of_speech": "noun",
     "definition": "大學",
     "example_sentence": "Patrick is now at London University.",
-    "example_translation": "帕特里克現在就讀 (就職 ) 於倫敦大學。"
+    "example_translation": "帕特里克現在就讀於倫敦大學。"
   },
   {
     "word": "unnecessary",
@@ -58612,7 +58612,7 @@
         "phonetic": "/ˌərbənɪˈzeɪʃən/",
         "part_of_speech": "noun (uncountable)",
         "definition": "城市化",
-        "example_sentence": "Rapid urbanization is one of the gravest challenges facing governments and communities a like.",
+        "example_sentence": "Rapid urbanization is one of the gravest challenges facing governments and communities alike.",
         "example_translation": "快速城市化是政府和地區面臨的最嚴峻挑戰之一。",
         "sources": [
           {
@@ -58620,13 +58620,13 @@
             "row": 1231
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˌərbənɪˈzeɪʃən/",
     "part_of_speech": "noun (uncountable)",
     "definition": "城市化",
-    "example_sentence": "Rapid urbanization is one of the gravest challenges facing governments and communities a like.",
+    "example_sentence": "Rapid urbanization is one of the gravest challenges facing governments and communities alike.",
     "example_translation": "快速城市化是政府和地區面臨的最嚴峻挑戰之一。"
   },
   {
@@ -59140,21 +59140,21 @@
         "part_of_speech": "noun",
         "definition": "多樣性；各式各樣",
         "example_sentence": "The island offers a wide variety of scenery and wildlife.",
-        "example_translation": "這個島同擁有豐富多樣的景緻及種類繁多的野生動植物。",
+        "example_translation": "這座島擁有豐富多樣的景緻及種類繁多的野生動植物。",
         "sources": [
           {
             "file": "elementary",
             "row": 1319
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/vərˈaɪəti/",
     "part_of_speech": "noun",
     "definition": "多樣性；各式各樣",
     "example_sentence": "The island offers a wide variety of scenery and wildlife.",
-    "example_translation": "這個島同擁有豐富多樣的景緻及種類繁多的野生動植物。"
+    "example_translation": "這座島擁有豐富多樣的景緻及種類繁多的野生動植物。"
   },
   {
     "word": "various",
@@ -59538,14 +59538,14 @@
         "part_of_speech": "verb",
         "definition": "看待；認為",
         "example_sentence": "First-generation Americans view the United States as a land of golden opportunity.",
-        "example_translation": "第一代美國人認為美國是一個充滿了黃金機退的國度。",
+        "example_translation": "第一代美國人認為美國是一個充滿黃金機會的國度。",
         "sources": [
           {
             "file": "elementary",
             "row": 1325
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/vju/",
@@ -59657,7 +59657,7 @@
         "phonetic": "/ˈvaɪrəl/",
         "part_of_speech": "adjective",
         "definition": "病毒的",
-        "example_sentence": "A 65 - year old patient suffering from severe viral pneumonia",
+        "example_sentence": "A 65-year-old patient suffering from severe viral pneumonia",
         "example_translation": "一名65歲患有嚴重的病毒性肺炎的病人",
         "sources": [
           {
@@ -59665,13 +59665,13 @@
             "row": 1258
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈvaɪrəl/",
     "part_of_speech": "adjective",
     "definition": "病毒的",
-    "example_sentence": "A 65 - year old patient suffering from severe viral pneumonia",
+    "example_sentence": "A 65-year-old patient suffering from severe viral pneumonia",
     "example_translation": "一名65歲患有嚴重的病毒性肺炎的病人"
   },
   {
@@ -59777,22 +59777,22 @@
         "phonetic": "/ˈvɪzəbli/",
         "part_of_speech": "adverb",
         "definition": "明顯地",
-        "example_sentence": "Persons dying from cancer or other degenerative disorders growth in and visibly waste away.",
-        "example_translation": "死於癌症或其他退化性疾病的人變得消瘦而明顯屏弱。",
+        "example_sentence": "Persons dying from cancer or other degenerative disorders grow thin and visibly waste away.",
+        "example_translation": "死於癌症或其他退化性疾病的人會變得消瘦，身體明顯衰弱。",
         "sources": [
           {
             "file": "intermediate",
             "row": 1260
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈvɪzəbli/",
     "part_of_speech": "adverb",
     "definition": "明顯地",
-    "example_sentence": "Persons dying from cancer or other degenerative disorders growth in and visibly waste away.",
-    "example_translation": "死於癌症或其他退化性疾病的人變得消瘦而明顯屏弱。"
+    "example_sentence": "Persons dying from cancer or other degenerative disorders grow thin and visibly waste away.",
+    "example_translation": "死於癌症或其他退化性疾病的人會變得消瘦，身體明顯衰弱。"
   },
   {
     "word": "vision",
@@ -60161,7 +60161,7 @@
         "phonetic": "/ˈvəlnərəbəl/",
         "part_of_speech": "adjective",
         "definition": "虛弱的，脆弱的",
-        "example_sentence": "Ld people are particularly vulnerable members of our society.",
+        "example_sentence": "Old people are particularly vulnerable members of our society.",
         "example_translation": "老年人是我們社會中特別脆弱的人群。",
         "sources": [
           {
@@ -60169,13 +60169,13 @@
             "row": 1272
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈvəlnərəbəl/",
     "part_of_speech": "adjective",
     "definition": "虛弱的，脆弱的",
-    "example_sentence": "Ld people are particularly vulnerable members of our society.",
+    "example_sentence": "Old people are particularly vulnerable members of our society.",
     "example_translation": "老年人是我們社會中特別脆弱的人群。"
   },
   {
@@ -60427,21 +60427,21 @@
         "part_of_speech": "noun",
         "definition": "重量；體重",
         "example_sentence": "What is your height and weight?",
-        "example_translation": "你的身高和體重是多少 ?",
+        "example_translation": "你的身高和體重是多少？",
         "sources": [
           {
             "file": "elementary",
             "row": 1339
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/weɪt/",
     "part_of_speech": "noun",
     "definition": "重量；體重",
     "example_sentence": "What is your height and weight?",
-    "example_translation": "你的身高和體重是多少 ?"
+    "example_translation": "你的身高和體重是多少？"
   },
   {
     "word": "welfare",
@@ -60801,21 +60801,21 @@
         "part_of_speech": "adjective",
         "definition": "甘願的",
         "example_sentence": "The military now say they're willing to hold talks with the political parties.",
-        "example_translation": "軍方現在說，他願意們與政黨進行談判。",
+        "example_translation": "軍方現在說，他們願意與政黨進行談判。",
         "sources": [
           {
             "file": "elementary",
             "row": 1354
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈwɪlɪŋ/",
     "part_of_speech": "adjective",
     "definition": "甘願的",
     "example_sentence": "The military now say they're willing to hold talks with the political parties.",
-    "example_translation": "軍方現在說，他願意們與政黨進行談判。"
+    "example_translation": "軍方現在說，他們願意與政黨進行談判。"
   },
   {
     "word": "wing",
@@ -60872,7 +60872,7 @@
         "phonetic": "/ˈwaɪrlɪs/",
         "part_of_speech": "adjective",
         "definition": "無線的",
-        "example_sentence": "The company is going Wireless.",
+        "example_sentence": "The company is going wireless.",
         "example_translation": "這家公司正在進行無線化改革。",
         "sources": [
           {
@@ -60880,13 +60880,13 @@
             "row": 1357
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈwaɪrlɪs/",
     "part_of_speech": "adjective",
     "definition": "無線的",
-    "example_sentence": "The company is going Wireless.",
+    "example_sentence": "The company is going wireless.",
     "example_translation": "這家公司正在進行無線化改革。"
   },
   {
@@ -61137,21 +61137,21 @@
         "part_of_speech": "adjective",
         "definition": "有價值的",
         "example_sentence": "The President's trip to Washington this week seems to have been worthwhile.",
-        "example_translation": "總統本週的華感頓之行看來是有價值的。",
+        "example_translation": "總統本週的華盛頓之行看來是有價值的。",
         "sources": [
           {
             "file": "elementary",
             "row": 1364
           }
         ],
-        "example_origin": "supplied"
+        "example_origin": "editorial"
       }
     ],
     "phonetic": "/ˈwərθˈwaɪl/",
     "part_of_speech": "adjective",
     "definition": "有價值的",
     "example_sentence": "The President's trip to Washington this week seems to have been worthwhile.",
-    "example_translation": "總統本週的華感頓之行看來是有價值的。"
+    "example_translation": "總統本週的華盛頓之行看來是有價值的。"
   },
   {
     "word": "x-ray",
