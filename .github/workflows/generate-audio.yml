@@ -3,10 +3,10 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'sample = a few words in two voices, all = every word'
+        description: 'sample = a few words in two voices, all = every word, examples = every example sentence'
         default: sample
         type: choice
-        options: [sample, all]
+        options: [sample, all, examples]
 permissions:
   contents: write
 jobs:
