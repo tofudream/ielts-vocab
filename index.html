@@ -238,7 +238,7 @@ button,.navbtn,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
 <div class="learn-controls" role="group" aria-label="單字學習操作"><div class="learn-nav"><button class="btn outline" id="previous">← 上一個</button><div class="learn-rating"><button class="btn primary" id="reveal" aria-controls="answer" aria-expanded="false">顯示單字中文</button><button class="btn outline" id="revealtranslation" aria-controls="translation" aria-expanded="false">顯示例句中文</button></div><button class="btn outline" id="next">下一個 →</button></div></div>
 <details class="learn-guide"><summary>學習方式與抽取規則</summary><div class="notice">每日配置：20 個從未學過的新單字、5 個已學字（測驗錯字優先，名額不足以其他已學字補足）、5 個隨機已學字。三組不重複，各組候選不足時不跨組補足，同一天不會重抽。讀完單字與例句後，按「已學習」才計入今日已學；切換卡片不會自動記錄。右上角可切換「未學習」與「已學習」兩種清單。</div></details>
 </section>
-<section class="section" id="history"><div class="toolbar"><h2>學習記錄</h2><button class="btn outline" id="exporthistory">匯出學習記錄 JSON</button></div><p class="muted">按日期查看學過的單字、例句及測驗成績。重複練習同一個單字，在同一天只計算一次。</p><div class="stats history-stats" aria-label="單字學習統計"><div class="stat"><span>單字總數</span><b id="total">—</b></div><div class="stat"><span>已學習</span><b id="known">0</b></div><div class="stat"><span>未學習</span><b id="due">0</b></div></div><div class="stats history-stats"><div class="stat"><span>學習天數</span><b id="studydays">0</b></div><div class="stat"><span>累計學過（不重複）</span><b id="studiedtotal">0</b></div><div class="stat"><span>完成每日任務</span><b id="completeddays">0</b></div></div><div class="list" id="historylist"></div><div class="notice">登入後記錄會自動同步到雲端，可在不同裝置使用；同步狀態顯示在側邊欄。仍建議定期匯出備份。舊版未保存每日記錄，因此不會自動補上過去的學習日期。</div></section>
+<section class="section" id="history"><div class="toolbar"><h2>學習記錄</h2><button class="btn outline" id="exporthistory">匯出學習記錄 JSON</button></div><p class="muted">按日期查看學過的單字、例句及測驗成績。重複練習同一個單字，在同一天只計算一次。</p><div class="stats history-stats" aria-label="單字學習統計"><div class="stat"><span>單字總數</span><b id="total">—</b></div><div class="stat"><span>已學習</span><b id="known">0</b></div><div class="stat"><span>未學習</span><b id="due">0</b></div></div><div class="stats history-stats"><div class="stat"><span>學習天數</span><b id="studydays">0</b></div><div class="stat"><span>累計學過（不重複）</span><b id="studiedtotal">0</b></div><div class="stat"><span>完成每日任務</span><b id="completeddays">0</b></div></div><div id="wrongreview"></div><div class="list" id="historylist"></div><div class="notice">登入後記錄會自動同步到雲端，可在不同裝置使用；同步狀態顯示在側邊欄。仍建議定期匯出備份。舊版未保存每日記錄，因此不會自動補上過去的學習日期。</div></section>
 <section class="section" id="library"><div class="toolbar"><h2>所有單字</h2><input id="search" class="control" placeholder="搜尋英文或中文..." aria-label="搜尋單字"></div><p class="muted" id="librarycount"></p><div class="list" id="wordlist"></div><div class="actions"><button class="btn outline hidden" id="loadmore">載入更多單字</button></div></section>
 <section class="section" id="quiz">
 <div class="toolbar"><div><h2>每日單字測驗</h2><p class="muted daily-date" id="examdate"></p></div></div>
@@ -555,7 +555,7 @@ function historyWord(record) {
   });
   return el;
 }
-const EXAM_QUOTAS = { today: 20, previous: 5, wrong: 5, fill: 10 };
+const EXAM_QUOTAS = { today: 20, previous: 5, wrong: 5, fill: 15, fillNew: 10, fillReview: 5 };
 const SOURCE_LABELS = { today: '今日已學習', previous: '已學習・尚未測驗', wrong: '已測驗但答錯', fill: '句子填空' };
 const EXAMPLE_PHRASES = {
   accomplish: 'accomplished her goal', analyze: 'analyze the results', approach: 'approach to this problem',
@@ -676,12 +676,24 @@ function buildExam() {
   }));
   const fillSeen = new Set(), fillWords = [];
   const studied = everStudiedIds();
-  // A word may be assessed once in each format, but never twice within a format.
-  for (const word of [...shuffle(pools.today), ...shuffle(dailyWords()), ...shuffle(words.filter(item => studied.has(getId(item)))), ...shuffle(words)]) {
-    const id = getId(word); if (fillSeen.has(id) || !gapFor(word)) continue;
-    fillSeen.add(id); fillWords.push(word); if (fillWords.length === 10) break;
-  }
-  fillWords.forEach((word,index) => { const gap = gapFor(word); questions.push({id:`fill-${index}`,type:'fill',source:'fill',word:{...word},gap,fillOptions:fillOptions(word,gap),hintUsed:false,answer:null}); });
+  const pushFill = (word, kind) => {
+    const id = getId(word);
+    if (fillSeen.has(id) || !gapFor(word) || fillWords.length >= EXAM_QUOTAS.fill) return false;
+    fillSeen.add(id); fillWords.push(word); fillKinds.set(id, kind); return true;
+  };
+  const fillKinds = new Map(), wrongCount = word => Number(quizResults[getId(word)]?.wrongCount) || 0;
+  // 10 newly learned words (today's), topped up from today's list if fewer were studied.
+  let count = 0;
+  for (const word of [...shuffle(pools.today), ...shuffle(dailyWords())]) { if (count >= EXAM_QUOTAS.fillNew) break; if (pushFill(word, 'new')) count++; }
+  // 5 review words: previously wrong words first (still-wrong before later-corrected), then other learned words.
+  const olderLearned = words.filter(word => studied.has(getId(word)) && !todayIds.has(getId(word)));
+  const stillWrong = shuffle(olderLearned.filter(word => wrongCount(word) > 0 && quizResults[getId(word)]?.lastCorrect !== true));
+  const fixedWrong = shuffle(olderLearned.filter(word => wrongCount(word) > 0 && quizResults[getId(word)]?.lastCorrect === true));
+  count = 0;
+  for (const word of [...stillWrong, ...fixedWrong, ...shuffle(olderLearned)]) { if (count >= EXAM_QUOTAS.fillReview) break; if (pushFill(word, 'review')) count++; }
+  // Still short (few learned words): fall back to any learned word, then any word.
+  for (const word of [...shuffle(words.filter(item => studied.has(getId(item)))), ...shuffle(words)]) { if (fillWords.length >= EXAM_QUOTAS.fill) break; pushFill(word, 'review'); }
+  fillWords.forEach((word,index) => { const gap = gapFor(word); questions.push({id:`fill-${index}`,type:'fill',source:'fill',fillKind:fillKinds.get(getId(word)),word:{...word},gap,fillOptions:fillOptions(word,gap),hintUsed:false,answer:null}); });
   return {
     version:1,date:today(),startedAt:null,completedAt:null,cursor:0,questions,
     allocation:{today:selected.today.length,previous:selected.previous.length,wrong:selected.wrong.length,fill:fillWords.length},
@@ -693,8 +705,11 @@ function examSummary(exam) {
   const correct = answered.filter(question => question.answer.correct).length;
   const choice = exam.questions.filter(question => question.type === 'choice').length;
   const fill = exam.questions.length-choice;
-  return {answered:answered.length,correct,total:exam.questions.length,score:correct*2.5,max:exam.questions.length*2.5,
-    hints:exam.questions.filter(question => question.hintUsed).length,full:choice===30&&fill===10};
+  const total=exam.questions.length, full=choice===30&&(fill===10||fill===15);
+  // A full exam (30 choice + 10/15 fill) is always worth 100 points; practice sets keep 2.5 per question.
+  const max=full?100:total*2.5, each=total?max/total:0;
+  return {answered:answered.length,correct,total,score:Math.round(correct*each*10)/10,max,each:Math.round(each*100)/100,
+    hints:exam.questions.filter(question => question.hintUsed).length,full};
 }
 function renderQuiz() {
   if (!words.length) return;
@@ -702,11 +717,11 @@ function renderQuiz() {
   text('#examdate', today().replaceAll('-',' / '));
   text('#examprogress', `已答 ${summary.answered} / ${summary.total} 題`);
   text('#examscore', `得分 ${summary.score} / ${summary.max}`);
-  text('#examnotice', (summary.full ? '作答會自動儲存，可稍後繼續。' : `練習卷：共 ${summary.total} 題，滿分 ${summary.max} 分（不是百分制）。`) + ' 抽題規則：今日已學習 20 題、已學習但尚未測驗 5 題、已測驗但答錯 5 題，另加 10 題句子填空。');
+  text('#examnotice', (summary.full ? '作答會自動儲存，可稍後繼續。' : `練習卷：共 ${summary.total} 題，滿分 ${summary.max} 分（不是百分制）。`) + ' 抽題規則：今日已學習 20 題、已學習但尚未測驗 5 題、已測驗但答錯 5 題，另加 15 題句子填空（10 題新學單字、5 題複習單字，優先選曾答錯的單字）。');
   $('#examnotice').classList.toggle('hidden', !!exam);
   $('#startexam').classList.toggle('hidden', !!exam);
   $('#startexam').disabled = !draft.questions.length;
-  text('#startexam', summary.full ? '開始今日 40 題測驗' : `開始今日 ${summary.total} 題練習`);
+  text('#startexam', summary.full ? `開始今日 ${summary.total} 題測驗` : `開始今日 ${summary.total} 題練習`);
   $('#quizquestion').classList.toggle('hidden', !exam || !!exam.completedAt);
   $('#examresult').classList.toggle('hidden', !exam?.completedAt);
   if (!exam) return;
@@ -798,7 +813,7 @@ function renderExamResult(container,exam) {
   const result=examSummary(exam), title=document.createElement('h3');
   title.textContent=exam.completedAt?`${result.full?'每日測驗':'練習卷'}完成 · ${result.score} / ${result.max} 分`:`測驗進行中 · ${result.score} / ${result.max} 分`;
   const note=document.createElement('p'); note.className='muted';
-  note.textContent=`已答 ${result.answered}/${result.total} 題，答對 ${result.correct} 題 · 提示使用 ${result.hints}/5 次 · 每題 2.5 分`;
+  note.textContent=`已答 ${result.answered}/${result.total} 題，答對 ${result.correct} 題 · 提示使用 ${result.hints}/5 次 · 每題 ${result.each} 分`;
   container.append(title,note);
   const details=document.createElement('details'), summary=document.createElement('summary');
   summary.textContent='查看已作答題目與答案'; details.append(summary);
@@ -813,7 +828,47 @@ function renderExamResult(container,exam) {
   });
   container.append(details);
 }
+function renderWrongReview() {
+  const holder = $('#wrongreview');
+  const wasOpen = holder.children[0] ? !!holder.children[0].open : true;
+  const byWord = new Map();
+  Object.keys(exams.days).sort().reverse().forEach(date => {
+    const exam = exams.days[date]; if (!validExam(exam)) return;
+    exam.questions.forEach(question => {
+      if (!question.answer || question.answer.correct !== false) return;
+      const id = getId(question.word), entry = byWord.get(id) || { word: question.word, rows: [] };
+      const picked = question.type === 'choice' ? question.options.find(option => option.id === question.answer.value)?.label : question.answer.value;
+      entry.rows.push({ date, type: question.type === 'choice' ? '四選一' : '句子填空', picked, right: question.type === 'choice' ? question.word.definition : question.gap.answer });
+      byWord.set(id, entry);
+    });
+  });
+  const entries = [...byWord.entries()].map(([id, entry]) => ({ id, ...entry, fixed: quizResults[id]?.lastCorrect === true }));
+  entries.sort((a, b) => Number(a.fixed) - Number(b.fixed) || b.rows[0].date.localeCompare(a.rows[0].date));
+  const details = document.createElement('details'); details.className = 'panel history-day'; details.open = wasOpen;
+  const summary = document.createElement('summary'), label = document.createElement('div'), title = document.createElement('strong');
+  title.textContent = '錯題複習';
+  const sub = document.createElement('p'); sub.textContent = entries.length ? `共 ${entries.length} 個單字答錯過 · 尚未答對 ${entries.filter(entry => !entry.fixed).length} 個` : '還沒有答錯的題目';
+  label.append(title, sub); summary.append(label); details.append(summary);
+  const list = document.createElement('div'); list.className = 'history-words';
+  entries.forEach(entry => {
+    const el = document.createElement('div'); el.className = 'history-word';
+    const head = document.createElement('div'); head.className = 'history-word-head';
+    const name = document.createElement('strong'); name.textContent = entry.word.word;
+    const tag = document.createElement('span'); tag.className = 'chip'; tag.textContent = entry.fixed ? '之後已答對' : '尚未答對';
+    head.append(name, tag); el.append(head);
+    const definition = document.createElement('p'); definition.textContent = [entry.word.part_of_speech, entry.word.definition].filter(Boolean).join(' · '); el.append(definition);
+    entry.rows.forEach(row => {
+      const p = document.createElement('p'); p.className = 'translation';
+      p.textContent = `${row.date} · ${row.type} · 你的答案：${row.picked}；正確答案：${row.right}`; el.append(p);
+    });
+    const example = document.createElement('p'); example.className = 'example'; highlightedExample(example, entry.word); el.append(example);
+    list.append(el);
+  });
+  if (entries.length) details.append(list);
+  holder.replaceChildren(details);
+}
 function renderHistory() {
+  renderWrongReview();
   const openDates=new Set([...$('#historylist').children].filter(el=>el.open).map(el=>el.dataset.date));
   const studyDates=Object.keys(journal.days).filter(date=>validDay(journal.days[date]) && studiedIds(journal.days[date]).length);
   const examDates=Object.keys(exams.days).filter(date=>validExam(exams.days[date]) && exams.days[date].startedAt);

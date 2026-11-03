@@ -21,7 +21,7 @@ const studied = (from, to) => Object.fromEntries(Array.from({ length: to - from 
   assert.equal(app.get('known').textContent, '1');
   assert.equal(app.get('due').textContent, '199', 'unlearned = total - learned');
 
-  // Quiz: 20 learned today + 5 learned-but-untested + 5 tested-but-wrong (+10 fill).
+  // Quiz: 20 learned today + 5 learned-but-untested + 5 tested-but-wrong (+15 fill).
   const today = studied(0, 25);                       // 25 learned today
   const earlier = studied(25, 45);                    // 20 learned earlier, never quizzed
   const quizResults = Object.fromEntries(Array.from({ length: 12 }, (_, k) => ['word' + (100 + k), { wrongCount: 1, correctCount: 0, lastCorrect: false, lastAttemptAt: '2026-10-30T00:00:00Z' }]));
@@ -35,12 +35,25 @@ const studied = (from, to) => Object.fromEntries(Array.from({ length: to - from 
   quiz.get('startexam').click();
   const alloc = quiz.eval('currentExam().allocation');
   assert.deepEqual({ today: alloc.today, previous: alloc.previous, wrong: alloc.wrong }, { today: 20, previous: 5, wrong: 5 });
-  assert.equal(quiz.eval('currentExam().questions.length'), 40);
+  assert.equal(quiz.eval('currentExam().questions.length'), 45);
   const sources = quiz.eval("currentExam().questions.filter(q=>q.type==='choice').map(q=>q.source+':'+q.word.word)");
   const untested = sources.filter(s => s.startsWith('previous')).map(s => Number(s.split('word')[1]));
   assert.ok(untested.every(n => n >= 25 && n < 45), 'untested picks are learned words that were never quizzed');
   const wrong = sources.filter(s => s.startsWith('wrong')).map(s => Number(s.split('word')[1]));
   assert.ok(wrong.every(n => n >= 100 && n < 112), 'wrong picks come from words answered incorrectly');
   assert.equal(new Set(sources.map(s => s.split(':')[1])).size, 30, 'no word is asked twice');
-  console.log('PASS: single learned action, two-way filter, quiz 20 + 5 + 5 (+10 fill)');
+  // Fill-in questions: 10 newly learned today + 5 review words, wrong words first.
+  const fills = quiz.eval("currentExam().questions.filter(q=>q.type==='fill').map(q=>q.fillKind+':'+q.word.word)");
+  assert.equal(fills.length, 15);
+  const fillNew = fills.filter(f => f.startsWith('new')).map(f => Number(f.split('word')[1]));
+  const fillReview = fills.filter(f => f.startsWith('review')).map(f => Number(f.split('word')[1]));
+  assert.equal(fillNew.length, 10); assert.ok(fillNew.every(n => n < 25), 'new fill words were learned today');
+  assert.equal(fillReview.length, 5); assert.ok(fillReview.every(n => n >= 100 && n < 112), 'review fill words prefer previously wrong words');
+  assert.equal(quiz.eval('examSummary(currentExam()).max'), 100);
+  // A wrong answer shows up under 錯題複習 in the learning history.
+  quiz.eval("(()=>{const q=currentExam().questions[0];answerQuestion(q.id,q.options.find(o=>o.id!==getId(q.word)).id)})()");
+  const wrongWord = quiz.eval('currentExam().questions[0].word.word');
+  const panel = quiz.get('wrongreview').textContent;
+  assert.ok(panel.includes('錯題複習') && panel.includes(wrongWord) && panel.includes('尚未答對'));
+  console.log('PASS: single learned action, two-way filter, quiz 20 + 5 + 5 (+15 fill: 10 new, 5 review), wrong-answer review');
 })().catch(e => { console.error(e); process.exit(1); });

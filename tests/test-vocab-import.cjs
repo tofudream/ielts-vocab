@@ -55,8 +55,8 @@ const fields=['word','phonetic','part_of_speech','definition','example_sentence'
     ['ielts-vocab-quiz-v1',JSON.stringify(Object.fromEntries(ids.slice(40,60).map(id=>[id,{wrongCount:1,lastCorrect:false}])))]
   ]);
   const quiz=await boot({data:words,storage:examStore});quiz.get('startexam').click();
-  assert.equal(quiz.eval('currentExam().questions.length'),40);
+  assert.equal(quiz.eval('currentExam().questions.length'),45);
   assert.equal(quiz.eval('examSummary(currentExam()).max'),100);
   assert.equal(quiz.eval("currentExam().questions.filter(q=>q.type==='choice').every(q=>q.options.length===4 && new Set(q.options.map(o=>o.label)).size===4)"),true);
-  console.log(`PASS: ${words.length} words, ${report.preserved_senses} senses; complete row coverage, no missing fields, legacy progress, secondary-sense search/display, pagination, all example gaps, real-data 40-question exam.`);
+  console.log(`PASS: ${words.length} words, ${report.preserved_senses} senses; complete row coverage, no missing fields, legacy progress, secondary-sense search/display, pagination, all example gaps, real-data 45-question exam.`);
 })();
