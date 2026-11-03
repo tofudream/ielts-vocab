@@ -871,11 +871,33 @@ $('#resume').onclick = () => {
 };
 $('#search').oninput = () => { libraryLimit = 100; renderList(); };
 $('#loadmore').onclick = () => { libraryLimit += 100; renderList(); };
+// Prefer the best-sounding British English voice the device offers (natural/neural > Google > named voices).
+let voiceCache = null;
+function pickVoice() {
+  if (voiceCache) return voiceCache;
+  const voices = window.speechSynthesis?.getVoices?.() || [];
+  if (!voices.length) return null;
+  const score = voice => {
+    const gb = /^en[-_]gb$/i.test(voice.lang), en = /^en[-_]/i.test(voice.lang);
+    if (!en) return -1;
+    let value = gb ? 100 : 0;
+    if (/natural|neural|online/i.test(voice.name)) value += 40;
+    if (/google/i.test(voice.name)) value += 25;
+    if (/sonia|libby|ryan|maisie|daniel|serena|kate|oliver|martha|arthur/i.test(voice.name)) value += 15;
+    if (/compact|espeak/i.test(voice.name)) value -= 30;
+    return value;
+  };
+  const best = voices.map(voice => ({ voice, value: score(voice) })).filter(item => item.value >= 0).sort((a, b) => b.value - a.value)[0];
+  return voiceCache = best ? best.voice : null;
+}
+try { window.speechSynthesis?.addEventListener?.('voiceschanged', () => { voiceCache = null; }); } catch { /* ignore */ }
 $('#sound').onclick = () => {
   if (rollover()) return;
   const word = sequence[index]; if (!word || !('speechSynthesis' in window)) return;
   window.speechSynthesis.cancel(); const speech = new SpeechSynthesisUtterance(word.word);
-  speech.lang = 'en-GB'; speech.rate = .85; window.speechSynthesis.speak(speech);
+  const voice = pickVoice();
+  if (voice) speech.voice = voice;
+  speech.lang = voice ? voice.lang : 'en-GB'; speech.rate = .85; window.speechSynthesis.speak(speech);
 };
 $('#newquiz').onclick = nextQuestion;
 $('#startexam').onclick = startExam;
