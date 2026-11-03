@@ -227,6 +227,48 @@ button,.navbtn,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
 }
 
 .example-sound{font-size:12px;padding:4px 10px;min-height:0;margin:2px 0 8px}
+
+/* Unified mobile layout: every tab uses the compact sizes of 今日學習. */
+@media(max-width:760px){
+.layout:has(:is(#review,#history,#library).active) .side{padding:9px 12px;gap:6px}
+.layout:has(:is(#review,#history,#library).active) .brand{font-size:17px}
+.layout:has(:is(#review,#history,#library).active) .brand small{display:none}
+.layout:has(:is(#review,#history,#library).active) .navbtn{font-size:13px;padding:8px 10px;min-height:38px}
+.layout:has(:is(#review,#history,#library).active) .main{padding:12px 14px calc(28px + env(safe-area-inset-bottom,0px))}
+.layout:has(:is(#review,#history,#library).active) .top .eyebrow{font-size:10px;letter-spacing:1.5px}
+.layout:has(:is(#review,#history,#library).active) h1{font-size:23px;line-height:1.25;margin:4px 0 5px;letter-spacing:-.6px}
+.layout:has(:is(#review,#history,#library).active) #motivationnote{font-size:12px;line-height:1.4}
+.layout:has(:is(#review,#history,#library).active) .footer{display:none}
+.layout:has(:is(#review,#history,#library).active) .toolbar{margin:10px 0 8px;gap:8px;align-items:center}
+.layout:has(:is(#review,#history,#library).active) .toolbar h2,.layout:has(:is(#review,#history,#library).active) .section-title{font-size:17px;margin:0}
+.layout:has(:is(#review,#history,#library).active) .section>.muted{font-size:12px;margin:3px 0 8px;line-height:1.5}
+.layout:has(:is(#review,#history,#library).active) .btn{font-size:12px;padding:7px 10px;min-height:36px}
+.layout:has(:is(#review,#history,#library).active) .notice{font-size:12px;margin:8px 0;padding:10px 12px}
+.layout:has(:is(#review,#history,#library).active) .chip{padding:4px 8px;font-size:11px}
+.layout:has(:is(#review,#history,#library).active) .stats,.layout:has(:is(#review,#history,#library).active) .history-stats{grid-template-columns:repeat(3,1fr);gap:6px;margin:8px 0}
+.layout:has(:is(#review,#history,#library).active) .stat,.layout:has(:is(#review,#history,#library).active) .history-stats .stat{display:block;padding:8px 6px;text-align:center;border-radius:14px}
+.layout:has(:is(#review,#history,#library).active) .stat span{display:block;font-size:11px}
+.layout:has(:is(#review,#history,#library).active) .stat b{display:block;font-size:18px;margin:2px 0 0}
+.layout:has(:is(#review,#history,#library).active) .item,.layout:has(:is(#review,#history,#library).active) .history-word{padding:10px 12px;border-radius:12px}
+.layout:has(:is(#review,#history,#library).active) .item p,.layout:has(:is(#review,#history,#library).active) .history-word p{font-size:12px;margin:5px 0 0;line-height:1.5}
+.layout:has(:is(#review,#history,#library).active) .history-word .example,.layout:has(:is(#review,#history,#library).active) .sense-entry p{font-size:15px}
+.layout:has(:is(#review,#history,#library).active) .history-word .translation{font-size:13px}
+.layout:has(:is(#review,#history,#library).active) .history-day summary{padding:10px 14px}
+.layout:has(:is(#review,#history,#library).active) .history-words{padding:0 10px 10px;gap:8px}
+.layout:has(:is(#review,#history,#library).active) .panel{padding:9px 11px}
+.layout:has(:is(#review,#history,#library).active) .history-day{padding:0}
+.layout:has(:is(#review,#history,#library).active) .empty{padding:26px 14px;font-size:13px}
+.layout:has(:is(#review,#history,#library).active) .control{font-size:12px;padding:7px 8px;min-height:36px}
+.layout:has(:is(#review,#history,#library).active) .item strong,.layout:has(:is(#review,#history,#library).active) .history-word strong{font-size:16px}
+.layout:has(:is(#review,#history,#library).active) .section-title{margin:10px 0 0}
+.layout:has(:is(#review,#history,#library).active) .word-entry>summary{gap:8px}
+#quiz .toolbar h2{font-size:17px}
+#quiz .exam-overview .daily-summary-top{font-size:13px}
+#quiz #startexam{font-size:13px}
+}
+@media(max-width:360px){
+.layout:has(:is(#review,#history,#library,#quiz).active) h1{font-size:20px}
+}
 </style></head>
 <body><div class="layout"><aside class="side"><div class="brandrow"><div class="brand">vocab<span style="color:#b2dc97">.</span>studio<small>IELTS LEARNING SPACE</small></div><button id="logout" class="logoutbtn hidden" type="button">登出</button></div><nav aria-label="主要導覽"><button class="navbtn active" data-tab="learn">今日學習</button><button class="navbtn" data-tab="quiz">單字測驗</button><button class="navbtn" data-tab="review">複習清單</button><button class="navbtn" data-tab="history">學習記錄</button><button class="navbtn" data-tab="library">單字總覽</button></nav><div class="sidefoot">每天一點，穩定累積。<br><span id="cloudstate">學習記錄儲存於此瀏覽器。</span></div></aside>
 <main class="main"><div class="top"><div><div class="eyebrow">YOUR DAILY ENGLISH ROUTINE</div><h1 id="motivation">先開始，再慢慢熟悉。</h1><p id="motivationnote" class="muted" style="margin:0">給自己一點時間，從今天的第一個單字開始。</p></div></div>
