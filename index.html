@@ -891,13 +891,26 @@ function pickVoice() {
   return voiceCache = best ? best.voice : null;
 }
 try { window.speechSynthesis?.addEventListener?.('voiceschanged', () => { voiceCache = null; }); } catch { /* ignore */ }
-$('#sound').onclick = () => {
-  if (rollover()) return;
-  const word = sequence[index]; if (!word || !('speechSynthesis' in window)) return;
+function audioSlug(text) { return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+function speakFallback(word) {
+  if (!('speechSynthesis' in window)) return;
   window.speechSynthesis.cancel(); const speech = new SpeechSynthesisUtterance(word.word);
   const voice = pickVoice();
   if (voice) speech.voice = voice;
   speech.lang = voice ? voice.lang : 'en-GB'; speech.rate = .85; window.speechSynthesis.speak(speech);
+}
+let currentAudio = null;
+$('#sound').onclick = () => {
+  if (rollover()) return;
+  const word = sequence[index]; if (!word) return;
+  try { window.speechSynthesis?.cancel?.(); currentAudio?.pause(); } catch { /* ignore */ }
+  // Prefer the pre-generated neural-voice mp3; fall back to the browser voice if it is missing.
+  if (typeof Audio === 'undefined') { speakFallback(word); return; }
+  let fellBack = false;
+  const fallback = () => { if (!fellBack) { fellBack = true; speakFallback(word); } };
+  const audio = new Audio(`audio/${audioSlug(word.word)}.mp3`);
+  currentAudio = audio; audio.onerror = fallback;
+  audio.play().catch(fallback);
 };
 $('#newquiz').onclick = nextQuestion;
 $('#startexam').onclick = startExam;
